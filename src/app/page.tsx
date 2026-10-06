@@ -6,7 +6,6 @@ import Hero from '@/components/Hero';
 import SocialProof from '@/components/SocialProof';
 import CoreFeatures from '@/components/CoreFeatures';
 import RoleExperience from '@/components/RoleExperience';
-import SecuritySection from '@/components/SecuritySection';
 import PricingSection from '@/components/PricingSection';
 import RealOperations from '@/components/RealOperations';
 import WorkflowSection from '@/components/WorkflowSection';
@@ -32,10 +31,7 @@ export default function Home() {
       {/* 5. Role-Based Experience */}
       <RoleExperience />
 
-      {/* 6. Security / Access Control */}
-      <SecuritySection />
-
-      {/* 7. Pricing */}
+      {/* 6. Pricing */}
       <PricingSection />
 
       {/* 8. Real Bimbel Operations */}

@@ -10,37 +10,34 @@ export default function Hero() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       
-      {/* Radiant Luminous Background with Dual Diagonal Light Beams (Obliq Style) */}
+      {/* Full-Width Seamless Radiant Background (Obliq Style with mix-blend-multiply to eliminate white edges) */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
         
-        {/* Top-Left Glowing Light Beam */}
-        <div className="absolute -top-10 -left-10 w-[420px] sm:w-[650px] lg:w-[800px] aspect-square pointer-events-none opacity-95">
+        {/* Top-Left Glowing Light Beam (Full screen corner alignment) */}
+        <div className="absolute -top-2 left-0 w-[58vw] max-w-[850px] aspect-[4/3] pointer-events-none mix-blend-multiply opacity-85">
           <img
             src="/images/hero-beam-left.png"
             alt="Hero Left Glow Beam"
-            className="w-full h-full object-contain block"
+            className="w-full h-full object-cover object-left-top block"
           />
         </div>
 
-        {/* Top-Right Glowing Light Beam */}
-        <div className="absolute -top-10 -right-10 w-[420px] sm:w-[650px] lg:w-[800px] aspect-square pointer-events-none opacity-95">
+        {/* Top-Right Glowing Light Beam (Full screen corner alignment) */}
+        <div className="absolute -top-2 right-0 w-[58vw] max-w-[850px] aspect-[4/3] pointer-events-none mix-blend-multiply opacity-85">
           <img
             src="/images/hero-beam-right.png"
             alt="Hero Right Glow Beam"
-            className="w-full h-full object-contain block"
+            className="w-full h-full object-cover object-right-top block"
           />
         </div>
 
-        {/* Central Luminous Warmth Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[850px] h-[550px] bg-gradient-to-b from-brand-500/25 via-brand-500/8 to-transparent blur-[90px] rounded-full" />
-        
-        {/* Subtle dot matrix grid */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.35]" />
+        {/* Central Luminous Warmth Ambient Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-brand-500/15 via-brand-500/4 to-transparent blur-[110px] rounded-full pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Top Centered Content (No Badge, Big Bold Typography) */}
+        {/* Top Centered Content */}
         <div className="text-center max-w-4xl mx-auto pt-2 sm:pt-4">
           
           {/* Headline */}
@@ -56,7 +53,7 @@ export default function Hero() {
             Kelola kelas, siswa, pembayaran, cabang, dan tentor dalam satu platform yang sederhana.
           </p>
 
-          {/* Primary Action Button (Obliq Style Single Prominent Button) */}
+          {/* Primary Action Button (Obliq Style) */}
           <div className="flex items-center justify-center mb-14 sm:mb-16">
             <a
               href={APP_LOGIN_URL}

@@ -10,21 +10,21 @@ export default function Hero() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-[#FAFAF9]">
       
-      {/* Pure Elegant Minimalist Ambient Gradient (Linear / Stripe Style) */}
+      {/* Pure Subtle Minimalist Ambient Glow (100% Clean CSS - No Background Images) */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
-        {/* Soft upper ambient radial glow */}
+        {/* Soft top ambient radial glow */}
         <div 
-          className="absolute -top-32 left-1/2 -translate-x-1/2 w-[1000px] h-[580px] pointer-events-none opacity-80"
+          className="absolute -top-40 left-1/2 -translate-x-1/2 w-[1100px] h-[600px] pointer-events-none opacity-75"
           style={{
-            background: 'radial-gradient(ellipse 800px 480px at 50% 30%, rgba(206, 72, 42, 0.12) 0%, rgba(206, 72, 42, 0.04) 50%, transparent 80%)',
+            background: 'radial-gradient(ellipse 900px 500px at 50% 20%, rgba(206, 72, 42, 0.09) 0%, rgba(206, 72, 42, 0.02) 45%, transparent 75%)',
           }}
         />
 
-        {/* Delicate subtle dot pattern for modern texture */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.28]" />
+        {/* Delicate subtle dot texture for premium feel */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.25]" />
 
-        {/* Ambient warmth behind product frame */}
-        <div className="absolute top-[45%] left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-brand-500/[0.06] blur-[120px] rounded-full pointer-events-none" />
+        {/* Soft warmth behind product dashboard */}
+        <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-[750px] h-[380px] bg-brand-500/[0.05] blur-[130px] rounded-full pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

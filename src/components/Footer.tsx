@@ -7,49 +7,41 @@ const APP_LOGIN_URL = 'https://app-cressco.vercel.app/login';
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#111113] text-white overflow-hidden border-t border-white/[0.08] font-sans">
-      {/* Background Ambient Glow tailored to Cressco Brand (Warm Terracotta / Charcoal) */}
+    <footer className="relative bg-[#CE482A] bg-gradient-to-b from-[#D44D2F] via-[#CE482A] to-[#B33519] text-white overflow-hidden border-t border-[#DE8C7B]/30 font-sans">
+      {/* Subtle Ambient Glow */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Warm Cressco Brand Glow */}
-        <div className="absolute -bottom-28 -right-20 w-[550px] h-[550px] bg-brand-500/15 rounded-full blur-[140px]" />
-        <div className="absolute -bottom-36 left-1/4 w-[600px] h-[450px] bg-brand-600/10 rounded-full blur-[160px]" />
-        <div className="absolute top-0 right-1/3 w-[350px] h-[250px] bg-white/[0.02] rounded-full blur-[100px]" />
-        
-        {/* Subtle grid texture */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-10" />
+        <div className="absolute -top-24 left-1/4 w-[500px] h-[350px] bg-white/10 rounded-full blur-[100px]" />
+        <div className="absolute -bottom-20 right-10 w-[450px] h-[450px] bg-[#682213]/40 rounded-full blur-[120px]" />
+        <div className="absolute inset-0 bg-grid-pattern opacity-10 mix-blend-overlay" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-16 sm:pt-20 pb-6 sm:pb-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-16 sm:pt-20 pb-6 sm:pb-8">
         
-        {/* Top Content Row: Brand Statement & Structured Links */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 pb-14 sm:pb-20">
+        {/* Top Content Row: Brand statement & Nav columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 pb-12 sm:pb-16 border-b border-white/15">
           
-          {/* Brand Info & Tagline (Left Column) */}
+          {/* Brand Info (Left Column) */}
           <div className="lg:col-span-5 max-w-md">
-            <a href={APP_LOGIN_URL} className="inline-flex items-center gap-2.5 mb-4 group">
-              <img
-                src="/images/cressco-logo.png"
-                alt="Cressco Logo"
-                className="w-8 h-8 object-contain transition-transform group-hover:scale-105"
-              />
-              <span className="text-xl font-bold tracking-tight text-white">
+            <a href={APP_LOGIN_URL} className="inline-flex items-center gap-3 mb-4 group">
+              <div className="w-9 h-9 rounded-xl bg-white flex items-center justify-center p-1.5 shadow-md group-hover:scale-105 transition-transform duration-200">
+                <img
+                  src="/images/cressco-logo.png"
+                  alt="Cressco Logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <span className="text-2xl font-bold tracking-tight text-white">
                 Cressco
               </span>
             </a>
             
-            <p className="text-sm sm:text-[15px] text-zinc-400 font-normal leading-relaxed mb-6">
+            <p className="text-sm sm:text-[15px] text-brand-100 font-normal leading-relaxed mb-6">
               Sistem operasional dan manajemen bimbel modern terpadu. Kelola multi-cabang, jadwal kelas, absensi tutor & siswa, serta laporan keuangan dalam satu platform.
             </p>
 
-            <div className="flex flex-col gap-2">
-              <div className="inline-flex items-center gap-2 text-xs text-zinc-400 font-medium">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Dirancang khusus untuk Bimbel Indonesia</span>
-              </div>
-              <p className="text-xs text-zinc-400">
-                © 2026 Cressco. Hak cipta dilindungi.
-              </p>
-            </div>
+            <p className="text-xs text-brand-200/90 tracking-wide">
+              © 2026 Cressco. Hak cipta dilindungi.
+            </p>
           </div>
 
           {/* Links Columns (Right Columns) */}
@@ -57,27 +49,27 @@ export default function Footer() {
             
             {/* 1. Produk */}
             <div>
-              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 text-zinc-200">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 text-white/90">
                 Produk
               </h4>
-              <ul className="space-y-3 text-sm text-zinc-400">
+              <ul className="space-y-3 text-sm text-brand-100">
                 <li>
-                  <Link href="#features" className="hover:text-brand-400 transition-colors duration-150">
+                  <Link href="#features" className="hover:text-white hover:underline transition-colors">
                     Fitur Utama
                   </Link>
                 </li>
                 <li>
-                  <Link href="#roles" className="hover:text-brand-400 transition-colors duration-150">
+                  <Link href="#roles" className="hover:text-white hover:underline transition-colors">
                     Akses Role
                   </Link>
                 </li>
                 <li>
-                  <Link href="#workflow" className="hover:text-brand-400 transition-colors duration-150">
+                  <Link href="#workflow" className="hover:text-white hover:underline transition-colors">
                     Alur Operasional
                   </Link>
                 </li>
                 <li>
-                  <Link href="#pricing" className="hover:text-brand-400 transition-colors duration-150">
+                  <Link href="#pricing" className="hover:text-white hover:underline transition-colors">
                     Paket & Harga
                   </Link>
                 </li>
@@ -86,46 +78,46 @@ export default function Footer() {
 
             {/* 2. Solusi */}
             <div>
-              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 text-zinc-200">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 text-white/90">
                 Solusi
               </h4>
-              <ul className="space-y-3 text-sm text-zinc-400">
+              <ul className="space-y-3 text-sm text-brand-100">
                 <li>
-                  <Link href="#roles" className="hover:text-brand-400 transition-colors duration-150">
+                  <Link href="#roles" className="hover:text-white hover:underline transition-colors">
                     Untuk Owner
                   </Link>
                 </li>
                 <li>
-                  <Link href="#roles" className="hover:text-brand-400 transition-colors duration-150">
+                  <Link href="#roles" className="hover:text-white hover:underline transition-colors">
                     Untuk Admin Cabang
                   </Link>
                 </li>
                 <li>
-                  <Link href="#roles" className="hover:text-brand-400 transition-colors duration-150">
+                  <Link href="#roles" className="hover:text-white hover:underline transition-colors">
                     Untuk Tutor
                   </Link>
                 </li>
                 <li>
-                  <a href={APP_LOGIN_URL} className="hover:text-brand-400 transition-colors duration-150">
+                  <a href={APP_LOGIN_URL} className="hover:text-white hover:underline transition-colors">
                     Multi-Cabang
                   </a>
                 </li>
               </ul>
             </div>
 
-            {/* 3. Bantuan & Akun */}
+            {/* 3. Layanan */}
             <div>
-              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 text-zinc-200">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 text-white/90">
                 Layanan
               </h4>
-              <ul className="space-y-3 text-sm text-zinc-400">
+              <ul className="space-y-3 text-sm text-brand-100">
                 <li>
-                  <a href={APP_LOGIN_URL} className="hover:text-brand-400 transition-colors duration-150">
+                  <a href={APP_LOGIN_URL} className="hover:text-white hover:underline transition-colors">
                     Masuk Dashboard
                   </a>
                 </li>
                 <li>
-                  <Link href="#faq" className="hover:text-brand-400 transition-colors duration-150">
+                  <Link href="#faq" className="hover:text-white hover:underline transition-colors">
                     Tanya Jawab (FAQ)
                   </Link>
                 </li>
@@ -134,13 +126,13 @@ export default function Footer() {
                     href="https://wa.me/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="hover:text-brand-400 transition-colors duration-150 inline-flex items-center gap-1.5"
+                    className="hover:text-white hover:underline transition-colors inline-flex items-center gap-1.5"
                   >
                     <span>Hubungi CS</span>
                   </a>
                 </li>
                 <li>
-                  <a href={APP_LOGIN_URL} className="hover:text-brand-400 transition-colors duration-150">
+                  <a href={APP_LOGIN_URL} className="hover:text-white hover:underline transition-colors">
                     Privasi Data
                   </a>
                 </li>
@@ -150,53 +142,11 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Giant Brand Typography + Cressco Dot Matrix Graphic */}
-        <div className="pt-6 sm:pt-10 flex items-center justify-between border-t border-white/[0.08] select-none overflow-hidden">
-          <div className="w-full flex items-center justify-between gap-4 sm:gap-8">
-            
-            {/* Giant CRESSCO Typography with subtle Cressco brand-tinted gradient */}
-            <span className="font-extrabold tracking-[-0.04em] uppercase text-[12vw] sm:text-[13vw] lg:text-[14.5vw] leading-[0.82] bg-gradient-to-b from-white via-stone-200 to-brand-500/25 bg-clip-text text-transparent">
-              CRESSCO
-            </span>
-
-            {/* Dot Matrix Arrow Graphic in Cressco Brand Glow */}
-            <div className="shrink-0 flex items-center justify-center pl-2 sm:pl-6">
-              <svg 
-                className="w-14 h-14 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-36 lg:h-36" 
-                viewBox="0 0 150 150" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <radialGradient id="cresscoDotGlow" cx="35%" cy="35%" r="65%">
-                    <stop offset="0%" stopColor="#FFFFFF" />
-                    <stop offset="45%" stopColor="#F5DBD4" />
-                    <stop offset="100%" stopColor="#CE482A" />
-                  </radialGradient>
-                </defs>
-
-                {/* Diagonal Arrow Dot Matrix in Cressco Terracotta Glow */}
-                {/* Row 1 (y=20): Top-Left and Top-Right */}
-                <circle cx="20" cy="20" r="7.5" fill="url(#cresscoDotGlow)" fillOpacity="0.85" />
-                <circle cx="128" cy="20" r="7.5" fill="url(#cresscoDotGlow)" fillOpacity="0.85" />
-
-                {/* Row 2 (y=56): Diagonal and Right */}
-                <circle cx="56" cy="56" r="8" fill="url(#cresscoDotGlow)" fillOpacity="0.9" />
-                <circle cx="128" cy="56" r="8" fill="url(#cresscoDotGlow)" fillOpacity="0.9" />
-
-                {/* Row 3 (y=92): Diagonal and Right */}
-                <circle cx="92" cy="92" r="8.5" fill="url(#cresscoDotGlow)" fillOpacity="0.95" />
-                <circle cx="128" cy="92" r="8.5" fill="url(#cresscoDotGlow)" fillOpacity="0.95" />
-
-                {/* Row 4 (y=128): Full bottom row */}
-                <circle cx="20" cy="128" r="7.5" fill="url(#cresscoDotGlow)" fillOpacity="0.85" />
-                <circle cx="56" cy="128" r="8" fill="url(#cresscoDotGlow)" fillOpacity="0.9" />
-                <circle cx="92" cy="128" r="8.5" fill="url(#cresscoDotGlow)" fillOpacity="0.95" />
-                <circle cx="128" cy="128" r="9" fill="url(#cresscoDotGlow)" fillOpacity="1" />
-              </svg>
-            </div>
-
-          </div>
+        {/* Bottom Giant Static CRESSCO Typography (Pojok Kiri, Bold, Gede, Diem) */}
+        <div className="pt-6 sm:pt-8 select-none">
+          <h2 className="text-[14vw] sm:text-[15vw] md:text-[16vw] font-black uppercase tracking-[-0.05em] leading-[0.8] text-white/90 drop-shadow-[0_4px_24px_rgba(0,0,0,0.15)]">
+            CRESSCO
+          </h2>
         </div>
 
       </div>

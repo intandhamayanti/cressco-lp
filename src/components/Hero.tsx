@@ -2,19 +2,19 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { ArrowUpRight, ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 const APP_LOGIN_URL = 'https://app-cressco.vercel.app/login';
 
 export default function Hero() {
   return (
-    <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+    <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       
       {/* Radiant Luminous Background with Dual Diagonal Light Beams (Obliq Style) */}
-      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden select-none">
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
         
         {/* Top-Left Glowing Light Beam */}
-        <div className="absolute -top-6 -left-12 sm:-left-6 w-[340px] sm:w-[580px] lg:w-[720px] aspect-square pointer-events-none opacity-90 transition-opacity">
+        <div className="absolute -top-10 -left-10 w-[420px] sm:w-[650px] lg:w-[800px] aspect-square pointer-events-none opacity-95">
           <img
             src="/images/hero-beam-left.png"
             alt="Hero Left Glow Beam"
@@ -23,7 +23,7 @@ export default function Hero() {
         </div>
 
         {/* Top-Right Glowing Light Beam */}
-        <div className="absolute -top-6 -right-12 sm:-right-6 w-[340px] sm:w-[580px] lg:w-[720px] aspect-square pointer-events-none opacity-90 transition-opacity">
+        <div className="absolute -top-10 -right-10 w-[420px] sm:w-[650px] lg:w-[800px] aspect-square pointer-events-none opacity-95">
           <img
             src="/images/hero-beam-right.png"
             alt="Hero Right Glow Beam"
@@ -32,16 +32,16 @@ export default function Hero() {
         </div>
 
         {/* Central Luminous Warmth Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[850px] h-[550px] bg-gradient-to-b from-brand-500/20 via-brand-500/5 to-transparent blur-[100px] rounded-full" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[850px] h-[550px] bg-gradient-to-b from-brand-500/25 via-brand-500/8 to-transparent blur-[90px] rounded-full" />
         
         {/* Subtle dot matrix grid */}
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.35]" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Centered Content (No Badge, Big Bold Typography) */}
-        <div className="text-center max-w-4xl mx-auto pt-4 sm:pt-6">
+        <div className="text-center max-w-4xl mx-auto pt-2 sm:pt-4">
           
           {/* Headline */}
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-charcoal-900 leading-[1.08] mb-6">
@@ -72,7 +72,7 @@ export default function Hero() {
         {/* Hero Product Screenshot Frame (Full Uncropped Dashboard Image) */}
         <div className="relative mt-2 max-w-5xl mx-auto">
           {/* Ambient Glow behind frame */}
-          <div className="absolute -inset-3 bg-gradient-to-b from-brand-500/25 via-brand-500/10 to-transparent rounded-3xl blur-2xl opacity-90 -z-10" />
+          <div className="absolute -inset-3 bg-gradient-to-b from-brand-500/30 via-brand-500/10 to-transparent rounded-3xl blur-2xl opacity-90 -z-10" />
 
           <div className="relative rounded-2xl md:rounded-3xl border border-black/[0.08] bg-white p-2 sm:p-3 md:p-3.5 shadow-soft-xl">
             {/* macOS / Web App Top Bar */}

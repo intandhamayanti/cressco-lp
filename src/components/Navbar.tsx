@@ -69,17 +69,17 @@ export default function Navbar() {
               </Link>
             </nav>
 
-            {/* Right Action Buttons -> Directly to Vercel Login */}
+            {/* Right Action Buttons */}
             <div className="hidden md:flex items-center gap-3">
               <a
                 href={APP_LOGIN_URL}
-                className="text-sm font-semibold text-charcoal-900 hover:text-brand-600 px-3.5 py-2 transition-colors cursor-pointer"
+                className="text-sm font-semibold text-charcoal-900 hover:text-brand-600 px-4 py-2 transition-colors cursor-pointer"
               >
                 Login
               </a>
               <a
                 href={APP_LOGIN_URL}
-                className={`inline-flex items-center justify-center text-xs sm:text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 px-4.5 py-2.5 shadow-sm transition-all hover:shadow-brand-glow hover:-translate-y-0.5 active:translate-y-0 cursor-pointer ${
+                className={`inline-flex items-center justify-center text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 px-5 py-2.5 shadow-sm transition-all hover:shadow-brand-glow hover:-translate-y-0.5 active:translate-y-0 cursor-pointer ${
                   scrolled ? 'rounded-full' : 'rounded-xl'
                 }`}
               >

@@ -16,6 +16,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://cressco.id'),
   title: "Cressco — Smarter Management for Modern Bimbels",
   description:
     "Platform operasional all-in-one untuk bimbel modern di Indonesia. Kelola kelas, siswa, pembayaran, cabang, dan tentor dalam satu sistem terpadu.",

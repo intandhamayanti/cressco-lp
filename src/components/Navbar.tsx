@@ -27,7 +27,7 @@ export default function Navbar({ onOpenAuth }: NavbarProps) {
         <div
           className={`pointer-events-auto transition-all duration-300 ease-out mx-auto ${
             scrolled
-              ? 'mt-3 max-w-4xl bg-white/75 backdrop-blur-xl supports-[backdrop-filter]:bg-white/70 shadow-[0_8px_32px_0_rgba(24,24,27,0.08),0_1px_2px_0_rgba(0,0,0,0.02),inset_0_1px_1px_rgba(255,255,255,0.9)] border border-white/80 ring-1 ring-black/[0.07] rounded-full px-5 py-2'
+              ? 'mt-3 max-w-4xl glass-header rounded-full px-5 py-2.5'
               : 'mt-0 w-full bg-transparent py-5 px-2'
           }`}
         >
@@ -53,25 +53,25 @@ export default function Navbar({ onOpenAuth }: NavbarProps) {
             <nav className="hidden md:flex items-center gap-7">
               <Link
                 href="#features"
-                className="text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+                className="text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
               >
                 Product
               </Link>
               <Link
                 href="#roles"
-                className="text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+                className="text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
               >
                 Solutions
               </Link>
               <Link
                 href="#pricing"
-                className="text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+                className="text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
               >
                 Pricing
               </Link>
               <Link
                 href="#workflow"
-                className="text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+                className="text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
               >
                 Resources
               </Link>
@@ -110,7 +110,7 @@ export default function Navbar({ onOpenAuth }: NavbarProps) {
 
         {/* Mobile Dropdown with Glassmorphism */}
         {mobileMenuOpen && (
-          <div className="pointer-events-auto md:hidden mt-2 p-4 bg-white/85 backdrop-blur-xl supports-[backdrop-filter]:bg-white/80 rounded-2xl border border-white/80 ring-1 ring-black/[0.08] shadow-soft-xl flex flex-col gap-3 animate-in fade-in slide-in-from-top-2 duration-200 max-w-lg mx-auto">
+          <div className="pointer-events-auto md:hidden mt-2 p-4 glass-header rounded-2xl flex flex-col gap-3 animate-in fade-in slide-in-from-top-2 duration-200 max-w-lg mx-auto">
             <Link
               href="#features"
               onClick={() => setMobileMenuOpen(false)}

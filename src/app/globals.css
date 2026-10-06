@@ -24,9 +24,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom subtle gradient and glow utility */
+/* Ambient gradients */
 .hero-glow {
-  background: radial-gradient(circle 600px at 50% 0%, rgba(206, 72, 42, 0.08) 0%, rgba(206, 72, 42, 0.02) 60%, transparent 100%);
+  background: radial-gradient(circle 700px at 50% 0%, rgba(206, 72, 42, 0.12) 0%, rgba(206, 72, 42, 0.03) 60%, transparent 100%);
 }
 
 .card-hover-effect {
@@ -41,4 +41,33 @@ body {
 .bg-grid-pattern {
   background-size: 24px 24px;
   background-image: radial-gradient(rgba(24, 24, 27, 0.06) 1px, transparent 1px);
+}
+
+/* Glassmorphism true frosted glass utility */
+.glass-header {
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.06), 0 1px 2px 0 rgba(0, 0, 0, 0.04), inset 0 1px 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Marquee scrolling animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }

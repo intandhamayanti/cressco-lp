@@ -20,29 +20,29 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-none">
-      <div className={`transition-all duration-300 mx-auto ${scrolled ? 'max-w-4xl px-4' : 'max-w-6xl px-4 sm:px-6 lg:px-8'}`}>
+      <div className={`transition-all duration-300 mx-auto ${scrolled ? 'max-w-4xl px-4' : 'w-full max-w-[1400px] px-6 sm:px-10 lg:px-12'}`}>
         <div
           className={`pointer-events-auto transition-all duration-300 ease-out mx-auto ${
             scrolled
-              ? 'mt-3 glass-header rounded-full px-5 py-2.5 shadow-soft-lg'
+              ? 'mt-3 glass-header rounded-full px-6 py-2.5 shadow-soft-lg'
               : 'mt-0 w-full bg-transparent py-5 px-0'
           }`}
         >
           <div className="flex items-center justify-between">
-            {/* Logo positioned neatly on the left */}
-            <Link href="#" className="flex items-center gap-2.5 group -ml-1 sm:ml-0">
+            {/* Logo positioned distinctly to the left */}
+            <a href={APP_LOGIN_URL} className="flex items-center gap-2.5 group">
               <img
                 src="/images/cressco-logo.png"
                 alt="Cressco Logo"
-                className="w-8 h-8 object-contain transition-transform group-hover:scale-105 block"
+                className="w-8 h-8 object-contain transition-transform group-hover:scale-105 block shrink-0"
               />
               <span className="text-xl font-bold tracking-tight text-charcoal-900">
                 Cressco
               </span>
-            </Link>
+            </a>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden md:flex items-center gap-7">
+            <nav className="hidden md:flex items-center gap-8">
               <Link
                 href="#features"
                 className="text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
@@ -69,17 +69,17 @@ export default function Navbar() {
               </Link>
             </nav>
 
-            {/* Right Action Buttons -> Linked to Laravel App */}
+            {/* Right Action Buttons -> Directly to Vercel Login */}
             <div className="hidden md:flex items-center gap-3">
               <a
                 href={APP_LOGIN_URL}
-                className="text-sm font-semibold text-charcoal-900 hover:text-brand-600 px-3 py-1.5 transition-colors"
+                className="text-sm font-semibold text-charcoal-900 hover:text-brand-600 px-3.5 py-2 transition-colors cursor-pointer"
               >
                 Login
               </a>
               <a
                 href={APP_LOGIN_URL}
-                className={`inline-flex items-center justify-center text-xs sm:text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 px-4 py-2 shadow-sm transition-all hover:shadow-brand-glow hover:-translate-y-0.5 active:translate-y-0 ${
+                className={`inline-flex items-center justify-center text-xs sm:text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 px-4.5 py-2.5 shadow-sm transition-all hover:shadow-brand-glow hover:-translate-y-0.5 active:translate-y-0 cursor-pointer ${
                   scrolled ? 'rounded-full' : 'rounded-xl'
                 }`}
               >
@@ -134,13 +134,13 @@ export default function Navbar() {
             <div className="pt-2 border-t border-black/[0.06] flex flex-col gap-2">
               <a
                 href={APP_LOGIN_URL}
-                className="w-full text-center text-sm font-semibold text-charcoal-900 bg-white/60 hover:bg-white/90 py-2 rounded-xl border border-black/[0.06]"
+                className="w-full text-center text-sm font-semibold text-charcoal-900 bg-white/60 hover:bg-white/90 py-2.5 rounded-xl border border-black/[0.06] block"
               >
                 Login
               </a>
               <a
                 href={APP_LOGIN_URL}
-                className="w-full text-center text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 py-2 rounded-xl shadow-sm"
+                className="w-full text-center text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 py-2.5 rounded-xl shadow-sm block"
               >
                 Try for free
               </a>

@@ -2,13 +2,10 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
-interface FooterProps {
-  onOpenAuth?: (mode: 'login' | 'register') => void;
-}
+const APP_LOGIN_URL = 'https://app-cressco.vercel.app/login';
 
-export default function Footer({ onOpenAuth }: FooterProps) {
+export default function Footer() {
   return (
     <footer className="bg-white border-t border-black/[0.06] pt-16 pb-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,20 +15,16 @@ export default function Footer({ onOpenAuth }: FooterProps) {
           
           {/* Brand Col */}
           <div className="md:col-span-4">
-            <Link href="#" className="flex items-center gap-2 mb-3.5 group">
-              <div className="relative w-8 h-8 flex items-center justify-center shrink-0">
-                <Image
-                  src="/images/cressco-logo.png"
-                  alt="Cressco Logo"
-                  width={32}
-                  height={32}
-                  className="object-contain"
-                />
-              </div>
+            <a href={APP_LOGIN_URL} className="flex items-center gap-2.5 mb-3.5 group">
+              <img
+                src="/images/cressco-logo.png"
+                alt="Cressco Logo"
+                className="w-8 h-8 object-contain block"
+              />
               <span className="text-xl font-bold tracking-tight text-charcoal-900">
                 Cressco
               </span>
-            </Link>
+            </a>
             
             <p className="text-sm text-charcoal-100 font-normal leading-relaxed max-w-xs mb-6">
               Smarter management for growing bimbels.
@@ -63,12 +56,12 @@ export default function Footer({ onOpenAuth }: FooterProps) {
                   </Link>
                 </li>
                 <li>
-                  <button 
-                    onClick={() => onOpenAuth?.('login')} 
-                    className="text-charcoal-100 hover:text-brand-600 transition-colors text-left"
+                  <a 
+                    href={APP_LOGIN_URL}
+                    className="text-charcoal-100 hover:text-brand-600 transition-colors block"
                   >
                     Dashboard Login
-                  </button>
+                  </a>
                 </li>
                 <li>
                   <Link href="#roles" className="text-charcoal-100 hover:text-brand-600 transition-colors">
@@ -85,20 +78,20 @@ export default function Footer({ onOpenAuth }: FooterProps) {
               </h4>
               <ul className="space-y-2.5 text-sm">
                 <li>
-                  <button 
-                    onClick={() => onOpenAuth?.('register')} 
-                    className="text-charcoal-100 hover:text-brand-600 transition-colors text-left"
+                  <a 
+                    href={APP_LOGIN_URL}
+                    className="text-charcoal-100 hover:text-brand-600 transition-colors block"
                   >
                     About
-                  </button>
+                  </a>
                 </li>
                 <li>
-                  <button 
-                    onClick={() => onOpenAuth?.('register')} 
-                    className="text-charcoal-100 hover:text-brand-600 transition-colors text-left"
+                  <a 
+                    href={APP_LOGIN_URL}
+                    className="text-charcoal-100 hover:text-brand-600 transition-colors block"
                   >
                     Contact
-                  </button>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -110,20 +103,20 @@ export default function Footer({ onOpenAuth }: FooterProps) {
               </h4>
               <ul className="space-y-2.5 text-sm">
                 <li>
-                  <button 
-                    onClick={() => onOpenAuth?.('register')} 
-                    className="text-charcoal-100 hover:text-brand-600 transition-colors text-left"
+                  <a 
+                    href={APP_LOGIN_URL}
+                    className="text-charcoal-100 hover:text-brand-600 transition-colors block"
                   >
                     Help Center
-                  </button>
+                  </a>
                 </li>
                 <li>
-                  <button 
-                    onClick={() => onOpenAuth?.('register')} 
-                    className="text-charcoal-100 hover:text-brand-600 transition-colors text-left"
+                  <a 
+                    href={APP_LOGIN_URL}
+                    className="text-charcoal-100 hover:text-brand-600 transition-colors block"
                   >
                     Documentation
-                  </button>
+                  </a>
                 </li>
                 <li>
                   <Link href="#faq" className="text-charcoal-100 hover:text-brand-600 transition-colors">

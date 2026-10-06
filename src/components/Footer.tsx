@@ -7,127 +7,141 @@ const APP_LOGIN_URL = 'https://app-cressco.vercel.app/login';
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#05060B] text-white overflow-hidden border-t border-white/[0.08]">
-      {/* Background Ambient Glow & Starfield effect */}
+    <footer className="relative bg-[#111113] text-white overflow-hidden border-t border-white/[0.08] font-sans">
+      {/* Background Ambient Glow tailored to Cressco Brand (Warm Terracotta / Charcoal) */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Deep blue/purple & warm brand ambient gradient at bottom */}
-        <div className="absolute -bottom-24 -right-24 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[120px]" />
-        <div className="absolute -bottom-32 left-1/3 w-[600px] h-[400px] bg-indigo-600/10 rounded-full blur-[140px]" />
-        <div className="absolute -bottom-10 left-0 w-[400px] h-[300px] bg-brand-500/10 rounded-full blur-[100px]" />
+        {/* Warm Cressco Brand Glow */}
+        <div className="absolute -bottom-28 -right-20 w-[550px] h-[550px] bg-brand-500/15 rounded-full blur-[140px]" />
+        <div className="absolute -bottom-36 left-1/4 w-[600px] h-[450px] bg-brand-600/10 rounded-full blur-[160px]" />
+        <div className="absolute top-0 right-1/3 w-[350px] h-[250px] bg-white/[0.02] rounded-full blur-[100px]" />
         
-        {/* Subtle Starfield dots */}
-        <svg className="absolute inset-0 w-full h-full opacity-35" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="8%" cy="18%" r="1" fill="#ffffff" opacity="0.8" />
-          <circle cx="15%" cy="38%" r="1" fill="#ffffff" opacity="0.4" />
-          <circle cx="28%" cy="14%" r="1.2" fill="#ffffff" opacity="0.7" />
-          <circle cx="42%" cy="28%" r="0.8" fill="#ffffff" opacity="0.5" />
-          <circle cx="58%" cy="12%" r="1" fill="#ffffff" opacity="0.6" />
-          <circle cx="72%" cy="32%" r="1.2" fill="#ffffff" opacity="0.7" />
-          <circle cx="86%" cy="16%" r="0.8" fill="#ffffff" opacity="0.4" />
-          <circle cx="94%" cy="24%" r="1" fill="#ffffff" opacity="0.8" />
-          <circle cx="34%" cy="50%" r="0.8" fill="#ffffff" opacity="0.3" />
-          <circle cx="65%" cy="48%" r="1" fill="#ffffff" opacity="0.5" />
-          <circle cx="82%" cy="60%" r="1" fill="#ffffff" opacity="0.6" />
-        </svg>
+        {/* Subtle grid texture */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-10" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-16 sm:pt-20 pb-8 sm:pb-12">
-        {/* Top Content Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 sm:pb-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-16 sm:pt-20 pb-6 sm:pb-10">
+        
+        {/* Top Content Row: Brand Statement & Structured Links */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 pb-14 sm:pb-20">
           
-          {/* Brand Info (Left) */}
-          <div className="lg:col-span-6 max-w-md">
-            <h3 className="text-xl sm:text-2xl font-bold tracking-wider text-white uppercase mb-3.5">
-              CRESSCO
-            </h3>
+          {/* Brand Info & Tagline (Left Column) */}
+          <div className="lg:col-span-5 max-w-md">
+            <a href={APP_LOGIN_URL} className="inline-flex items-center gap-2.5 mb-4 group">
+              <img
+                src="/images/cressco-logo.png"
+                alt="Cressco Logo"
+                className="w-8 h-8 object-contain transition-transform group-hover:scale-105"
+              />
+              <span className="text-xl font-bold tracking-tight text-white">
+                Cressco
+              </span>
+            </a>
+            
             <p className="text-sm sm:text-[15px] text-zinc-400 font-normal leading-relaxed mb-6">
-              Modern SaaS platform to connect, automate, and grow your bimbel branches — all in one place.
+              Sistem operasional dan manajemen bimbel modern terpadu. Kelola multi-cabang, jadwal kelas, absensi tutor & siswa, serta laporan keuangan dalam satu platform.
             </p>
-            <p className="text-xs text-zinc-400 font-normal tracking-wide">
-              © Copyright 2026 Cressco. All Rights Reserved.
-            </p>
+
+            <div className="flex flex-col gap-2">
+              <div className="inline-flex items-center gap-2 text-xs text-zinc-400 font-medium">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Dirancang khusus untuk Bimbel Indonesia</span>
+              </div>
+              <p className="text-xs text-zinc-400">
+                © 2026 Cressco. Hak cipta dilindungi.
+              </p>
+            </div>
           </div>
 
-          {/* Nav Links Columns (Right) */}
-          <div className="lg:col-span-6 grid grid-cols-3 gap-6 sm:gap-10">
+          {/* Links Columns (Right Columns) */}
+          <div className="lg:col-span-7 grid grid-cols-3 gap-6 sm:gap-8">
             
-            {/* Product */}
+            {/* 1. Produk */}
             <div>
-              <h4 className="text-sm font-semibold text-white mb-4 tracking-tight">
-                Product
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 text-zinc-200">
+                Produk
               </h4>
-              <ul className="space-y-3 text-xs sm:text-sm text-zinc-400">
+              <ul className="space-y-3 text-sm text-zinc-400">
                 <li>
-                  <Link href="#features" className="hover:text-white transition-colors duration-150">
-                    Features
+                  <Link href="#features" className="hover:text-brand-400 transition-colors duration-150">
+                    Fitur Utama
                   </Link>
                 </li>
                 <li>
-                  <Link href="#roles" className="hover:text-white transition-colors duration-150">
-                    Integrations
+                  <Link href="#roles" className="hover:text-brand-400 transition-colors duration-150">
+                    Akses Role
                   </Link>
                 </li>
                 <li>
-                  <Link href="#workflow" className="hover:text-white transition-colors duration-150">
-                    How It Works
+                  <Link href="#workflow" className="hover:text-brand-400 transition-colors duration-150">
+                    Alur Operasional
                   </Link>
                 </li>
                 <li>
-                  <Link href="#pricing" className="hover:text-white transition-colors duration-150">
-                    Pricing
+                  <Link href="#pricing" className="hover:text-brand-400 transition-colors duration-150">
+                    Paket & Harga
                   </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Company */}
+            {/* 2. Solusi */}
             <div>
-              <h4 className="text-sm font-semibold text-white mb-4 tracking-tight">
-                Company
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 text-zinc-200">
+                Solusi
               </h4>
-              <ul className="space-y-3 text-xs sm:text-sm text-zinc-400">
+              <ul className="space-y-3 text-sm text-zinc-400">
                 <li>
-                  <a href={APP_LOGIN_URL} className="hover:text-white transition-colors duration-150">
-                    About
-                  </a>
+                  <Link href="#roles" className="hover:text-brand-400 transition-colors duration-150">
+                    Untuk Owner
+                  </Link>
                 </li>
                 <li>
-                  <a href={APP_LOGIN_URL} className="hover:text-white transition-colors duration-150">
-                    Careers
-                  </a>
+                  <Link href="#roles" className="hover:text-brand-400 transition-colors duration-150">
+                    Untuk Admin Cabang
+                  </Link>
                 </li>
                 <li>
-                  <a href={APP_LOGIN_URL} className="hover:text-white transition-colors duration-150">
-                    Blog
-                  </a>
+                  <Link href="#roles" className="hover:text-brand-400 transition-colors duration-150">
+                    Untuk Tutor
+                  </Link>
                 </li>
                 <li>
-                  <a href={APP_LOGIN_URL} className="hover:text-white transition-colors duration-150">
-                    Contact
+                  <a href={APP_LOGIN_URL} className="hover:text-brand-400 transition-colors duration-150">
+                    Multi-Cabang
                   </a>
                 </li>
               </ul>
             </div>
 
-            {/* Legal */}
+            {/* 3. Bantuan & Akun */}
             <div>
-              <h4 className="text-sm font-semibold text-white mb-4 tracking-tight">
-                Legal
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 text-zinc-200">
+                Layanan
               </h4>
-              <ul className="space-y-3 text-xs sm:text-sm text-zinc-400">
+              <ul className="space-y-3 text-sm text-zinc-400">
                 <li>
-                  <a href={APP_LOGIN_URL} className="hover:text-white transition-colors duration-150">
-                    Terms of License
+                  <a href={APP_LOGIN_URL} className="hover:text-brand-400 transition-colors duration-150">
+                    Masuk Dashboard
                   </a>
                 </li>
                 <li>
-                  <a href={APP_LOGIN_URL} className="hover:text-white transition-colors duration-150">
-                    Privacy Policy
+                  <Link href="#faq" className="hover:text-brand-400 transition-colors duration-150">
+                    Tanya Jawab (FAQ)
+                  </Link>
+                </li>
+                <li>
+                  <a 
+                    href="https://wa.me/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="hover:text-brand-400 transition-colors duration-150 inline-flex items-center gap-1.5"
+                  >
+                    <span>Hubungi CS</span>
                   </a>
                 </li>
                 <li>
-                  <a href={APP_LOGIN_URL} className="hover:text-white transition-colors duration-150">
-                    Cookie Policy
+                  <a href={APP_LOGIN_URL} className="hover:text-brand-400 transition-colors duration-150">
+                    Privasi Data
                   </a>
                 </li>
               </ul>
@@ -136,42 +150,49 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Giant Brand Typography + Dot Matrix Graphic */}
-        <div className="pt-4 sm:pt-8 flex items-center justify-between border-t border-white/[0.06] select-none">
-          <div className="w-full flex items-center justify-between gap-4 overflow-hidden">
+        {/* Bottom Giant Brand Typography + Cressco Dot Matrix Graphic */}
+        <div className="pt-6 sm:pt-10 flex items-center justify-between border-t border-white/[0.08] select-none overflow-hidden">
+          <div className="w-full flex items-center justify-between gap-4 sm:gap-8">
             
-            {/* Giant CRESSCO Typography */}
-            <span className="font-extrabold tracking-tighter uppercase text-[12vw] sm:text-[13vw] lg:text-[14vw] leading-[0.85] bg-gradient-to-b from-white via-zinc-200 to-zinc-600/30 bg-clip-text text-transparent transition-all duration-300">
+            {/* Giant CRESSCO Typography with subtle Cressco brand-tinted gradient */}
+            <span className="font-extrabold tracking-[-0.04em] uppercase text-[12vw] sm:text-[13vw] lg:text-[14.5vw] leading-[0.82] bg-gradient-to-b from-white via-stone-200 to-brand-500/25 bg-clip-text text-transparent">
               CRESSCO
             </span>
 
-            {/* Dot Matrix Arrow Icon Graphic */}
-            <div className="shrink-0 flex items-center justify-center pl-4 sm:pl-8">
+            {/* Dot Matrix Arrow Graphic in Cressco Brand Glow */}
+            <div className="shrink-0 flex items-center justify-center pl-2 sm:pl-6">
               <svg 
-                className="w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40" 
-                viewBox="0 0 160 160" 
+                className="w-14 h-14 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-36 lg:h-36" 
+                viewBox="0 0 150 150" 
                 fill="none" 
                 xmlns="http://www.w3.org/2000/svg"
               >
-                {/* Diagonal Arrow Dot Matrix (Matching Atomify reference) */}
-                {/* Col 1 */}
-                <circle cx="20" cy="20" r="7" className="fill-white/80" />
-                <circle cx="20" cy="140" r="7" className="fill-white/70" />
-                
-                {/* Col 2 */}
-                <circle cx="55" cy="55" r="7.5" className="fill-white/90" />
-                <circle cx="55" cy="140" r="7.5" className="fill-white/85" />
-                
-                {/* Col 3 */}
-                <circle cx="90" cy="90" r="8" className="fill-white" />
-                <circle cx="90" cy="140" r="8" className="fill-white/90" />
-                
-                {/* Col 4 (Arrowhead column) */}
-                <circle cx="125" cy="20" r="7" className="fill-white/70" />
-                <circle cx="125" cy="55" r="7.5" className="fill-white/85" />
-                <circle cx="125" cy="90" r="8" className="fill-white/95" />
-                <circle cx="125" cy="125" r="8.5" className="fill-white shadow-lg" />
-                <circle cx="125" cy="140" r="7" className="fill-white/80" />
+                <defs>
+                  <radialGradient id="cresscoDotGlow" cx="35%" cy="35%" r="65%">
+                    <stop offset="0%" stopColor="#FFFFFF" />
+                    <stop offset="45%" stopColor="#F5DBD4" />
+                    <stop offset="100%" stopColor="#CE482A" />
+                  </radialGradient>
+                </defs>
+
+                {/* Diagonal Arrow Dot Matrix in Cressco Terracotta Glow */}
+                {/* Row 1 (y=20): Top-Left and Top-Right */}
+                <circle cx="20" cy="20" r="7.5" fill="url(#cresscoDotGlow)" fillOpacity="0.85" />
+                <circle cx="128" cy="20" r="7.5" fill="url(#cresscoDotGlow)" fillOpacity="0.85" />
+
+                {/* Row 2 (y=56): Diagonal and Right */}
+                <circle cx="56" cy="56" r="8" fill="url(#cresscoDotGlow)" fillOpacity="0.9" />
+                <circle cx="128" cy="56" r="8" fill="url(#cresscoDotGlow)" fillOpacity="0.9" />
+
+                {/* Row 3 (y=92): Diagonal and Right */}
+                <circle cx="92" cy="92" r="8.5" fill="url(#cresscoDotGlow)" fillOpacity="0.95" />
+                <circle cx="128" cy="92" r="8.5" fill="url(#cresscoDotGlow)" fillOpacity="0.95" />
+
+                {/* Row 4 (y=128): Full bottom row */}
+                <circle cx="20" cy="128" r="7.5" fill="url(#cresscoDotGlow)" fillOpacity="0.85" />
+                <circle cx="56" cy="128" r="8" fill="url(#cresscoDotGlow)" fillOpacity="0.9" />
+                <circle cx="92" cy="128" r="8.5" fill="url(#cresscoDotGlow)" fillOpacity="0.95" />
+                <circle cx="128" cy="128" r="9" fill="url(#cresscoDotGlow)" fillOpacity="1" />
               </svg>
             </div>
 

@@ -15,7 +15,7 @@ export default function Navbar({ onOpenAuth }: NavbarProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 25);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -27,13 +27,13 @@ export default function Navbar({ onOpenAuth }: NavbarProps) {
         <div
           className={`pointer-events-auto transition-all duration-300 ease-out mx-auto ${
             scrolled
-              ? 'mt-3 max-w-4xl bg-white/95 backdrop-blur-md shadow-soft-lg border border-black/[0.08] rounded-full px-5 py-2'
+              ? 'mt-3 max-w-4xl bg-white/75 backdrop-blur-xl supports-[backdrop-filter]:bg-white/70 shadow-[0_8px_32px_0_rgba(24,24,27,0.08),0_1px_2px_0_rgba(0,0,0,0.02),inset_0_1px_1px_rgba(255,255,255,0.9)] border border-white/80 ring-1 ring-black/[0.07] rounded-full px-5 py-2'
               : 'mt-0 w-full bg-transparent py-5 px-2'
           }`}
         >
           <div className="flex items-center justify-between">
             {/* Logo with official Cressco mark */}
-            <Link href="#" className="flex items-center gap-2 group">
+            <Link href="#" className="flex items-center gap-2.5 group">
               <div className="relative w-8 h-8 flex items-center justify-center shrink-0">
                 <Image
                   src="/images/cressco-logo.png"
@@ -108,9 +108,9 @@ export default function Navbar({ onOpenAuth }: NavbarProps) {
           </div>
         </div>
 
-        {/* Mobile Dropdown */}
+        {/* Mobile Dropdown with Glassmorphism */}
         {mobileMenuOpen && (
-          <div className="pointer-events-auto md:hidden mt-2 p-4 bg-white/95 backdrop-blur-md rounded-2xl border border-black/[0.08] shadow-soft-xl flex flex-col gap-3 animate-in fade-in slide-in-from-top-2 duration-200 max-w-lg mx-auto">
+          <div className="pointer-events-auto md:hidden mt-2 p-4 bg-white/85 backdrop-blur-xl supports-[backdrop-filter]:bg-white/80 rounded-2xl border border-white/80 ring-1 ring-black/[0.08] shadow-soft-xl flex flex-col gap-3 animate-in fade-in slide-in-from-top-2 duration-200 max-w-lg mx-auto">
             <Link
               href="#features"
               onClick={() => setMobileMenuOpen(false)}
@@ -145,7 +145,7 @@ export default function Navbar({ onOpenAuth }: NavbarProps) {
                   setMobileMenuOpen(false);
                   onOpenAuth?.('login');
                 }}
-                className="w-full text-center text-sm font-semibold text-charcoal-900 bg-surface-100 hover:bg-surface-200 py-2 rounded-xl border border-black/[0.06]"
+                className="w-full text-center text-sm font-semibold text-charcoal-900 bg-white/60 hover:bg-white/90 py-2 rounded-xl border border-black/[0.06]"
               >
                 Login
               </button>

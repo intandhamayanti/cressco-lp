@@ -10,34 +10,20 @@ export default function Hero() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       
-      {/* Full-Width Seamless Radiant Background (Obliq Style with mix-blend-multiply to eliminate white edges) */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
-        
-        {/* Top-Left Glowing Light Beam (Full screen corner alignment) */}
-        <div className="absolute -top-2 left-0 w-[58vw] max-w-[850px] aspect-[4/3] pointer-events-none mix-blend-multiply opacity-85">
-          <img
-            src="/images/hero-beam-left.png"
-            alt="Hero Left Glow Beam"
-            className="w-full h-full object-cover object-left-top block"
-          />
-        </div>
-
-        {/* Top-Right Glowing Light Beam (Full screen corner alignment) */}
-        <div className="absolute -top-2 right-0 w-[58vw] max-w-[850px] aspect-[4/3] pointer-events-none mix-blend-multiply opacity-85">
-          <img
-            src="/images/hero-beam-right.png"
-            alt="Hero Right Glow Beam"
-            className="w-full h-full object-cover object-right-top block"
-          />
-        </div>
-
-        {/* Central Luminous Warmth Ambient Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-brand-500/15 via-brand-500/4 to-transparent blur-[110px] rounded-full pointer-events-none" />
+      {/* 100% Full-Width Seamless Canvas Background (Obliq Radiant Style) */}
+      <div className="absolute top-0 left-0 right-0 w-full h-[620px] sm:h-[780px] lg:h-[900px] overflow-hidden pointer-events-none z-0 select-none">
+        <img
+          src="/images/hero-bg-radiant.jpg"
+          alt="Radiant Hero Background"
+          className="w-full h-full object-cover object-top opacity-85"
+        />
+        {/* Smooth bottom gradient fade to seamlessly blend into page canvas */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-70% to-[#FAFAF9]" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Top Centered Content */}
+        {/* Top Centered Content (No Badge, Big Bold Typography) */}
         <div className="text-center max-w-4xl mx-auto pt-2 sm:pt-4">
           
           {/* Headline */}
@@ -53,7 +39,7 @@ export default function Hero() {
             Kelola kelas, siswa, pembayaran, cabang, dan tentor dalam satu platform yang sederhana.
           </p>
 
-          {/* Primary Action Button (Obliq Style) */}
+          {/* Primary Action Button (Obliq Style Single Prominent Button) */}
           <div className="flex items-center justify-center mb-14 sm:mb-16">
             <a
               href={APP_LOGIN_URL}
@@ -69,7 +55,7 @@ export default function Hero() {
         {/* Hero Product Screenshot Frame (Full Uncropped Dashboard Image) */}
         <div className="relative mt-2 max-w-5xl mx-auto">
           {/* Ambient Glow behind frame */}
-          <div className="absolute -inset-3 bg-gradient-to-b from-brand-500/30 via-brand-500/10 to-transparent rounded-3xl blur-2xl opacity-90 -z-10" />
+          <div className="absolute -inset-3 bg-gradient-to-b from-brand-500/25 via-brand-500/10 to-transparent rounded-3xl blur-2xl opacity-90 -z-10" />
 
           <div className="relative rounded-2xl md:rounded-3xl border border-black/[0.08] bg-white p-2 sm:p-3 md:p-3.5 shadow-soft-xl">
             {/* macOS / Web App Top Bar */}

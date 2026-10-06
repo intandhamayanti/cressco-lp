@@ -10,15 +10,15 @@ export default function Hero() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       
-      {/* 100% Full-Width Seamless Canvas Background (Obliq Radiant Style) */}
-      <div className="absolute top-0 left-0 right-0 w-full h-[620px] sm:h-[780px] lg:h-[900px] overflow-hidden pointer-events-none z-0 select-none">
+      {/* 100% Full-Width Seamless Canvas Background (Ultra-Wide Obliq Radiant Style) */}
+      <div className="absolute inset-0 w-full h-[950px] lg:h-[1150px] pointer-events-none z-0 select-none overflow-hidden">
         <img
-          src="/images/hero-bg-radiant.jpg"
+          src="/images/hero-bg-radiant.jpg?v=2"
           alt="Radiant Hero Background"
-          className="w-full h-full object-cover object-top opacity-85"
+          className="w-full h-full object-cover object-top opacity-90 block"
         />
-        {/* Smooth bottom gradient fade to seamlessly blend into page canvas */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-70% to-[#FAFAF9]" />
+        {/* Smooth progressive bottom gradient fade into page canvas */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-65% to-[#FAFAF9]" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

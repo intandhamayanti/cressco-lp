@@ -104,13 +104,15 @@ body {
 .animate-marquee-up {
   display: flex;
   flex-direction: column;
-  animation: marquee-up 28s linear infinite;
+  animation: marquee-up 32s linear infinite;
+  will-change: transform;
 }
 
 .animate-marquee-down {
   display: flex;
   flex-direction: column;
-  animation: marquee-down 28s linear infinite;
+  animation: marquee-down 32s linear infinite;
+  will-change: transform;
 }
 
 .animate-marquee-left:hover,

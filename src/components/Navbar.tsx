@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, ArrowRight } from 'lucide-react';
 
 interface NavbarProps {
@@ -14,131 +15,137 @@ export default function Navbar({ onOpenAuth }: NavbarProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 25);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-soft border-b border-black/[0.06] py-3.5'
-          : 'bg-transparent py-5'
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="#" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center text-white font-bold text-lg shadow-sm transition-transform group-hover:scale-105">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="3" y="3" width="8" height="8" rx="2" fill="white" fillOpacity="0.9" />
-                <rect x="13" y="3" width="8" height="8" rx="2" fill="white" fillOpacity="0.6" />
-                <rect x="3" y="13" width="8" height="8" rx="2" fill="white" fillOpacity="0.6" />
-                <rect x="13" y="13" width="8" height="8" rx="2" fill="white" />
-              </svg>
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-none">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          className={`pointer-events-auto transition-all duration-300 ease-out mx-auto ${
+            scrolled
+              ? 'mt-3 max-w-4xl bg-white/95 backdrop-blur-md shadow-soft-lg border border-black/[0.08] rounded-full px-5 py-2'
+              : 'mt-0 w-full bg-transparent py-5 px-2'
+          }`}
+        >
+          <div className="flex items-center justify-between">
+            {/* Logo with official Cressco mark */}
+            <Link href="#" className="flex items-center gap-2 group">
+              <div className="relative w-8 h-8 flex items-center justify-center shrink-0">
+                <Image
+                  src="/images/cressco-logo.png"
+                  alt="Cressco Logo"
+                  width={32}
+                  height={32}
+                  className="object-contain transition-transform group-hover:scale-105"
+                  priority
+                />
+              </div>
+              <span className="text-xl font-bold tracking-tight text-charcoal-900">
+                Cressco
+              </span>
+            </Link>
+
+            {/* Desktop Navigation Links */}
+            <nav className="hidden md:flex items-center gap-7">
+              <Link
+                href="#features"
+                className="text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+              >
+                Product
+              </Link>
+              <Link
+                href="#roles"
+                className="text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+              >
+                Solutions
+              </Link>
+              <Link
+                href="#pricing"
+                className="text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+              >
+                Pricing
+              </Link>
+              <Link
+                href="#workflow"
+                className="text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+              >
+                Resources
+              </Link>
+            </nav>
+
+            {/* Right Action Buttons */}
+            <div className="hidden md:flex items-center gap-3">
+              <button
+                onClick={() => onOpenAuth?.('login')}
+                className="text-sm font-semibold text-charcoal-900 hover:text-brand-600 px-3 py-1.5 transition-colors"
+              >
+                Login
+              </button>
+              <button
+                onClick={() => onOpenAuth?.('register')}
+                className={`inline-flex items-center justify-center text-xs sm:text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 px-4 py-2 shadow-sm transition-all hover:shadow-brand-glow hover:-translate-y-0.5 active:translate-y-0 ${
+                  scrolled ? 'rounded-full' : 'rounded-xl'
+                }`}
+              >
+                Try for free
+              </button>
             </div>
-            <span className="text-xl font-bold tracking-tight text-charcoal-900">
-              Cressco
-            </span>
-          </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-8">
-            <Link
-              href="#features"
-              className="text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
-            >
-              Product
-            </Link>
-            <Link
-              href="#roles"
-              className="text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
-            >
-              Solutions
-            </Link>
-            <Link
-              href="#pricing"
-              className="text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
-            >
-              Pricing
-            </Link>
-            <Link
-              href="#workflow"
-              className="text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
-            >
-              Resources
-            </Link>
-          </nav>
-
-          {/* Right Action Buttons: Login + Try for free */}
-          <div className="hidden md:flex items-center gap-4">
-            <button
-              onClick={() => onOpenAuth?.('login')}
-              className="text-sm font-semibold text-charcoal-900 hover:text-brand-600 px-3 py-2 transition-colors"
-            >
-              Login
-            </button>
-            <button
-              onClick={() => onOpenAuth?.('register')}
-              className="inline-flex items-center justify-center text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 px-4 py-2.5 rounded-xl shadow-sm transition-all hover:shadow-brand-glow hover:-translate-y-0.5 active:translate-y-0"
-            >
-              Try for free
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-2">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-charcoal-200 hover:text-charcoal-900 rounded-lg hover:bg-black/5"
-              aria-label="Toggle navigation menu"
-            >
-              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-            </button>
+            {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center gap-2">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 text-charcoal-200 hover:text-charcoal-900 rounded-lg hover:bg-black/5"
+                aria-label="Toggle navigation menu"
+              >
+                {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              </button>
+            </div>
           </div>
         </div>
 
         {/* Mobile Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-3 pt-4 pb-5 px-4 bg-white rounded-xl border border-black/[0.08] shadow-soft-lg flex flex-col gap-3.5 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="pointer-events-auto md:hidden mt-2 p-4 bg-white/95 backdrop-blur-md rounded-2xl border border-black/[0.08] shadow-soft-xl flex flex-col gap-3 animate-in fade-in slide-in-from-top-2 duration-200 max-w-lg mx-auto">
             <Link
               href="#features"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-medium text-charcoal-200 hover:text-brand-500 py-1"
+              className="text-sm font-medium text-charcoal-200 hover:text-brand-500 py-1"
             >
               Product
             </Link>
             <Link
               href="#roles"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-medium text-charcoal-200 hover:text-brand-500 py-1"
+              className="text-sm font-medium text-charcoal-200 hover:text-brand-500 py-1"
             >
               Solutions
             </Link>
             <Link
               href="#pricing"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-medium text-charcoal-200 hover:text-brand-500 py-1"
+              className="text-sm font-medium text-charcoal-200 hover:text-brand-500 py-1"
             >
               Pricing
             </Link>
             <Link
               href="#workflow"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-medium text-charcoal-200 hover:text-brand-500 py-1"
+              className="text-sm font-medium text-charcoal-200 hover:text-brand-500 py-1"
             >
               Resources
             </Link>
-            <div className="pt-3 border-t border-black/[0.06] flex flex-col gap-2.5">
+            <div className="pt-2 border-t border-black/[0.06] flex flex-col gap-2">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenAuth?.('login');
                 }}
-                className="w-full text-center text-sm font-semibold text-charcoal-900 bg-surface-100 hover:bg-surface-200 py-2.5 rounded-xl border border-black/[0.06]"
+                className="w-full text-center text-sm font-semibold text-charcoal-900 bg-surface-100 hover:bg-surface-200 py-2 rounded-xl border border-black/[0.06]"
               >
                 Login
               </button>
@@ -147,7 +154,7 @@ export default function Navbar({ onOpenAuth }: NavbarProps) {
                   setMobileMenuOpen(false);
                   onOpenAuth?.('register');
                 }}
-                className="w-full text-center text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 py-2.5 rounded-xl shadow-sm"
+                className="w-full text-center text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 py-2 rounded-xl shadow-sm"
               >
                 Try for free
               </button>

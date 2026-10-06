@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface FooterProps {
   onOpenAuth?: (mode: 'login' | 'register') => void;
@@ -17,14 +18,15 @@ export default function Footer({ onOpenAuth }: FooterProps) {
           
           {/* Brand Col */}
           <div className="md:col-span-4">
-            <Link href="#" className="flex items-center gap-2.5 mb-3.5 group">
-              <div className="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center text-white font-bold text-lg shadow-sm">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="3" y="3" width="8" height="8" rx="2" fill="white" fillOpacity="0.9" />
-                  <rect x="13" y="3" width="8" height="8" rx="2" fill="white" fillOpacity="0.6" />
-                  <rect x="3" y="13" width="8" height="8" rx="2" fill="white" fillOpacity="0.6" />
-                  <rect x="13" y="13" width="8" height="8" rx="2" fill="white" />
-                </svg>
+            <Link href="#" className="flex items-center gap-2 mb-3.5 group">
+              <div className="relative w-8 h-8 flex items-center justify-center shrink-0">
+                <Image
+                  src="/images/cressco-logo.png"
+                  alt="Cressco Logo"
+                  width={32}
+                  height={32}
+                  className="object-contain"
+                />
               </div>
               <span className="text-xl font-bold tracking-tight text-charcoal-900">
                 Cressco

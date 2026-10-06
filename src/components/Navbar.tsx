@@ -5,11 +5,10 @@ import Link from 'next/link';
 import { Menu, X, ArrowRight } from 'lucide-react';
 
 interface NavbarProps {
-  onOpenDemo?: () => void;
-  onOpenContact?: () => void;
+  onOpenAuth?: (mode: 'login' | 'register') => void;
 }
 
-export default function Navbar({ onOpenDemo, onOpenContact }: NavbarProps) {
+export default function Navbar({ onOpenAuth }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -25,7 +24,7 @@ export default function Navbar({ onOpenDemo, onOpenContact }: NavbarProps) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-soft border-b border-black/[0.06] py-3.5'
+          ? 'bg-white/95 backdrop-blur-md shadow-soft border-b border-black/[0.06] py-3.5'
           : 'bg-transparent py-5'
       }`}
     >
@@ -74,20 +73,20 @@ export default function Navbar({ onOpenDemo, onOpenContact }: NavbarProps) {
             </Link>
           </nav>
 
-          {/* Right Action Button */}
-          <div className="hidden md:flex items-center gap-3">
+          {/* Right Action Buttons: Login + Try for free */}
+          <div className="hidden md:flex items-center gap-4">
             <button
-              onClick={onOpenDemo}
-              className="text-sm font-medium text-charcoal-200 hover:text-charcoal-900 px-3 py-2 rounded-lg transition-colors"
+              onClick={() => onOpenAuth?.('login')}
+              className="text-sm font-semibold text-charcoal-900 hover:text-brand-600 px-3 py-2 transition-colors"
             >
-              Lihat Demo
+              Login
             </button>
-            <Link
-              href="#pricing"
-              className="inline-flex items-center justify-center text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 px-4 py-2.5 rounded-lg shadow-sm transition-all hover:shadow-brand-glow hover:-translate-y-0.5 active:translate-y-0"
+            <button
+              onClick={() => onOpenAuth?.('register')}
+              className="inline-flex items-center justify-center text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 px-4 py-2.5 rounded-xl shadow-sm transition-all hover:shadow-brand-glow hover:-translate-y-0.5 active:translate-y-0"
             >
-              Get Started
-            </Link>
+              Try for free
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -137,19 +136,21 @@ export default function Navbar({ onOpenDemo, onOpenContact }: NavbarProps) {
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  onOpenDemo?.();
+                  onOpenAuth?.('login');
                 }}
-                className="w-full text-center text-sm font-medium text-charcoal-200 bg-surface-100 hover:bg-surface-200 py-2.5 rounded-lg border border-black/[0.06]"
+                className="w-full text-center text-sm font-semibold text-charcoal-900 bg-surface-100 hover:bg-surface-200 py-2.5 rounded-xl border border-black/[0.06]"
               >
-                Lihat Demo
+                Login
               </button>
-              <Link
-                href="#pricing"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 py-2.5 rounded-lg shadow-sm"
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenAuth?.('register');
+                }}
+                className="w-full text-center text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 py-2.5 rounded-xl shadow-sm"
               >
-                Get Started
-              </Link>
+                Try for free
+              </button>
             </div>
           </div>
         )}

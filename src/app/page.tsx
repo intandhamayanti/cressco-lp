@@ -16,31 +16,30 @@ import Footer from '@/components/Footer';
 import ModalDemo from '@/components/ModalDemo';
 
 export default function Home() {
-  const [demoOpen, setDemoOpen] = useState(false);
+  const [authOpen, setAuthOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<'login' | 'register'>('register');
   const [selectedPlan, setSelectedPlan] = useState<string | undefined>(undefined);
 
-  const handleOpenDemo = (planId?: string) => {
+  const handleOpenAuth = (mode: 'login' | 'register' = 'register', planId?: string) => {
+    setAuthMode(mode);
     setSelectedPlan(planId);
-    setDemoOpen(true);
+    setAuthOpen(true);
   };
 
-  const handleCloseDemo = () => {
-    setDemoOpen(false);
+  const handleCloseAuth = () => {
+    setAuthOpen(false);
     setSelectedPlan(undefined);
   };
 
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF9] selection:bg-brand-100 selection:text-brand-900">
       {/* 1. Navbar */}
-      <Navbar 
-        onOpenDemo={() => handleOpenDemo()} 
-        onOpenContact={() => handleOpenDemo('custom')} 
-      />
+      <Navbar onOpenAuth={(mode) => handleOpenAuth(mode)} />
 
-      {/* 2. Hero Section */}
-      <Hero onOpenDemo={() => handleOpenDemo()} />
+      {/* 2. Hero Section (with Full Uncropped Dashboard) */}
+      <Hero onOpenAuth={(mode) => handleOpenAuth(mode)} />
 
-      {/* 3. Social Proof Ecosystem */}
+      {/* 3. Social Proof Ecosystem Logos */}
       <SocialProof />
 
       {/* 4. Core Features */}
@@ -53,7 +52,7 @@ export default function Home() {
       <SecuritySection />
 
       {/* 7. Pricing */}
-      <PricingSection onSelectPlan={(planId) => handleOpenDemo(planId)} />
+      <PricingSection onSelectPlan={(planId) => handleOpenAuth('register', planId)} />
 
       {/* 8. Real Bimbel Operations */}
       <RealOperations />
@@ -65,18 +64,16 @@ export default function Home() {
       <FaqSection />
 
       {/* 10. Final CTA */}
-      <FinalCta onOpenDemo={() => handleOpenDemo()} />
+      <FinalCta onOpenAuth={(mode) => handleOpenAuth(mode)} />
 
       {/* 11. Footer */}
-      <Footer 
-        onOpenDemo={() => handleOpenDemo()}
-        onOpenContact={() => handleOpenDemo('custom')}
-      />
+      <Footer onOpenAuth={(mode) => handleOpenAuth(mode)} />
 
-      {/* Interactive Demo & Registration Modal */}
+      {/* Interactive Login & Registration Modal */}
       <ModalDemo
-        isOpen={demoOpen}
-        onClose={handleCloseDemo}
+        isOpen={authOpen}
+        onClose={handleCloseAuth}
+        initialMode={authMode}
         selectedPlan={selectedPlan}
       />
     </main>

@@ -4,11 +4,10 @@ import React from 'react';
 import Link from 'next/link';
 
 interface FooterProps {
-  onOpenDemo?: () => void;
-  onOpenContact?: () => void;
+  onOpenAuth?: (mode: 'login' | 'register') => void;
 }
 
-export default function Footer({ onOpenDemo, onOpenContact }: FooterProps) {
+export default function Footer({ onOpenAuth }: FooterProps) {
   return (
     <footer className="bg-white border-t border-black/[0.06] pt-16 pb-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,8 +61,11 @@ export default function Footer({ onOpenDemo, onOpenContact }: FooterProps) {
                   </Link>
                 </li>
                 <li>
-                  <button onClick={onOpenDemo} className="text-charcoal-100 hover:text-brand-600 transition-colors text-left">
-                    Dashboard
+                  <button 
+                    onClick={() => onOpenAuth?.('login')} 
+                    className="text-charcoal-100 hover:text-brand-600 transition-colors text-left"
+                  >
+                    Dashboard Login
                   </button>
                 </li>
                 <li>
@@ -81,12 +83,18 @@ export default function Footer({ onOpenDemo, onOpenContact }: FooterProps) {
               </h4>
               <ul className="space-y-2.5 text-sm">
                 <li>
-                  <button onClick={onOpenContact} className="text-charcoal-100 hover:text-brand-600 transition-colors text-left">
+                  <button 
+                    onClick={() => onOpenAuth?.('register')} 
+                    className="text-charcoal-100 hover:text-brand-600 transition-colors text-left"
+                  >
                     About
                   </button>
                 </li>
                 <li>
-                  <button onClick={onOpenContact} className="text-charcoal-100 hover:text-brand-600 transition-colors text-left">
+                  <button 
+                    onClick={() => onOpenAuth?.('register')} 
+                    className="text-charcoal-100 hover:text-brand-600 transition-colors text-left"
+                  >
                     Contact
                   </button>
                 </li>
@@ -100,12 +108,18 @@ export default function Footer({ onOpenDemo, onOpenContact }: FooterProps) {
               </h4>
               <ul className="space-y-2.5 text-sm">
                 <li>
-                  <button onClick={onOpenContact} className="text-charcoal-100 hover:text-brand-600 transition-colors text-left">
+                  <button 
+                    onClick={() => onOpenAuth?.('register')} 
+                    className="text-charcoal-100 hover:text-brand-600 transition-colors text-left"
+                  >
                     Help Center
                   </button>
                 </li>
                 <li>
-                  <button onClick={onOpenContact} className="text-charcoal-100 hover:text-brand-600 transition-colors text-left">
+                  <button 
+                    onClick={() => onOpenAuth?.('register')} 
+                    className="text-charcoal-100 hover:text-brand-600 transition-colors text-left"
+                  >
                     Documentation
                   </button>
                 </li>

@@ -2,13 +2,13 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Play, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 interface FinalCtaProps {
-  onOpenDemo?: () => void;
+  onOpenAuth?: (mode: 'login' | 'register') => void;
 }
 
-export default function FinalCta({ onOpenDemo }: FinalCtaProps) {
+export default function FinalCta({ onOpenAuth }: FinalCtaProps) {
   return (
     <section className="py-20 sm:py-28 bg-surface-50 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,19 +40,18 @@ export default function FinalCta({ onOpenDemo }: FinalCtaProps) {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
-              <Link
-                href="#pricing"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold text-base shadow-soft hover:shadow-brand-glow transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
-              >
-                <span>Get Started</span>
-                <ArrowRight size={18} />
-              </Link>
               <button
-                onClick={onOpenDemo}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-white hover:bg-surface-100 text-charcoal-900 font-medium text-base border border-black/[0.09] shadow-soft-sm transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+                onClick={() => onOpenAuth?.('register')}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold text-base shadow-soft hover:shadow-brand-glow transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
               >
-                <Play size={16} className="text-brand-500 fill-brand-500" />
-                <span>Book a Demo</span>
+                <span>Try for free</span>
+                <ArrowRight size={18} />
+              </button>
+              <button
+                onClick={() => onOpenAuth?.('login')}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-white hover:bg-surface-100 text-charcoal-900 font-semibold text-base border border-black/[0.09] shadow-soft-sm transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <span>Login</span>
               </button>
             </div>
 

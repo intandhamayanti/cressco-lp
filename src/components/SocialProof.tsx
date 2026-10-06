@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { Star } from 'lucide-react';
 
 const indonesianAvatars = [
@@ -34,11 +33,9 @@ export default function SocialProof() {
                   key={idx} 
                   className="relative inline-block h-9 w-9 rounded-full ring-2 ring-white overflow-hidden bg-surface-200 shrink-0 shadow-sm"
                 >
-                  <Image
+                  <img
                     src={av.src}
                     alt={av.alt}
-                    width={36}
-                    height={36}
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -60,24 +57,22 @@ export default function SocialProof() {
 
           {/* Right: Smooth Infinite Animated Marquee Ticker ("Efek Berjalan") */}
           <div className="relative w-full lg:max-w-xl overflow-hidden py-1">
-            {/* Left and Right gradient fade masks for modern polish */}
+            {/* Left and Right gradient fade masks */}
             <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
             {/* Moving Track */}
-            <div className="animate-marquee flex items-center gap-10">
+            <div className="animate-marquee flex items-center gap-12 sm:gap-16">
               {/* Set 1 */}
               {clientLogos.map((logo, idx) => (
                 <div 
                   key={`set1-${idx}`} 
-                  className="relative h-6 sm:h-7 w-28 sm:w-32 flex items-center justify-center shrink-0 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer"
+                  className="flex items-center justify-center shrink-0 opacity-80 hover:opacity-100 transition-opacity cursor-pointer"
                 >
-                  <Image
+                  <img
                     src={logo.src}
                     alt={logo.alt}
-                    fill
-                    className="object-contain"
-                    sizes="130px"
+                    className="h-6 sm:h-7 w-auto max-w-[140px] object-contain block"
                   />
                 </div>
               ))}
@@ -86,14 +81,26 @@ export default function SocialProof() {
               {clientLogos.map((logo, idx) => (
                 <div 
                   key={`set2-${idx}`} 
-                  className="relative h-6 sm:h-7 w-28 sm:w-32 flex items-center justify-center shrink-0 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer"
+                  className="flex items-center justify-center shrink-0 opacity-80 hover:opacity-100 transition-opacity cursor-pointer"
                 >
-                  <Image
+                  <img
                     src={logo.src}
                     alt={logo.alt}
-                    fill
-                    className="object-contain"
-                    sizes="130px"
+                    className="h-6 sm:h-7 w-auto max-w-[140px] object-contain block"
+                  />
+                </div>
+              ))}
+
+              {/* Set 3 (ensures seamless scrolling on wider monitors) */}
+              {clientLogos.map((logo, idx) => (
+                <div 
+                  key={`set3-${idx}`} 
+                  className="flex items-center justify-center shrink-0 opacity-80 hover:opacity-100 transition-opacity cursor-pointer"
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="h-6 sm:h-7 w-auto max-w-[140px] object-contain block"
                   />
                 </div>
               ))}

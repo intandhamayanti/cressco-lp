@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Menu, X, ArrowRight } from 'lucide-react';
 
 interface NavbarProps {
@@ -34,16 +33,11 @@ export default function Navbar({ onOpenAuth }: NavbarProps) {
           <div className="flex items-center justify-between">
             {/* Logo with official Cressco mark */}
             <Link href="#" className="flex items-center gap-2.5 group">
-              <div className="relative w-8 h-8 flex items-center justify-center shrink-0">
-                <Image
-                  src="/images/cressco-logo.png"
-                  alt="Cressco Logo"
-                  width={32}
-                  height={32}
-                  className="object-contain transition-transform group-hover:scale-105"
-                  priority
-                />
-              </div>
+              <img
+                src="/images/cressco-logo.png"
+                alt="Cressco Logo"
+                className="w-8 h-8 object-contain transition-transform group-hover:scale-105 block"
+              />
               <span className="text-xl font-bold tracking-tight text-charcoal-900">
                 Cressco
               </span>

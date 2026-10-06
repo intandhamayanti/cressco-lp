@@ -52,8 +52,8 @@ body {
   box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.06), 0 1px 2px 0 rgba(0, 0, 0, 0.04), inset 0 1px 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
 
-/* Marquee scrolling animation */
-@keyframes marquee {
+/* Infinite Marquee animations */
+@keyframes marquee-left {
   0% {
     transform: translateX(0%);
   }
@@ -62,12 +62,60 @@ body {
   }
 }
 
-.animate-marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee 22s linear infinite;
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
-.animate-marquee:hover {
+@keyframes marquee-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes marquee-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 35s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marquee-right 35s linear infinite;
+}
+
+.animate-marquee-up {
+  display: flex;
+  flex-direction: column;
+  animation: marquee-up 28s linear infinite;
+}
+
+.animate-marquee-down {
+  display: flex;
+  flex-direction: column;
+  animation: marquee-down 28s linear infinite;
+}
+
+.animate-marquee-left:hover,
+.animate-marquee-right:hover,
+.animate-marquee-up:hover,
+.animate-marquee-down:hover {
   animation-play-state: paused;
 }

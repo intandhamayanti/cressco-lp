@@ -142,9 +142,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Giant Static CRESSCO Typography (Pojok Kiri, Bold, Gede, Diem) */}
-        <div className="pt-6 sm:pt-8 select-none">
-          <h2 className="text-[14vw] sm:text-[15vw] md:text-[16vw] font-black uppercase tracking-[-0.05em] leading-[0.8] text-white/90 drop-shadow-[0_4px_24px_rgba(0,0,0,0.15)]">
+        {/* Bottom Giant Static CRESSCO Typography (Pojok Kanan, Bold, Gede, Diem) */}
+        <div className="pt-6 sm:pt-8 select-none flex justify-end">
+          <h2 className="text-[14vw] sm:text-[15vw] md:text-[16vw] font-black uppercase tracking-[-0.05em] leading-[0.8] text-right text-white/90 drop-shadow-[0_4px_24px_rgba(0,0,0,0.15)]">
             CRESSCO
           </h2>
         </div>

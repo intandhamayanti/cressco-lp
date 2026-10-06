@@ -10,6 +10,7 @@ import PricingSection from '@/components/PricingSection';
 import RealOperations from '@/components/RealOperations';
 import WorkflowSection from '@/components/WorkflowSection';
 import FaqSection from '@/components/FaqSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import FinalCta from '@/components/FinalCta';
 import Footer from '@/components/Footer';
 
@@ -40,13 +41,16 @@ export default function Home() {
       {/* 9. Workflow Organization */}
       <WorkflowSection />
 
-      {/* FAQ Section */}
+      {/* 10. Testimonials (Opposing horizontal marquee) */}
+      <TestimonialsSection />
+
+      {/* 11. FAQ Section */}
       <FaqSection />
 
-      {/* 10. Final CTA */}
+      {/* 12. Final CTA */}
       <FinalCta />
 
-      {/* 11. Footer */}
+      {/* 13. Footer */}
       <Footer />
     </main>
   );

@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Check, Sparkles, ArrowRight, HelpCircle } from 'lucide-react';
+import { Check, Sparkles, ArrowRight } from 'lucide-react';
+
+const APP_LOGIN_URL = 'https://app-cressco.vercel.app/login';
 
 type BillingPeriod = '3months' | '6months' | '12months';
 
@@ -20,10 +22,8 @@ interface PricingPlan {
   };
   features: string[];
   ctaLabel: string;
-  ctaAction?: string;
 }
 
-// Editable pricing placeholder structure
 const plans: PricingPlan[] = [
   {
     id: 'starter',
@@ -125,11 +125,7 @@ const plans: PricingPlan[] = [
   },
 ];
 
-interface PricingSectionProps {
-  onSelectPlan?: (planId: string) => void;
-}
-
-export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
+export default function PricingSection() {
   const [period, setPeriod] = useState<BillingPeriod>('12months');
 
   return (
@@ -149,7 +145,7 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
           </p>
         </div>
 
-        {/* Pricing Period Toggle (3 Months, 6 Months, 12 Months) */}
+        {/* Pricing Period Toggle */}
         <div className="flex justify-center mb-16">
           <div className="inline-flex p-1 rounded-xl bg-surface-100 border border-black/[0.06] shadow-soft-sm">
             <button
@@ -191,7 +187,7 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
           </div>
         </div>
 
-        {/* 3 Pricing Cards (Trackio-inspired layout with Most Popular emphasis) */}
+        {/* 3 Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {plans.map((plan) => {
             const currentPricing = plan.pricing[period];
@@ -262,10 +258,10 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
                   </div>
                 </div>
 
-                {/* CTA Button */}
+                {/* CTA Button -> Link to Laravel App */}
                 <div>
-                  <button
-                    onClick={() => onSelectPlan?.(plan.id)}
+                  <a
+                    href={APP_LOGIN_URL}
                     className={`w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 ${
                       plan.popular
                         ? 'bg-brand-500 hover:bg-brand-600 text-white shadow-soft hover:shadow-brand-glow hover:-translate-y-0.5 active:translate-y-0'
@@ -274,7 +270,7 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
                   >
                     <span>{plan.ctaLabel}</span>
                     <ArrowRight size={14} />
-                  </button>
+                  </a>
                 </div>
 
               </div>

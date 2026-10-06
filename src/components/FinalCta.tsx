@@ -1,14 +1,11 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
-interface FinalCtaProps {
-  onOpenAuth?: (mode: 'login' | 'register') => void;
-}
+const APP_LOGIN_URL = 'https://app-cressco.vercel.app/login';
 
-export default function FinalCta({ onOpenAuth }: FinalCtaProps) {
+export default function FinalCta() {
   return (
     <section className="py-20 sm:py-28 bg-surface-50 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,19 +37,19 @@ export default function FinalCta({ onOpenAuth }: FinalCtaProps) {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
-              <button
-                onClick={() => onOpenAuth?.('register')}
+              <a
+                href={APP_LOGIN_URL}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold text-base shadow-soft hover:shadow-brand-glow transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span>Try for free</span>
                 <ArrowRight size={18} />
-              </button>
-              <button
-                onClick={() => onOpenAuth?.('login')}
+              </a>
+              <a
+                href={APP_LOGIN_URL}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-white hover:bg-surface-100 text-charcoal-900 font-semibold text-base border border-black/[0.09] shadow-soft-sm transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span>Login</span>
-              </button>
+              </a>
             </div>
 
           </div>

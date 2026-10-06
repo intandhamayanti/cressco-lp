@@ -4,11 +4,9 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, ArrowRight } from 'lucide-react';
 
-interface NavbarProps {
-  onOpenAuth?: (mode: 'login' | 'register') => void;
-}
+const APP_LOGIN_URL = 'https://app-cressco.vercel.app/login';
 
-export default function Navbar({ onOpenAuth }: NavbarProps) {
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -22,17 +20,17 @@ export default function Navbar({ onOpenAuth }: NavbarProps) {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-none">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className={`transition-all duration-300 mx-auto ${scrolled ? 'max-w-4xl px-4' : 'max-w-6xl px-4 sm:px-6 lg:px-8'}`}>
         <div
           className={`pointer-events-auto transition-all duration-300 ease-out mx-auto ${
             scrolled
-              ? 'mt-3 max-w-4xl glass-header rounded-full px-5 py-2.5'
-              : 'mt-0 w-full bg-transparent py-5 px-2'
+              ? 'mt-3 glass-header rounded-full px-5 py-2.5 shadow-soft-lg'
+              : 'mt-0 w-full bg-transparent py-5 px-0'
           }`}
         >
           <div className="flex items-center justify-between">
-            {/* Logo with official Cressco mark */}
-            <Link href="#" className="flex items-center gap-2.5 group">
+            {/* Logo positioned neatly on the left */}
+            <Link href="#" className="flex items-center gap-2.5 group -ml-1 sm:ml-0">
               <img
                 src="/images/cressco-logo.png"
                 alt="Cressco Logo"
@@ -71,22 +69,22 @@ export default function Navbar({ onOpenAuth }: NavbarProps) {
               </Link>
             </nav>
 
-            {/* Right Action Buttons */}
+            {/* Right Action Buttons -> Linked to Laravel App */}
             <div className="hidden md:flex items-center gap-3">
-              <button
-                onClick={() => onOpenAuth?.('login')}
+              <a
+                href={APP_LOGIN_URL}
                 className="text-sm font-semibold text-charcoal-900 hover:text-brand-600 px-3 py-1.5 transition-colors"
               >
                 Login
-              </button>
-              <button
-                onClick={() => onOpenAuth?.('register')}
+              </a>
+              <a
+                href={APP_LOGIN_URL}
                 className={`inline-flex items-center justify-center text-xs sm:text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 px-4 py-2 shadow-sm transition-all hover:shadow-brand-glow hover:-translate-y-0.5 active:translate-y-0 ${
                   scrolled ? 'rounded-full' : 'rounded-xl'
                 }`}
               >
                 Try for free
-              </button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -134,24 +132,18 @@ export default function Navbar({ onOpenAuth }: NavbarProps) {
               Resources
             </Link>
             <div className="pt-2 border-t border-black/[0.06] flex flex-col gap-2">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenAuth?.('login');
-                }}
+              <a
+                href={APP_LOGIN_URL}
                 className="w-full text-center text-sm font-semibold text-charcoal-900 bg-white/60 hover:bg-white/90 py-2 rounded-xl border border-black/[0.06]"
               >
                 Login
-              </button>
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenAuth?.('register');
-                }}
+              </a>
+              <a
+                href={APP_LOGIN_URL}
                 className="w-full text-center text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 py-2 rounded-xl shadow-sm"
               >
                 Try for free
-              </button>
+              </a>
             </div>
           </div>
         )}

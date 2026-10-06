@@ -2,24 +2,57 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
-interface HeroProps {
-  onOpenAuth?: (mode: 'login' | 'register') => void;
-}
+const APP_LOGIN_URL = 'https://app-cressco.vercel.app/login';
 
-export default function Hero({ onOpenAuth }: HeroProps) {
+export default function Hero() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-      {/* Ambient lighting glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[650px] pointer-events-none hero-glow -z-10" />
-      <div className="absolute top-28 left-1/2 -translate-x-1/2 w-[720px] h-[360px] bg-brand-500/[0.07] blur-[130px] rounded-full pointer-events-none -z-10" />
+      
+      {/* Editorial High-End SaaS Background (Trackio / Linear style architectural mesh) */}
+      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
+        {/* Top radial ambient glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[550px] bg-gradient-to-b from-brand-500/10 via-brand-500/[0.03] to-transparent blur-[90px] rounded-full" />
+        
+        {/* Subtle geometric dot matrix */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.45]" />
+
+        {/* Crisp vector network lines & nodes (Trackio architectural aesthetic) */}
+        <svg
+          className="absolute top-8 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] opacity-[0.09] text-brand-700"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 1200 600"
+        >
+          <path
+            d="M100 120 H 450 V 280 H 750 V 120 H 1100"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeDasharray="4 4"
+          />
+          <path
+            d="M200 400 H 500 V 280 H 700 V 400 H 1000"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          />
+          <circle cx="450" cy="120" r="4" fill="currentColor" />
+          <circle cx="750" cy="120" r="4" fill="currentColor" />
+          <circle cx="500" cy="280" r="5" fill="currentColor" />
+          <circle cx="700" cy="280" r="5" fill="currentColor" />
+          <circle cx="200" cy="400" r="4" fill="currentColor" />
+          <circle cx="1000" cy="400" r="4" fill="currentColor" />
+        </svg>
+
+        {/* Ambient warmth behind product card */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 w-[680px] h-[340px] bg-brand-500/[0.08] blur-[120px] rounded-full" />
+      </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Centered Content */}
         <div className="text-center max-w-3xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-200/80 text-brand-700 text-xs sm:text-sm font-medium mb-6 shadow-soft-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50/90 border border-brand-200/80 text-brand-700 text-xs sm:text-sm font-medium mb-6 shadow-soft-sm backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse" />
             <span>Built for modern learning centers</span>
           </div>
@@ -37,15 +70,15 @@ export default function Hero({ onOpenAuth }: HeroProps) {
             Kelola kelas, siswa, pembayaran, cabang, dan tentor dalam satu platform yang sederhana.
           </p>
 
-          {/* CTA - Try for free / Mulai dengan Cressco */}
+          {/* CTA - Direct link to Laravel app */}
           <div className="flex items-center justify-center gap-3.5 mb-14">
-            <button
-              onClick={() => onOpenAuth?.('register')}
-              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold text-base shadow-soft hover:shadow-brand-glow transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+            <a
+              href={APP_LOGIN_URL}
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold text-base shadow-soft hover:shadow-brand-glow transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
             >
               <span>Mulai dengan Cressco</span>
               <ArrowRight size={18} />
-            </button>
+            </a>
           </div>
         </div>
 
@@ -63,7 +96,7 @@ export default function Hero({ onOpenAuth }: HeroProps) {
                 <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F] border border-black/10" />
               </div>
               <div className="flex items-center gap-1.5 px-3 py-0.5 bg-white rounded-md border border-black/[0.06] text-xs font-mono text-charcoal-100">
-                <span className="text-brand-500">https://</span>app.cressco.id/dashboard
+                <span className="text-brand-500">https://</span>app-cressco.vercel.app/dashboard
               </div>
               <div className="text-[11px] text-charcoal-50 font-medium hidden sm:block">
                 Cressco OS v2.4

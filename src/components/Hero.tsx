@@ -34,9 +34,9 @@ export default function Hero() {
           
           {/* Headline */}
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-charcoal-900 leading-[1.08] mb-6">
-            Smarter Management for{' '}
+            Manajemen Lebih Cerdas untuk{' '}
             <span className="text-brand-500 relative inline-block">
-              Modern Bimbels
+              Bimbel Modern
             </span>
           </h1>
 

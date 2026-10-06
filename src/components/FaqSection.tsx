@@ -33,14 +33,14 @@ export default function FaqSection() {
     <section id="faq" className="py-20 sm:py-28 bg-white border-t border-black/[0.05]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold uppercase tracking-wider mb-3">
-            FAQ
-          </div>
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-charcoal-900 mb-3">
+          <span className="font-mono text-xs uppercase tracking-wider font-bold text-brand-600 mb-3 inline-block">
+            /07 TANYA JAWAB (FAQ)
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal-900 mb-4">
             Pertanyaan yang Sering Diajukan
           </h2>
           <p className="text-sm sm:text-base text-charcoal-100">
-            Segala hal yang perlu Anda ketahui sebelum menggunakan platform Cressco.
+            Segala hal yang perlu Anda ketahui sebelum mulai menggunakan platform Cressco.
           </p>
         </div>
 

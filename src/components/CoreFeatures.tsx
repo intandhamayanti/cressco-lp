@@ -21,14 +21,14 @@ export default function CoreFeatures() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold uppercase tracking-wider mb-4">
-            Core Features
-          </div>
+          <span className="font-mono text-xs uppercase tracking-wider font-bold text-brand-600 mb-3 inline-block">
+            /01 FITUR UTAMA
+          </span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal-900 mb-4">
-            Everything Your Bimbel Needs.
+            Semua Kebutuhan Operasional Bimbel Anda
           </h2>
           <p className="text-base sm:text-lg text-charcoal-100 font-normal leading-relaxed">
-            Satu sistem untuk membantu owner, admin, dan tentor bekerja lebih teratur setiap hari.
+            Satu sistem terpadu untuk membantu owner, admin, dan tentor bekerja lebih teratur setiap hari.
           </p>
         </div>
 
@@ -42,7 +42,7 @@ export default function CoreFeatures() {
                 <CreditCard size={20} />
               </div>
               <h3 className="text-xl font-bold text-charcoal-900 mb-2">
-                Smart Payment Tracking
+                Pelacakan Pembayaran & SPP
               </h3>
               <p className="text-sm text-charcoal-100 leading-relaxed">
                 Pantau pembayaran siswa, status tagihan, dan riwayat transaksi tanpa spreadsheet yang berantakan.
@@ -95,10 +95,10 @@ export default function CoreFeatures() {
                 <BarChart3 size={20} />
               </div>
               <h3 className="text-xl font-bold text-charcoal-900 mb-2">
-                Real-Time Bimbel Dashboard
+                Dashboard Analitik Real-Time
               </h3>
               <p className="text-sm text-charcoal-100 leading-relaxed">
-                Lihat pendapatan, kehadiran, kelas, hingga performa cabang dalam satu dashboard.
+                Lihat pendapatan, kehadiran siswa, sesi kelas, hingga performa seluruh cabang dalam satu dashboard.
               </p>
             </div>
 
@@ -147,10 +147,10 @@ export default function CoreFeatures() {
                 <Users2 size={20} />
               </div>
               <h3 className="text-xl font-bold text-charcoal-900 mb-2">
-                Flexible Tutor Management
+                Manajemen Tentor & Honor Mengajar
               </h3>
               <p className="text-sm text-charcoal-100 leading-relaxed">
-                Atur jadwal, kehadiran, sesi mengajar, materi, dan honor tentor.
+                Atur jadwal mengajar, presensi kehadiran, sesi kelas, materi, dan perhitungan honor tentor secara transparan.
               </p>
             </div>
 
@@ -200,10 +200,10 @@ export default function CoreFeatures() {
                 <Building2 size={20} />
               </div>
               <h3 className="text-xl font-bold text-charcoal-900 mb-2">
-                Multi-Branch Management
+                Pengelolaan Multi-Cabang Terpusat
               </h3>
               <p className="text-sm text-charcoal-100 leading-relaxed">
-                Kelola beberapa cabang dari satu akun dengan akses yang terkontrol.
+                Kelola beberapa cabang dari satu akun dengan hak akses yang terisolasi dan terkontrol rapi.
               </p>
             </div>
 

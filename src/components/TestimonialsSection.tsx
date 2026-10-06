@@ -18,7 +18,7 @@ const column1: Testimonial[] = [
     name: 'Albert Pratama',
     role: 'CFO di LoopAcademy Bandung',
     avatar: '/images/avatars/avatar-1.jpg',
-    quote: 'Cressco completely streamlined our payroll and student billing processes. Kami sekarang menghemat lebih dari 70% waktu administrasi operasional dan merasa 100% lebih yakin dengan rekonsiliasi data tiap cabang.',
+    quote: 'Cressco benar-benar menata rapi sistem honor tentor dan penagihan siswa kami. Kami sekarang menghemat lebih dari 70% waktu administrasi operasional dan merasa 100% lebih yakin dengan rekonsiliasi data tiap cabang.',
     stars: 5,
   },
   {
@@ -135,8 +135,11 @@ export default function TestimonialsSection() {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-charcoal-900 leading-tight mb-4">
-            Loved by Modern Bimbel Teams
+          <span className="font-mono text-xs uppercase tracking-wider font-bold text-brand-600 mb-3 inline-block">
+            /06 TESTIMONI PENGGUNA
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal-900 mb-4">
+            Dipercaya & Disukai Tim Bimbel Indonesia
           </h2>
           <p className="text-sm sm:text-base text-charcoal-100 font-normal leading-relaxed">
             Lihat bagaimana ratusan bimbel dan lembaga kursus di Indonesia menyederhanakan operasional harian mereka bersama Cressco.

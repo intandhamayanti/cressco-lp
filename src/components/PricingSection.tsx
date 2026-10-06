@@ -28,7 +28,7 @@ const plans: PricingPlan[] = [
   {
     id: 'starter',
     name: 'STARTER',
-    description: 'For bimbel yang baru mulai beralih ke sistem digital.',
+    description: 'Untuk bimbel yang baru mulai beralih ke sistem digital terpadu.',
     popular: false,
     pricing: {
       '3months': {
@@ -50,18 +50,18 @@ const plans: PricingPlan[] = [
       },
     },
     features: [
-      'Student management',
-      'Class management',
-      'Attendance',
-      'Payment tracking',
-      'Basic dashboard',
+      'Manajemen data siswa',
+      'Jadwal & pembagian kelas',
+      'Presensi siswa digital',
+      'Pencatatan tagihan & SPP',
+      'Dashboard ringkasan harian',
     ],
     ctaLabel: 'Pilih Starter',
   },
   {
     id: 'growth',
     name: 'GROWTH',
-    description: 'For bimbel yang ingin mengelola operasional dengan lebih terstruktur.',
+    description: 'Untuk bimbel berkembang yang ingin operasional lebih terstruktur.',
     popular: true,
     pricing: {
       '3months': {
@@ -83,19 +83,19 @@ const plans: PricingPlan[] = [
       },
     },
     features: [
-      'Everything in Starter',
-      'Tutor management',
-      'Payroll management',
-      'Advanced dashboard',
-      'Branch management',
-      'Reports',
+      'Semua fitur Starter',
+      'Manajemen tentor & jadwal mengajar',
+      'Perhitungan honor tentor otomatis',
+      'Dashboard analitik lanjutan',
+      'Pengelolaan multi-cabang',
+      'Rekap laporan keuangan bulanan',
     ],
     ctaLabel: 'Mulai dengan Growth',
   },
   {
     id: 'custom',
     name: 'CUSTOM',
-    description: 'For bimbel dengan kebutuhan dan struktur operasional yang lebih kompleks.',
+    description: 'Untuk jaringan bimbel besar dengan kebutuhan kustom skala luas.',
     popular: false,
     pricing: {
       '3months': {
@@ -115,11 +115,11 @@ const plans: PricingPlan[] = [
       },
     },
     features: [
-      'Multiple branches',
-      'Custom access control',
-      'Advanced reporting',
-      'Custom configuration',
-      'Dedicated support',
+      'Kapasitas cabang tak terbatas',
+      'Hak akses & kontrol kustom',
+      'Laporan analitik eksekutif terpusat',
+      'Konfigurasi sistem tailored',
+      'Dedicated support WhatsApp prioritas',
     ],
     ctaLabel: 'Konsultasi Tim',
   },
@@ -134,11 +134,11 @@ export default function PricingSection() {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold uppercase tracking-wider mb-4">
-            Pricing Plans
-          </div>
+          <span className="font-mono text-xs uppercase tracking-wider font-bold text-brand-600 mb-3 inline-block">
+            /03 PAKET HARGA
+          </span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal-900 mb-4">
-            Simple Pricing for Every Stage of Growth
+            Pilihan Paket Sederhana & Transparan
           </h2>
           <p className="text-base sm:text-lg text-charcoal-100 font-normal leading-relaxed">
             Mulai dari satu bimbel hingga beberapa cabang, pilih paket yang sesuai dengan kebutuhan operasional Anda.
@@ -156,7 +156,7 @@ export default function PricingSection() {
                   : 'text-charcoal-100 hover:text-charcoal-900'
               }`}
             >
-              3 Months
+              3 Bulan
             </button>
             <button
               onClick={() => setPeriod('6months')}
@@ -166,9 +166,9 @@ export default function PricingSection() {
                   : 'text-charcoal-100 hover:text-charcoal-900'
               }`}
             >
-              <span>6 Months</span>
+              <span>6 Bulan</span>
               <span className="text-[10px] bg-brand-50 text-brand-600 px-1.5 py-0.5 rounded font-bold border border-brand-200/60 hidden sm:inline">
-                Save 10%
+                Hemat 10%
               </span>
             </button>
             <button
@@ -179,9 +179,9 @@ export default function PricingSection() {
                   : 'text-charcoal-100 hover:text-charcoal-900'
               }`}
             >
-              <span>12 Months</span>
+              <span>12 Bulan</span>
               <span className="text-[10px] bg-brand-500 text-white px-1.5 py-0.5 rounded font-bold">
-                Save 20%
+                Hemat 20%
               </span>
             </button>
           </div>

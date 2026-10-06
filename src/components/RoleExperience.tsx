@@ -16,8 +16,8 @@ import {
 const roleCards = [
   {
     role: 'OWNER',
-    title: 'See the Bigger Picture',
-    description: 'Pantau seluruh cabang, pendapatan, siswa, dan performa bimbel.',
+    title: 'Kendali Penuh & Laporan Strategis',
+    description: 'Pantau seluruh cabang, arus kas, pertumbuhan siswa, dan performa bimbel.',
     icon: ShieldCheck,
     tag: 'Executive Suite',
     keyPoints: [
@@ -29,8 +29,8 @@ const roleCards = [
   },
   {
     role: 'ADMIN',
-    title: 'Keep Things Running',
-    description: 'Kelola siswa, jadwal, pembayaran, dan operasional harian.',
+    title: 'Operasional Harian Lebih Teratur',
+    description: 'Kelola siswa, jadwal kelas, penagihan SPP, dan administrasi harian.',
     icon: UserCheck,
     tag: 'Operations Console',
     keyPoints: [
@@ -42,8 +42,8 @@ const roleCards = [
   },
   {
     role: 'TUTOR',
-    title: 'Focus on Teaching',
-    description: 'Catat kehadiran, sesi mengajar, materi, dan aktivitas kelas.',
+    title: 'Fokus Mendidik Tanpa Beban Admin',
+    description: 'Catat kehadiran, sesi mengajar, materi, dan transparansi honor tentor.',
     icon: GraduationCap,
     tag: 'Teacher Hub',
     keyPoints: [
@@ -64,14 +64,14 @@ export default function RoleExperience() {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold uppercase tracking-wider mb-4">
-            Role-Based Experience
-          </div>
+          <span className="font-mono text-xs uppercase tracking-wider font-bold text-brand-600 mb-3 inline-block">
+            /02 SOLUSI PERAN
+          </span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal-900 mb-4">
-            One Platform. Every Role.
+            Satu Platform untuk Setiap Peran
           </h2>
           <p className="text-base sm:text-lg text-charcoal-100 font-normal leading-relaxed">
-            Setiap orang mendapatkan tools yang sesuai dengan tanggung jawabnya.
+            Owner, Admin, dan Tentor mendapatkan dashboard yang sesuai dengan tanggung jawabnya masing-masing.
           </p>
         </div>
 

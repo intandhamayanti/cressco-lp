@@ -20,19 +20,18 @@ export default function FinalCta() {
           <div className="relative z-10 max-w-2xl mx-auto">
             
             {/* Badge */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold mb-6">
-              <Sparkles size={13} />
-              <span>Modern Bimbel Operating Platform</span>
-            </div>
+            <span className="font-mono text-xs uppercase tracking-wider font-bold text-brand-600 mb-3 inline-block">
+              /08 MULAI SEKARANG
+            </span>
 
             {/* Headline */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-charcoal-900 leading-tight mb-5">
-              Ready to Run Your Bimbel Smarter?
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal-900 mb-4">
+              Siap Mengelola Bimbel Anda Lebih Rapi?
             </h2>
 
             {/* Supporting Text */}
             <p className="text-base sm:text-lg text-charcoal-100 font-normal leading-relaxed mb-10 max-w-xl mx-auto">
-              Stop juggling spreadsheets, chats, and scattered records. Bring your bimbel operations into one simple system with Cressco.
+              Hentikan repotnya rekap spreadsheet manual, chat WhatsApp yang tercecer, dan hitungan honor yang rawan selisih. Satukan seluruh operasional bimbel Anda ke dalam satu platform modern bersama Cressco.
             </p>
 
             {/* CTA Buttons */}

@@ -5,10 +5,10 @@ import { ShieldCheck, UserCheck, GraduationCap, CheckCircle2, TrendingUp, Clock,
 
 const operationCards = [
   {
-    target: 'For Owners',
+    target: 'Untuk Owner Bimbel',
     roleTag: 'Executive Leadership',
     icon: ShieldCheck,
-    quote: "Know what's happening across your bimbel without waiting for manual reports.",
+    quote: 'Ketahui kondisi seluruh cabang secara realtime tanpa harus menunggu rekap laporan manual.',
     benefits: [
       'Visibilitas finansial & status tagihan realtime',
       'Pemantauan performa cabang dalam satu ringkasan',
@@ -16,10 +16,10 @@ const operationCards = [
     ],
   },
   {
-    target: 'For Admins',
+    target: 'Untuk Tim Admin',
     roleTag: 'Daily Operations',
     icon: UserCheck,
-    quote: "Spend less time managing spreadsheets and repetitive administrative tasks.",
+    quote: 'Kurangi waktu berkutat dengan spreadsheet dan tugas administratif manual yang berulang.',
     benefits: [
       'Otomasi invoice tagihan dan verifikasi pembayaran',
       'Plotting jadwal kelas & distribusi ruangan instan',
@@ -27,10 +27,10 @@ const operationCards = [
     ],
   },
   {
-    target: 'For Tutors',
+    target: 'Untuk Tentor / Guru',
     roleTag: 'Teaching Staff',
     icon: GraduationCap,
-    quote: "Spend less time on administration and more time teaching.",
+    quote: 'Kurangi beban administrasi dan curahkan lebih banyak waktu untuk fokus mengajar.',
     benefits: [
       'Presensi kelas dan jurnal materi dalam 2 klik',
       'Transparansi jadwal dan riwayat sesi mengajar',
@@ -46,14 +46,14 @@ export default function RealOperations() {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold uppercase tracking-wider mb-4">
-            Operational Focus
-          </div>
+          <span className="font-mono text-xs uppercase tracking-wider font-bold text-brand-600 mb-3 inline-block">
+            /04 OPERASIONAL HARIAN
+          </span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal-900 mb-4">
-            Built Around Real Bimbel Operations
+            Dibangun untuk Operasional Bimbel Nyata
           </h2>
           <p className="text-base sm:text-lg text-charcoal-100 font-normal leading-relaxed">
-            Cressco dirancang berdasarkan kebutuhan operasional yang benar-benar terjadi di bimbel.
+            Cressco dirancang berdasarkan kebutuhan operasional yang benar-benar dihadapi pengelola bimbel di Indonesia.
           </p>
         </div>
 

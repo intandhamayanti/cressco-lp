@@ -47,25 +47,37 @@ export default function Navbar() {
                 href="#features"
                 className="text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
               >
-                Product
+                Fitur
               </Link>
               <Link
                 href="#roles"
                 className="text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
               >
-                Solutions
+                Solusi Peran
               </Link>
               <Link
                 href="#pricing"
                 className="text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
               >
-                Pricing
+                Harga
               </Link>
               <Link
                 href="#workflow"
                 className="text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
               >
-                Resources
+                Integrasi
+              </Link>
+              <Link
+                href="#testimoni"
+                className="text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
+              >
+                Testimoni
+              </Link>
+              <Link
+                href="#faq"
+                className="text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
+              >
+                FAQ
               </Link>
             </nav>
 

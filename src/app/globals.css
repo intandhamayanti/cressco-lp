@@ -45,11 +45,11 @@ body {
 
 /* Glassmorphism true frosted glass utility */
 .glass-header {
-  background: rgba(255, 255, 255, 0.78) !important;
-  backdrop-filter: blur(20px) saturate(190%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(190%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.85) !important;
-  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.05), 0 1px 3px 0 rgba(0, 0, 0, 0.03), inset 0 1px 1px 0 rgba(255, 255, 255, 0.95) !important;
+  background: rgba(255, 255, 255, 0.62) !important;
+  backdrop-filter: blur(24px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(200%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.88) !important;
+  box-shadow: 0 12px 36px 0 rgba(24, 24, 27, 0.07), 0 2px 6px 0 rgba(24, 24, 27, 0.03), inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.95) !important;
 }
 
 /* Infinite Marquee animations */

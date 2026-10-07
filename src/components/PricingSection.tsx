@@ -152,33 +152,33 @@ export default function PricingSection() {
           </p>
         </div>
 
-        {/* Pricing Period Toggle with 3, 6, 12 Month Badges in Cressco Theme */}
-        <div className="flex justify-center mb-16">
-          <div className="inline-flex p-1.5 rounded-2xl bg-white border border-black/[0.08] shadow-soft-sm">
+        {/* Sleek & Compact Pricing Period Toggle */}
+        <div className="flex justify-center mb-12 sm:mb-14">
+          <div className="inline-flex p-1 rounded-full bg-white border border-black/[0.07] shadow-sm">
             <button
               onClick={() => setPeriod('3months')}
-              className={`px-5 sm:px-7 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+              className={`px-4 py-1.5 rounded-full text-xs transition-all ${
                 period === '3months'
-                  ? 'bg-brand-500 text-white shadow-sm'
-                  : 'text-charcoal-100 hover:text-charcoal-900'
+                  ? 'bg-brand-500 text-white shadow-sm font-semibold'
+                  : 'text-charcoal-100 hover:text-charcoal-900 font-medium'
               }`}
             >
               3 Bulan
             </button>
             <button
               onClick={() => setPeriod('6months')}
-              className={`px-5 sm:px-7 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${
+              className={`px-3.5 py-1.5 rounded-full text-xs transition-all flex items-center gap-1.5 ${
                 period === '6months'
-                  ? 'bg-brand-500 text-white shadow-sm'
-                  : 'text-charcoal-100 hover:text-charcoal-900'
+                  ? 'bg-brand-500 text-white shadow-sm font-semibold'
+                  : 'text-charcoal-100 hover:text-charcoal-900 font-medium'
               }`}
             >
               <span>6 Bulan</span>
               <span
-                className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${
+                className={`text-[10px] px-1.5 py-0.5 rounded-full font-medium ${
                   period === '6months'
-                    ? 'bg-white text-brand-600'
-                    : 'bg-brand-50 text-brand-600 border border-brand-200'
+                    ? 'bg-white/20 text-white'
+                    : 'bg-brand-50 text-brand-600 border border-brand-200/60'
                 }`}
               >
                 Hemat 10%
@@ -186,18 +186,18 @@ export default function PricingSection() {
             </button>
             <button
               onClick={() => setPeriod('12months')}
-              className={`px-5 sm:px-7 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${
+              className={`px-3.5 py-1.5 rounded-full text-xs transition-all flex items-center gap-1.5 ${
                 period === '12months'
-                  ? 'bg-brand-500 text-white shadow-sm'
-                  : 'text-charcoal-100 hover:text-charcoal-900'
+                  ? 'bg-brand-500 text-white shadow-sm font-semibold'
+                  : 'text-charcoal-100 hover:text-charcoal-900 font-medium'
               }`}
             >
               <span>12 Bulan</span>
               <span
-                className={`text-[10px] px-2 py-0.5 rounded-full font-bold shadow-sm ${
+                className={`text-[10px] px-1.5 py-0.5 rounded-full font-medium ${
                   period === '12months'
-                    ? 'bg-white text-brand-600'
-                    : 'bg-emerald-500 text-white'
+                    ? 'bg-white/20 text-white'
+                    : 'bg-emerald-50 text-emerald-700 border border-emerald-200/60'
                 }`}
               >
                 Hemat 20%

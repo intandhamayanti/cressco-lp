@@ -81,7 +81,7 @@ export default function ModalDemo({ isOpen, onClose, initialMode = 'register', s
               </p>
               <button
                 onClick={handleReset}
-                className="px-6 py-2.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm shadow-sm"
+                className="px-6 py-2.5 rounded-full bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm shadow-sm transition-all"
               >
                 Tutup
               </button>

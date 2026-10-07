@@ -11,67 +11,145 @@ interface IntegrationTool {
   yPercent: number;
   svgX: number;
   svgY: number;
+  mobXPercent: number; // For mobile vertical orbital layout
+  mobYPercent: number;
+  mobSvgX: number;
+  mobSvgY: number;
 }
 
-// 3 Spacious Tools on the Left (Arc distribution)
 const leftIntegrations: IntegrationTool[] = [
+  { 
+    name: 'Google Meet', 
+    icon: '/images/integrations/google-meet.png', 
+    category: 'Kelas Online & Privat', 
+    xPercent: 20, 
+    yPercent: 14,
+    svgX: 200,
+    svgY: 56,
+    mobXPercent: 18,
+    mobYPercent: 8,
+    mobSvgX: 65,
+    mobSvgY: 38
+  },
   { 
     name: 'WhatsApp', 
     icon: '/images/integrations/whatsapp.png', 
     category: 'Broadcast & Notifikasi', 
-    xPercent: 18, 
-    yPercent: 22,
-    svgX: 180,
-    svgY: 88
+    xPercent: 8, 
+    yPercent: 32,
+    svgX: 80,
+    svgY: 128,
+    mobXPercent: 50,
+    mobYPercent: 5,
+    mobSvgX: 180,
+    mobSvgY: 24
   },
   { 
     name: 'Google Calendar', 
     icon: '/images/integrations/google-calendar.png', 
     category: 'Jadwal Sesi & Ujian', 
-    xPercent: 10, 
+    xPercent: 22, 
     yPercent: 50,
-    svgX: 100,
-    svgY: 200
+    svgX: 220,
+    svgY: 200,
+    mobXPercent: 82,
+    mobYPercent: 8,
+    mobSvgX: 295,
+    mobSvgY: 38
+  },
+  { 
+    name: 'Mailchimp', 
+    icon: '/images/integrations/mailchimp.png', 
+    category: 'Email Broadcast Siswa', 
+    xPercent: 8, 
+    yPercent: 68,
+    svgX: 80,
+    svgY: 272,
+    mobXPercent: 28,
+    mobYPercent: 24,
+    mobSvgX: 100,
+    mobSvgY: 115
   },
   { 
     name: 'Microsoft Excel', 
     icon: '/images/integrations/excel.png', 
     category: 'Rekonsiliasi & Impor Data', 
-    xPercent: 18, 
-    yPercent: 78,
-    svgX: 180,
-    svgY: 312
+    xPercent: 20, 
+    yPercent: 86,
+    svgX: 200,
+    svgY: 344,
+    mobXPercent: 72,
+    mobYPercent: 24,
+    mobSvgX: 260,
+    mobSvgY: 115
   },
 ];
 
-// 3 Spacious Tools on the Right (Arc distribution)
 const rightIntegrations: IntegrationTool[] = [
+  { 
+    name: 'Telegram', 
+    icon: '/images/integrations/telegram.png', 
+    category: 'Grup Pengajar & Tugas', 
+    xPercent: 80, 
+    yPercent: 14,
+    svgX: 800,
+    svgY: 56,
+    mobXPercent: 28,
+    mobYPercent: 76,
+    mobSvgX: 100,
+    mobSvgY: 365
+  },
+  { 
+    name: 'Google Ads', 
+    icon: '/images/integrations/google-ads.png', 
+    category: 'Tracking Akuisisi Siswa', 
+    xPercent: 92, 
+    yPercent: 32,
+    svgX: 920,
+    svgY: 128,
+    mobXPercent: 72,
+    mobYPercent: 76,
+    mobSvgX: 260,
+    mobSvgY: 365
+  },
   { 
     name: 'Zoom', 
     icon: '/images/integrations/zoom.png', 
     category: 'Webinar & Kelas Interaktif', 
-    xPercent: 82, 
-    yPercent: 22,
-    svgX: 820,
-    svgY: 88
-  },
-  { 
-    name: 'Telegram', 
-    icon: '/images/integrations/telegram.png', 
-    category: 'Grup Pengajar & Notifikasi', 
-    xPercent: 90, 
+    xPercent: 78, 
     yPercent: 50,
-    svgX: 900,
-    svgY: 200
+    svgX: 780,
+    svgY: 200,
+    mobXPercent: 18,
+    mobYPercent: 92,
+    mobSvgX: 65,
+    mobSvgY: 442
   },
   { 
     name: 'Gmail', 
     icon: '/images/integrations/gmail.png', 
     category: 'Invoice & Surat Resmi', 
-    xPercent: 82, 
-    yPercent: 78,
-    svgX: 820,
-    svgY: 312
+    xPercent: 92, 
+    yPercent: 68,
+    svgX: 920,
+    svgY: 272,
+    mobXPercent: 50,
+    mobYPercent: 95,
+    mobSvgX: 180,
+    mobSvgY: 456
+  },
+  { 
+    name: 'Notion', 
+    icon: '/images/integrations/notion.png', 
+    category: 'Silabus & Bank Materi', 
+    xPercent: 80, 
+    yPercent: 86,
+    svgX: 800,
+    svgY: 344,
+    mobXPercent: 82,
+    mobYPercent: 92,
+    mobSvgX: 295,
+    mobSvgY: 442
   },
 ];
 
@@ -92,24 +170,24 @@ export default function WorkflowSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 font-sans">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 font-sans">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 font-sans">
           <span className="font-mono text-xs uppercase tracking-wider font-bold text-white/80 mb-3 inline-block">
             /05 INTEGRASI & ALUR KERJA
           </span>
           
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
-            Integrasi Mulus untuk Alur Kerja Bimbel Anda
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-3">
+            Integrasi Mulus dengan Tools Bimbel Anda
           </h2>
           
           <p className="text-sm sm:text-base text-brand-100 font-normal leading-relaxed max-w-xl mx-auto font-sans">
-            Hubungkan seluruh operasional bimbel Anda dengan tools harian yang sudah akrab digunakan dalam satu sistem terpusat.
+            Hubungkan seluruh operasional bimbel Anda dengan tools harian dalam satu sistem terpusat.
           </p>
         </div>
 
         {/* ========================================================================= */}
-        {/* DESKTOP & TABLET VIEW: Spacious 3+3 Orbital Layout with curved connectors */}
+        {/* DESKTOP & TABLET VIEW: Orbital Layout with curved connectors (md and up) */}
         {/* ========================================================================= */}
-        <div className="hidden md:flex relative max-w-4xl mx-auto h-[400px] select-none items-center justify-center">
+        <div className="hidden md:flex relative max-w-4xl mx-auto h-[420px] select-none items-center justify-center">
           
           {/* Curved SVG Connectors */}
           <svg 
@@ -158,16 +236,16 @@ export default function WorkflowSection() {
             </div>
           </div>
 
-          {/* Left Floating Tools (3 Icons with Generous Spacing) */}
+          {/* Left Floating Tools */}
           {leftIntegrations.map((tool, idx) => (
             <div
               key={`left-${idx}`}
-              className="absolute -translate-x-1/2 -translate-y-1/2 z-10 transition-transform duration-300 hover:scale-110 hover:z-30 cursor-pointer group"
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-300 hover:scale-110 hover:z-30 cursor-pointer group"
               style={{ left: `${tool.xPercent}%`, top: `${tool.yPercent}%` }}
               title={`${tool.name} • ${tool.category}`}
             >
-              <div className="w-15 h-15 md:w-16 md:h-16 rounded-2xl bg-white shadow-[0_10px_25px_rgba(0,0,0,0.22)] border border-white/60 group-hover:border-white transition-all flex items-center justify-center p-3 shrink-0">
-                <div className="w-9 h-9 relative flex items-center justify-center shrink-0">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white shadow-[0_10px_25px_rgba(0,0,0,0.22)] border border-white/60 group-hover:border-white transition-all flex items-center justify-center p-3 shrink-0">
+                <div className="w-8 h-8 md:w-9 md:h-9 relative flex items-center justify-center shrink-0">
                   <Image
                     src={tool.icon}
                     alt={tool.name}
@@ -185,16 +263,16 @@ export default function WorkflowSection() {
             </div>
           ))}
 
-          {/* Right Floating Tools (3 Icons with Generous Spacing) */}
+          {/* Right Floating Tools */}
           {rightIntegrations.map((tool, idx) => (
             <div
               key={`right-${idx}`}
-              className="absolute -translate-x-1/2 -translate-y-1/2 z-10 transition-transform duration-300 hover:scale-110 hover:z-30 cursor-pointer group"
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-300 hover:scale-110 hover:z-30 cursor-pointer group"
               style={{ left: `${tool.xPercent}%`, top: `${tool.yPercent}%` }}
               title={`${tool.name} • ${tool.category}`}
             >
-              <div className="w-15 h-15 md:w-16 md:h-16 rounded-2xl bg-white shadow-[0_10px_25px_rgba(0,0,0,0.22)] border border-white/60 group-hover:border-white transition-all flex items-center justify-center p-3 shrink-0">
-                <div className="w-9 h-9 relative flex items-center justify-center shrink-0">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white shadow-[0_10px_25px_rgba(0,0,0,0.22)] border border-white/60 group-hover:border-white transition-all flex items-center justify-center p-3 shrink-0">
+                <div className="w-8 h-8 md:w-9 md:h-9 relative flex items-center justify-center shrink-0">
                   <Image
                     src={tool.icon}
                     alt={tool.name}
@@ -215,41 +293,44 @@ export default function WorkflowSection() {
         </div>
 
         {/* ========================================================================= */}
-        {/* MOBILE VIEW: Vertical Flow (Top Tools -> Cressco Core Hub -> Bottom Tools) */}
+        {/* MOBILE VIEW: Vertical Flow with full curved connectors (top-to-bottom)    */}
         {/* ========================================================================= */}
-        <div className="flex md:hidden flex-col items-center gap-4 max-w-sm mx-auto">
+        <div className="flex md:hidden relative max-w-[340px] xs:max-w-[360px] mx-auto h-[480px] select-none items-center justify-center">
           
-          {/* Top Tools Grid */}
-          <div className="flex flex-wrap items-center justify-center gap-2.5 w-full">
+          {/* Vertical Curved SVG Connectors on Mobile */}
+          <svg 
+            className="absolute inset-0 w-full h-full pointer-events-none z-0" 
+            viewBox="0 0 360 480" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* Center at x=180, y=240 */}
+            {/* Top 5 connectors curving down into Cressco Hub */}
             {topMobileTools.map((tool, idx) => (
-              <div 
-                key={`mob-top-${idx}`}
-                className="flex items-center gap-2 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl shadow-sm border border-white/40 text-stone-900"
-              >
-                <div className="w-5 h-5 relative shrink-0 flex items-center justify-center">
-                  <Image
-                    src={tool.icon}
-                    alt={tool.name}
-                    width={20}
-                    height={20}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <span className="text-xs font-semibold text-stone-800">{tool.name}</span>
-              </div>
+              <path 
+                key={`mob-line-top-${idx}`}
+                d={`M ${tool.mobSvgX} ${tool.mobSvgY} C ${tool.mobSvgX} ${(tool.mobSvgY + 240) / 2}, 180 ${(tool.mobSvgY + 240) / 2}, 180 240`} 
+                stroke="rgba(255,255,255,0.4)" 
+                strokeWidth="1.5" 
+                strokeDasharray="4 4" 
+              />
             ))}
-          </div>
 
-          {/* Vertical Connecting Pulse Line Down */}
-          <div className="flex flex-col items-center justify-center my-1">
-            <div className="w-0.5 h-6 bg-gradient-to-b from-white/20 via-white/80 to-white/20 border-l border-dashed border-white/60" />
-            <div className="w-2 h-2 rounded-full bg-white animate-pulse -my-1" />
-            <div className="w-0.5 h-6 bg-gradient-to-b from-white/20 via-white/80 to-white/20 border-l border-dashed border-white/60" />
-          </div>
+            {/* Bottom 5 connectors curving down from Cressco Hub */}
+            {bottomMobileTools.map((tool, idx) => (
+              <path 
+                key={`mob-line-bottom-${idx}`}
+                d={`M 180 240 C 180 ${(240 + tool.mobSvgY) / 2}, ${tool.mobSvgX} ${(240 + tool.mobSvgY) / 2}, ${tool.mobSvgX} ${tool.mobSvgY}`} 
+                stroke="rgba(255,255,255,0.4)" 
+                strokeWidth="1.5" 
+                strokeDasharray="4 4" 
+              />
+            ))}
+          </svg>
 
           {/* Central Mobile Cressco Hub */}
-          <div className="relative">
-            <div className="w-20 h-20 rounded-full bg-white text-brand-600 flex flex-col items-center justify-center shadow-[0_12px_30px_rgba(0,0,0,0.3)] border-4 border-white/40">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+            <div className="w-20 h-20 rounded-full bg-white text-brand-600 flex flex-col items-center justify-center shadow-[0_12px_32px_rgba(0,0,0,0.35)] border-4 border-white/40">
               <Image
                 src="/images/cressco-logo.png"
                 alt="Cressco Core"
@@ -261,37 +342,49 @@ export default function WorkflowSection() {
                 CRESSCO
               </span>
             </div>
-            {/* Ambient ring glow */}
-            <div className="absolute inset-0 -m-1.5 rounded-full border border-white/30 pointer-events-none animate-ping opacity-30" />
           </div>
 
-          {/* Vertical Connecting Pulse Line Up */}
-          <div className="flex flex-col items-center justify-center my-1">
-            <div className="w-0.5 h-6 bg-gradient-to-b from-white/20 via-white/80 to-white/20 border-l border-dashed border-white/60" />
-            <div className="w-2 h-2 rounded-full bg-white animate-pulse -my-1" />
-            <div className="w-0.5 h-6 bg-gradient-to-b from-white/20 via-white/80 to-white/20 border-l border-dashed border-white/60" />
-          </div>
-
-          {/* Bottom Tools Grid */}
-          <div className="flex flex-wrap items-center justify-center gap-2.5 w-full">
-            {bottomMobileTools.map((tool, idx) => (
-              <div 
-                key={`mob-bottom-${idx}`}
-                className="flex items-center gap-2 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl shadow-sm border border-white/40 text-stone-900"
-              >
-                <div className="w-5 h-5 relative shrink-0 flex items-center justify-center">
+          {/* Top 5 Floating Tools */}
+          {topMobileTools.map((tool, idx) => (
+            <div
+              key={`mob-top-${idx}`}
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-10 cursor-pointer active:scale-105 transition-transform"
+              style={{ left: `${tool.mobXPercent}%`, top: `${tool.mobYPercent}%` }}
+            >
+              <div className="w-12 h-12 rounded-2xl bg-white shadow-[0_8px_20px_rgba(0,0,0,0.22)] border border-white/60 flex items-center justify-center p-2.5 shrink-0">
+                <div className="w-6 h-6 relative flex items-center justify-center shrink-0">
                   <Image
                     src={tool.icon}
                     alt={tool.name}
-                    width={20}
-                    height={20}
-                    className="w-full h-full object-contain"
+                    width={26}
+                    height={26}
+                    className="w-full h-full object-contain max-h-full max-w-full"
                   />
                 </div>
-                <span className="text-xs font-semibold text-stone-800">{tool.name}</span>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+
+          {/* Bottom 5 Floating Tools */}
+          {bottomMobileTools.map((tool, idx) => (
+            <div
+              key={`mob-bottom-${idx}`}
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-10 cursor-pointer active:scale-105 transition-transform"
+              style={{ left: `${tool.mobXPercent}%`, top: `${tool.mobYPercent}%` }}
+            >
+              <div className="w-12 h-12 rounded-2xl bg-white shadow-[0_8px_20px_rgba(0,0,0,0.22)] border border-white/60 flex items-center justify-center p-2.5 shrink-0">
+                <div className="w-6 h-6 relative flex items-center justify-center shrink-0">
+                  <Image
+                    src={tool.icon}
+                    alt={tool.name}
+                    width={26}
+                    height={26}
+                    className="w-full h-full object-contain max-h-full max-w-full"
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
 
         </div>
 

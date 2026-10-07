@@ -152,12 +152,12 @@ export default function PricingSection() {
           </p>
         </div>
 
-        {/* Sleek & Compact Pricing Period Toggle */}
-        <div className="flex justify-center mb-12 sm:mb-14">
-          <div className="inline-flex p-1 rounded-full bg-white border border-black/[0.07] shadow-sm">
+        {/* Sleek & Compact Responsive Pricing Period Toggle */}
+        <div className="flex justify-center mb-10 sm:mb-14 px-2">
+          <div className="inline-grid grid-cols-3 p-1 rounded-full bg-white border border-black/[0.07] shadow-sm w-full max-w-[340px] sm:max-w-md">
             <button
               onClick={() => setPeriod('3months')}
-              className={`px-4 py-1.5 rounded-full text-xs transition-all ${
+              className={`py-1.5 sm:py-2 px-2 sm:px-3 rounded-full text-[11px] sm:text-xs transition-all text-center ${
                 period === '3months'
                   ? 'bg-brand-500 text-white shadow-sm font-semibold'
                   : 'text-charcoal-100 hover:text-charcoal-900 font-medium'
@@ -167,7 +167,7 @@ export default function PricingSection() {
             </button>
             <button
               onClick={() => setPeriod('6months')}
-              className={`px-3.5 py-1.5 rounded-full text-xs transition-all flex items-center gap-1.5 ${
+              className={`py-1.5 sm:py-2 px-1 sm:px-2 rounded-full text-[11px] sm:text-xs transition-all flex items-center justify-center gap-1 ${
                 period === '6months'
                   ? 'bg-brand-500 text-white shadow-sm font-semibold'
                   : 'text-charcoal-100 hover:text-charcoal-900 font-medium'
@@ -175,18 +175,18 @@ export default function PricingSection() {
             >
               <span>6 Bulan</span>
               <span
-                className={`text-[10px] px-1.5 py-0.5 rounded-full font-medium ${
+                className={`text-[9px] sm:text-[10px] px-1 sm:px-1.5 py-0.5 rounded-full font-medium ${
                   period === '6months'
                     ? 'bg-white/20 text-white'
                     : 'bg-brand-50 text-brand-600 border border-brand-200/60'
                 }`}
               >
-                Hemat 10%
+                10%
               </span>
             </button>
             <button
               onClick={() => setPeriod('12months')}
-              className={`px-3.5 py-1.5 rounded-full text-xs transition-all flex items-center gap-1.5 ${
+              className={`py-1.5 sm:py-2 px-1 sm:px-2 rounded-full text-[11px] sm:text-xs transition-all flex items-center justify-center gap-1 ${
                 period === '12months'
                   ? 'bg-brand-500 text-white shadow-sm font-semibold'
                   : 'text-charcoal-100 hover:text-charcoal-900 font-medium'
@@ -194,13 +194,13 @@ export default function PricingSection() {
             >
               <span>12 Bulan</span>
               <span
-                className={`text-[10px] px-1.5 py-0.5 rounded-full font-medium ${
+                className={`text-[9px] sm:text-[10px] px-1 sm:px-1.5 py-0.5 rounded-full font-medium ${
                   period === '12months'
                     ? 'bg-white/20 text-white'
                     : 'bg-emerald-50 text-emerald-700 border border-emerald-200/60'
                 }`}
               >
-                Hemat 20%
+                20%
               </span>
             </button>
           </div>

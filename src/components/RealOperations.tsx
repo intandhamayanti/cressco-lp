@@ -58,25 +58,72 @@ const comparisonData = [
 
 export default function RealOperations() {
   return (
-    <section id="operations" className="py-20 sm:py-28 bg-[#FAFAF9] border-t border-black/[0.05] relative overflow-hidden font-sans">
+    <section id="operations" className="py-16 sm:py-24 md:py-28 bg-[#FAFAF9] border-t border-black/[0.05] relative overflow-hidden font-sans">
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 font-sans">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
           <span className="font-mono text-xs uppercase tracking-wider font-bold text-brand-600 mb-3 inline-block">
             /04 PERBANDINGAN OPERASIONAL
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-charcoal-900 mb-3 sm:mb-4">
             Tinggalkan Cara Lama yang Menguras Waktu
           </h2>
-          <p className="text-sm sm:text-base text-charcoal-100 font-normal leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-charcoal-100 font-normal leading-relaxed max-w-2xl mx-auto px-2">
             Bandingkan efisiensi alur kerja modern Cressco dengan hambatan operasional manual berbasis spreadsheet dan grup WhatsApp.
           </p>
         </div>
 
-        {/* Feature Comparison Table */}
-        <div className="w-full bg-white rounded-2xl border border-stone-200/90 shadow-soft overflow-hidden">
+        {/* 1. Mobile Responsive View (Stacked Comparison Cards for Small Screens) */}
+        <div className="md:hidden space-y-3.5">
+          {comparisonData.map((item, idx) => (
+            <div 
+              key={idx} 
+              className="bg-white rounded-2xl border border-stone-200/90 p-4 sm:p-5 shadow-soft"
+            >
+              {/* Feature Title */}
+              <div className="font-semibold text-charcoal-900 text-sm sm:text-base mb-3 pb-2.5 border-b border-stone-100">
+                {item.feature}
+              </div>
+
+              <div className="space-y-2.5">
+                {/* Manual Block */}
+                <div className="flex items-start gap-2.5 bg-stone-50/80 p-3 rounded-xl border border-stone-200/70">
+                  <div className="w-5 h-5 rounded-full bg-stone-200/80 text-stone-500 flex items-center justify-center shrink-0 mt-0.5">
+                    <X size={11} strokeWidth={2.5} />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <span className="text-[10px] font-semibold text-stone-500 uppercase tracking-wider block mb-0.5">
+                      Cara Manual & Spreadsheet
+                    </span>
+                    <p className="text-xs sm:text-[13px] text-charcoal-100 leading-snug font-normal">
+                      {item.manual}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Cressco Block */}
+                <div className="flex items-start gap-2.5 bg-brand-50/60 p-3 rounded-xl border border-brand-200/70">
+                  <div className="w-5 h-5 rounded-full bg-brand-500 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <Check size={11} strokeWidth={3} />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <span className="text-[10px] font-bold text-brand-700 uppercase tracking-wider block mb-0.5">
+                      Platform Cressco
+                    </span>
+                    <p className="text-xs sm:text-[13px] font-semibold text-charcoal-900 leading-snug">
+                      {item.cressco}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* 2. Desktop/Tablet Table View (Medium & Large Screens) */}
+        <div className="hidden md:block w-full bg-white rounded-2xl border border-stone-200/90 shadow-soft overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse min-w-[700px]">
               

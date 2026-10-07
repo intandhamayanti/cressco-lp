@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Check, ArrowRight, Zap } from 'lucide-react';
+import { Check, ArrowRight, Zap, Sparkles } from 'lucide-react';
 
 const APP_LOGIN_URL = 'https://app-cressco.vercel.app/login';
 
@@ -10,6 +10,7 @@ type BillingPeriod = '3months' | '6months' | '12months';
 interface PricingPlan {
   id: string;
   name: string;
+  tagline: string;
   description: string;
   isHighlighted?: boolean;
   pricing: {
@@ -27,6 +28,7 @@ const plans: PricingPlan[] = [
   {
     id: 'starter',
     name: 'Starter',
+    tagline: 'Untuk Bimbel Rintisan',
     description: 'Cocok untuk bimbel rintisan yang ingin mendigitalkan absensi dan tagihan siswa tanpa biaya operasional tinggi.',
     isHighlighted: false,
     pricing: {
@@ -47,8 +49,8 @@ const plans: PricingPlan[] = [
       },
     },
     features: [
-      '1 Cabang Bimbel',
-      'Hingga 150 Siswa Aktif',
+      '1 Cabang Bimbel Aktif',
+      'Hingga 150 Siswa Terdaftar',
       'Manajemen Kelas & Jadwal Belajar',
       'Presensi Digital Siswa (1-Tap)',
       'Invoice & Pencatatan SPP Otomatis',
@@ -56,11 +58,12 @@ const plans: PricingPlan[] = [
       'Dashboard Kas Masuk Harian',
       'Dukungan Standar (Email & WA)',
     ],
-    ctaLabel: 'Get Started Now',
+    ctaLabel: 'Mulai dengan Starter',
   },
   {
     id: 'professional',
     name: 'Professional',
+    tagline: 'Paling Banyak Dipilih',
     description: 'Dirancang untuk bimbel berkembang yang butuh kontrol multi-cabang, rekap honor tentor, dan otomasi WhatsApp.',
     isHighlighted: true,
     pricing: {
@@ -82,7 +85,7 @@ const plans: PricingPlan[] = [
     },
     features: [
       'Hingga 3 Cabang Bimbel',
-      'Hingga 600 Siswa Aktif',
+      'Hingga 600 Siswa Terdaftar',
       'Manajemen Tentor & Honor Otomatis',
       'Broadcast WhatsApp Otomatis ke Wali',
       'Deteksi Jadwal Bentrok Otomatis',
@@ -90,11 +93,12 @@ const plans: PricingPlan[] = [
       'Akses Multi-Role (Owner, Admin, Tutor)',
       'Dukungan Prioritas WhatsApp (12h Respon)',
     ],
-    ctaLabel: 'Get Started Now',
+    ctaLabel: 'Mulai dengan Professional',
   },
   {
     id: 'enterprise',
     name: 'Enterprise',
+    tagline: 'Skala Multi-Cabang',
     description: 'Solusi komprehensif untuk jaringan bimbel skala besar yang memerlukan custom RBAC, integrasi API, dan dedicated support.',
     isHighlighted: false,
     pricing: {
@@ -124,7 +128,7 @@ const plans: PricingPlan[] = [
       'Dedicated Account Manager Khusus',
       'Jaminan Uptime 99.9% & SLA Support',
     ],
-    ctaLabel: 'Get Started Now',
+    ctaLabel: 'Hubungi Tim Enterprise',
   },
 ];
 
@@ -132,30 +136,30 @@ export default function PricingSection() {
   const [period, setPeriod] = useState<BillingPeriod>('12months');
 
   return (
-    <section id="pricing" className="py-24 sm:py-32 bg-[#FAFAF9] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="py-24 sm:py-32 bg-[#FAF9F6] border-t border-black/[0.05] relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 font-sans">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="font-mono text-xs uppercase tracking-wider font-bold text-brand-600 mb-3 inline-block">
             /03 PAKET HARGA
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-charcoal-900 mb-4">
             Pilihan Paket Sederhana & Transparan
           </h2>
           <p className="text-base sm:text-lg text-charcoal-100 font-normal leading-relaxed">
-            Mulai dari satu bimbel hingga beberapa cabang, pilih paket yang sesuai dengan kebutuhan operasional Anda.
+            Mulai dari satu bimbel hingga puluhan cabang, pilih paket investasi yang paling tepat untuk pertumbuhan bisnis Anda.
           </p>
         </div>
 
-        {/* Pricing Period Toggle with 3, 6, 12 Month Badges */}
+        {/* Pricing Period Toggle with 3, 6, 12 Month Badges in Cressco Theme */}
         <div className="flex justify-center mb-16">
           <div className="inline-flex p-1.5 rounded-2xl bg-white border border-black/[0.08] shadow-soft-sm">
             <button
               onClick={() => setPeriod('3months')}
-              className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+              className={`px-5 sm:px-7 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
                 period === '3months'
-                  ? 'bg-charcoal-900 text-white shadow-soft-sm'
+                  ? 'bg-brand-500 text-white shadow-sm'
                   : 'text-charcoal-100 hover:text-charcoal-900'
               }`}
             >
@@ -163,60 +167,83 @@ export default function PricingSection() {
             </button>
             <button
               onClick={() => setPeriod('6months')}
-              className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-1.5 ${
+              className={`px-5 sm:px-7 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${
                 period === '6months'
-                  ? 'bg-charcoal-900 text-white shadow-soft-sm'
+                  ? 'bg-brand-500 text-white shadow-sm'
                   : 'text-charcoal-100 hover:text-charcoal-900'
               }`}
             >
               <span>6 Bulan</span>
-              <span className="text-[10px] bg-brand-50 text-brand-600 px-2 py-0.5 rounded-full font-bold border border-brand-200/60">
+              <span
+                className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${
+                  period === '6months'
+                    ? 'bg-white text-brand-600'
+                    : 'bg-brand-50 text-brand-600 border border-brand-200'
+                }`}
+              >
                 Hemat 10%
               </span>
             </button>
             <button
               onClick={() => setPeriod('12months')}
-              className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-1.5 ${
+              className={`px-5 sm:px-7 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${
                 period === '12months'
-                  ? 'bg-brand-500 text-white shadow-soft-sm'
+                  ? 'bg-brand-500 text-white shadow-sm'
                   : 'text-charcoal-100 hover:text-charcoal-900'
               }`}
             >
               <span>12 Bulan</span>
-              <span className="text-[10px] bg-emerald-500 text-white px-2 py-0.5 rounded-full font-bold shadow-sm">
+              <span
+                className={`text-[10px] px-2 py-0.5 rounded-full font-bold shadow-sm ${
+                  period === '12months'
+                    ? 'bg-white text-brand-600'
+                    : 'bg-emerald-500 text-white'
+                }`}
+              >
                 Hemat 20%
               </span>
             </button>
           </div>
         </div>
 
-        {/* 3 Pricing Cards: "Card dalam Card" Architecture matching reference */}
+        {/* 3 Pricing Cards: "Card dalam Card" Architecture in Cressco Terracotta Theme */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           {plans.map((plan) => {
             const currentPricing = plan.pricing[period];
             return (
               <div
                 key={plan.id}
-                className="group relative bg-white rounded-[28px] p-3.5 sm:p-4 border border-black/[0.08] shadow-[0_4px_24px_-4px_rgba(0,0,0,0.05)] hover:shadow-soft-xl hover:border-black/[0.14] transition-all duration-300 flex flex-col justify-between"
+                className={`group relative bg-white rounded-[28px] p-3.5 sm:p-4 border transition-all duration-300 flex flex-col justify-between ${
+                  plan.isHighlighted
+                    ? 'border-brand-500/30 shadow-xl shadow-brand-500/10 lg:-translate-y-2'
+                    : 'border-black/[0.08] shadow-[0_4px_24px_-4px_rgba(0,0,0,0.04)] hover:shadow-soft-lg hover:border-black/[0.14]'
+                }`}
               >
                 <div>
                   {/* INNER TOP CARD (Card di dalam Card) */}
                   <div
-                    className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-[300px] sm:min-h-[320px] transition-all duration-300 ${
+                    className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-[310px] sm:min-h-[330px] transition-all duration-300 ${
                       plan.isHighlighted
-                        ? 'bg-gradient-to-b from-[#4A85F6] via-[#3B82F6] to-[#2563EB] text-white shadow-lg shadow-blue-500/25'
-                        : 'bg-[#EBF3FE]/80 border border-blue-100 text-charcoal-900'
+                        ? 'bg-gradient-to-b from-[#E05334] via-[#CE482A] to-[#B33519] text-white shadow-lg shadow-brand-500/25 border border-white/20'
+                        : 'bg-[#FDF6F4] border border-[#F5DBD4] text-charcoal-900'
                     }`}
                   >
                     <div>
-                      {/* Plan Title (Serif Display Header) */}
-                      <h3
-                        className={`font-serif text-2xl sm:text-3xl font-medium tracking-tight mb-2.5 ${
-                          plan.isHighlighted ? 'text-white' : 'text-charcoal-900'
-                        }`}
-                      >
-                        {plan.name}
-                      </h3>
+                      {/* Plan Header & Tagline */}
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <h3
+                          className={`font-bold text-2xl sm:text-3xl tracking-tight ${
+                            plan.isHighlighted ? 'text-white' : 'text-charcoal-900'
+                          }`}
+                        >
+                          {plan.name}
+                        </h3>
+                        {plan.isHighlighted && (
+                          <span className="px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-sm text-white text-[11px] font-bold tracking-wide border border-white/30 flex items-center gap-1">
+                            <Sparkles size={11} /> Populer
+                          </span>
+                        )}
+                      </div>
 
                       {/* Plan Description */}
                       <p
@@ -232,7 +259,7 @@ export default function PricingSection() {
                       {/* Price Section */}
                       <div className="flex items-baseline gap-1.5 mb-1">
                         <span
-                          className={`font-serif text-3xl sm:text-4xl font-medium tracking-tight ${
+                          className={`font-bold text-3xl sm:text-4xl tracking-tight ${
                             plan.isHighlighted ? 'text-white' : 'text-charcoal-900'
                           }`}
                         >
@@ -240,7 +267,7 @@ export default function PricingSection() {
                         </span>
                         {currentPricing.periodLabel && (
                           <span
-                            className={`text-xs sm:text-sm font-sans font-normal ${
+                            className={`text-xs sm:text-sm font-normal ${
                               plan.isHighlighted ? 'text-white/80' : 'text-charcoal-100'
                             }`}
                           >
@@ -260,30 +287,34 @@ export default function PricingSection() {
                       {/* CTA Button */}
                       <a
                         href={APP_LOGIN_URL}
-                        className="w-full py-3.5 px-4 rounded-xl bg-[#18181B] hover:bg-black text-white text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+                        className={`w-full py-3.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center justify-center gap-2 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 cursor-pointer ${
+                          plan.isHighlighted
+                            ? 'bg-white text-brand-700 hover:bg-surface-50 shadow-md'
+                            : 'bg-charcoal-900 hover:bg-black text-white'
+                        }`}
                       >
-                        <Zap size={14} className="fill-white text-white" />
+                        <Zap size={14} className={plan.isHighlighted ? 'fill-brand-600 text-brand-600' : 'fill-white text-white'} />
                         <span>{plan.ctaLabel}</span>
                       </a>
                     </div>
                   </div>
 
-                  {/* BOTTOM FEATURE LIST (Checklist with clean circles, NO AI icons) */}
+                  {/* BOTTOM FEATURE LIST (Checklist with Cressco warm circular badges) */}
                   <div className="px-3 pt-6 pb-4 space-y-3.5">
                     {plan.features.map((feat, fIdx) => (
                       <div key={fIdx} className="flex items-center gap-3 text-xs sm:text-[13px] text-charcoal-200">
-                        <div className="w-5 h-5 rounded-full bg-[#DCEBFE] text-[#2563EB] flex items-center justify-center shrink-0">
+                        <div className="w-5 h-5 rounded-full bg-brand-50 text-brand-600 border border-brand-200/70 flex items-center justify-center shrink-0">
                           <Check size={12} strokeWidth={3} />
                         </div>
-                        <span className="font-normal text-charcoal-900">{feat}</span>
+                        <span className="font-medium text-charcoal-900">{feat}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Footer small note */}
+                {/* Footer note */}
                 <div className="px-3 pt-2 text-[11px] text-charcoal-50 border-t border-black/[0.04]">
-                  Mendukung aktivasi instan & data terisolasi.
+                  Mendukung aktivasi instan & isolasi basis data.
                 </div>
               </div>
             );

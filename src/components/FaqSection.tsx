@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Plus, Minus, Asterisk, Calendar, ArrowUpRight } from 'lucide-react';
+import { Plus, Minus, ArrowUpRight } from 'lucide-react';
 
 interface FaqItem {
   q: string;
@@ -15,7 +15,7 @@ const faqs: FaqItem[] = [
     a: 'Sangat aman. Cressco menggunakan arsitektur multi-tenant dengan enkripsi data standar industri dan isolasi basis data yang ketat. Setiap cabang memiliki kontrol akses role-based (RBAC) yang terproteksi penuh.',
   },
   {
-    q: 'Berapa lama proses implementasi dan migrasi data dari Excel?',
+    q: 'Berapa lama proses implementasi dan migrasi data dari Excel / sistem lama?',
     a: 'Tim Cressco menyediakan template migrasi data instan untuk siswa, kelas, dan tutor. Rata-rata bimbel dapat mengimpor seluruh data historis dan siap beroperasi penuh dalam kurun waktu kurang dari 24-48 jam.',
   },
   {
@@ -32,12 +32,12 @@ const faqs: FaqItem[] = [
   },
   {
     q: 'Apakah ada pendampingan atau pelatihan saat tim kami pertama kali menggunakan Cressco?',
-    a: 'Ya, setiap paket berlangganan sudah mencakup sesi onboarding intensif 1-on-1, video tutorial lengkap, serta tim dedicated support via WhatsApp untuk mendampingi tim Anda hingga lancar.',
+    a: 'Ya, setiap paket berlangganan sudah mencakup sesi onboarding intensif 1-on-1, panduan lengkap, serta tim dedicated support via WhatsApp untuk mendampingi tim Anda hingga lancar.',
   },
 ];
 
 export default function FaqSection() {
-  const [openIdx, setOpenIdx] = useState<number | null>(0); // First item open by default like the reference
+  const [openIdx, setOpenIdx] = useState<number | null>(0); // First item open by default
 
   const toggleFaq = (idx: number) => {
     setOpenIdx(openIdx === idx ? null : idx);
@@ -47,15 +47,17 @@ export default function FaqSection() {
     <section id="faq" className="py-20 sm:py-28 bg-[#FAFAF9] border-t border-black/[0.05]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header with FAQ Badge and Large Heading */}
+        {/* Section Header */}
         <div className="mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold text-brand-600 bg-brand-50 border border-brand-200/60 mb-4">
-            <Asterisk size={14} className="text-brand-500" />
-            <span>FAQ</span>
-          </div>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-charcoal-900">
-            Question? Answer
+          <span className="font-mono text-xs uppercase tracking-wider font-bold text-brand-600 mb-3 inline-block">
+            /07 TANYA JAWAB (FAQ)
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-charcoal-900 mb-4">
+            Pertanyaan Seputar Cressco
           </h2>
+          <p className="text-sm sm:text-base text-charcoal-100 max-w-2xl font-normal leading-relaxed">
+            Segala hal yang perlu Anda ketahui tentang implementasi, keamanan data, dan kemudahan operasional bimbel Anda bersama Cressco.
+          </p>
         </div>
 
         {/* 2-Column Grid Layout: Accordion (Left) + Consultation Card (Right) */}
@@ -89,7 +91,7 @@ export default function FaqSection() {
                   </button>
 
                   {isOpen && (
-                    <div className="px-6 pb-6 pt-1 text-sm sm:text-[14.5px] text-charcoal-100 leading-relaxed">
+                    <div className="px-6 pb-6 pt-1 text-sm sm:text-[14.5px] text-charcoal-100 leading-relaxed border-t border-black/[0.04]">
                       {faq.a}
                     </div>
                   )}
@@ -103,40 +105,42 @@ export default function FaqSection() {
             <div className="w-full bg-[#121214] rounded-3xl p-7 sm:p-8 text-white shadow-2xl border border-white/10 relative overflow-hidden flex flex-col justify-between min-h-[360px]">
               
               {/* Subtle Ambient Glow */}
-              <div className="absolute top-0 right-0 w-48 h-48 bg-brand-500/15 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-48 h-48 bg-brand-500/20 rounded-full blur-3xl pointer-events-none" />
 
               <div>
-                {/* Consultant Avatar */}
-                <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-white/20 shadow-lg mb-6 bg-zinc-800">
-                  <Image
-                    src="/images/avatars/avatar-1.jpg"
-                    alt="Konsultan Cressco"
-                    width={56}
-                    height={56}
-                    className="object-cover w-full h-full"
-                  />
+                {/* Consultant Avatar with Online Status */}
+                <div className="relative w-14 h-14 mb-6">
+                  <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white/20 shadow-lg bg-zinc-800">
+                    <Image
+                      src="/images/avatars/avatar-1.jpg"
+                      alt="Konsultan Cressco"
+                      width={56}
+                      height={56}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <span className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-[#121214] rounded-full" />
                 </div>
 
                 {/* Card Message */}
-                <p className="text-lg sm:text-xl font-medium text-white/95 leading-snug tracking-tight">
-                  Feel free to reach out whenever you have questions.
-                </p>
+                <h3 className="text-lg sm:text-xl font-bold text-white leading-snug tracking-tight">
+                  Punya pertanyaan spesifik seputar bimbel Anda?
+                </h3>
                 <p className="text-xs sm:text-sm text-zinc-400 font-normal leading-relaxed mt-2.5">
-                  Diskusikan alur operasional, simulasi harga, atau kebutuhan khusus bimbel Anda bersama tim ahli kami.
+                  Diskusikan alur kerja cabang, skema honor tentor, atau simulasi kebutuhan sistem bimbel Anda langsung bersama tim spesialis kami.
                 </p>
               </div>
 
-              {/* Book 1:1 Call Button */}
+              {/* Konsultasi Sekarang CTA Button */}
               <div className="mt-8 pt-4">
                 <a
-                  href="https://wa.me/6281234567890?text=Halo%20tim%20Cressco,%20saya%20ingin%20jadwalkan%20konsultasi%201:1%20mengenai%20platform%20bimbel."
+                  href="https://wa.me/6281234567890?text=Halo%20tim%20Cressco,%20saya%20ingin%20konsultasi%20mengenai%20platform%20manajemen%20bimbel."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 active:bg-white/15 text-white font-semibold text-sm transition-all duration-200 border border-white/15 backdrop-blur-md shadow-lg group hover:border-white/30"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 active:from-brand-700 text-white font-semibold text-sm transition-all duration-200 shadow-lg shadow-brand-500/25 group border border-brand-400/30"
                 >
-                  <Calendar size={16} className="text-brand-400 group-hover:scale-110 transition-transform" />
-                  <span>Book 1:1 call</span>
-                  <ArrowUpRight size={15} className="text-white/60 group-hover:text-white transition-colors" />
+                  <span>Konsultasi Sekarang</span>
+                  <ArrowUpRight size={16} className="text-white/80 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               </div>
 

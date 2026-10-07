@@ -185,7 +185,7 @@ export default function RealOperations() {
                     <div className="space-y-2">
                       <div className="bg-white p-3 rounded-xl border border-black/[0.05] flex items-center justify-between text-xs">
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 font-bold flex items-center justify-center text-[11px]">
+                          <div className="w-8 h-8 rounded-lg bg-brand-50 text-brand-600 font-bold flex items-center justify-center text-[11px] border border-brand-100">
                             R.01
                           </div>
                           <div>
@@ -193,14 +193,14 @@ export default function RealOperations() {
                             <div className="text-[11px] text-charcoal-50">Tutor: Sarah Nabila, S.Pd. • 12/12 Siswa Hadir</div>
                           </div>
                         </div>
-                        <span className="text-[11px] text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">
+                        <span className="text-[11px] text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                           BERLANGSUNG
                         </span>
                       </div>
 
                       <div className="bg-white p-3 rounded-xl border border-black/[0.05] flex items-center justify-between text-xs">
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-purple-50 text-purple-600 font-bold flex items-center justify-center text-[11px]">
+                          <div className="w-8 h-8 rounded-lg bg-surface-100 text-charcoal-200 font-bold flex items-center justify-center text-[11px] border border-black/[0.06]">
                             R.02
                           </div>
                           <div>
@@ -208,7 +208,7 @@ export default function RealOperations() {
                             <div className="text-[11px] text-charcoal-50">Tutor: Budi Pratama, M.Ed. • Jurnal Materi Tersimpan</div>
                           </div>
                         </div>
-                        <span className="text-[11px] text-purple-600 font-bold bg-purple-50 px-2 py-0.5 rounded">
+                        <span className="text-[11px] text-charcoal-100 font-bold bg-surface-100 px-2 py-0.5 rounded border border-black/[0.05]">
                           SELESAI
                         </span>
                       </div>

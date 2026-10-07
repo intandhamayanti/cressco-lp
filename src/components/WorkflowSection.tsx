@@ -9,22 +9,59 @@ interface IntegrationTool {
   category: string;
   xPercent: number; // For responsive orbital layout
   yPercent: number;
+  svgX: number;
+  svgY: number;
 }
 
 const leftIntegrations: IntegrationTool[] = [
-  { name: 'Google Drive', icon: '/images/integrations/google-drive.svg', category: 'Modul & Dokumen', xPercent: 23, yPercent: 12 },
-  { name: 'WhatsApp', icon: '/images/integrations/whatsapp.svg', category: 'Broadcast & Tagihan', xPercent: 10, yPercent: 30 },
-  { name: 'Google Calendar', icon: '/images/integrations/google-calendar.svg', category: 'Jadwal Sesi & Ujian', xPercent: 22, yPercent: 50 },
-  { name: 'Google Sheets', icon: '/images/integrations/google-sheets.svg', category: 'Impor & Ekspor Data', xPercent: 9, yPercent: 70 },
-  { name: 'Zoom', icon: '/images/integrations/zoom.svg', category: 'Kelas Online & Privat', xPercent: 23, yPercent: 88 },
+  { 
+    name: 'Google Meet', 
+    icon: '/images/integrations/google-meet.png', 
+    category: 'Kelas Online & Sesi Privat', 
+    xPercent: 18, 
+    yPercent: 25,
+    svgX: 180,
+    svgY: 100
+  },
+  { 
+    name: 'Mailchimp', 
+    icon: '/images/integrations/mailchimp.png', 
+    category: 'Email Broadcast & Newsletter', 
+    xPercent: 12, 
+    yPercent: 50,
+    svgX: 120,
+    svgY: 200
+  },
+  { 
+    name: 'Microsoft Excel', 
+    icon: '/images/integrations/excel.png', 
+    category: 'Impor/Ekspor & Rekonsiliasi Kas', 
+    xPercent: 18, 
+    yPercent: 75,
+    svgX: 180,
+    svgY: 300
+  },
 ];
 
 const rightIntegrations: IntegrationTool[] = [
-  { name: 'Telegram', icon: '/images/integrations/telegram.svg', category: 'Notifikasi Tutor', xPercent: 77, yPercent: 12 },
-  { name: 'QRIS', icon: '/images/integrations/qris.svg', category: 'Pembayaran SPP Instan', xPercent: 90, yPercent: 30 },
-  { name: 'Microsoft Excel', icon: '/images/integrations/excel.svg', category: 'Rekonsiliasi Kas', xPercent: 78, yPercent: 50 },
-  { name: 'Gmail', icon: '/images/integrations/gmail.svg', category: 'Invoice & Surat Resmi', xPercent: 91, yPercent: 70 },
-  { name: 'Notion', icon: '/images/integrations/notion.svg', category: 'Kurikulum & Silabus', xPercent: 77, yPercent: 88 },
+  { 
+    name: 'Notion', 
+    icon: '/images/integrations/notion.png', 
+    category: 'Silabus & Bank Materi', 
+    xPercent: 82, 
+    yPercent: 32,
+    svgX: 820,
+    svgY: 128
+  },
+  { 
+    name: 'Telegram', 
+    icon: '/images/integrations/telegram.png', 
+    category: 'Notifikasi Otomatis & Komunitas', 
+    xPercent: 82, 
+    yPercent: 68,
+    svgX: 820,
+    svgY: 272
+  },
 ];
 
 export default function WorkflowSection() {
@@ -66,19 +103,27 @@ export default function WorkflowSection() {
             xmlns="http://www.w3.org/2000/svg"
           >
             {/* Center at x=500, y=200 */}
-            {/* Left Connectors into Central Hub */}
-            <path d="M 230 48 C 330 48, 400 160, 500 200" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5 5" />
-            <path d="M 100 120 C 260 120, 380 180, 500 200" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5 5" />
-            <path d="M 220 200 L 500 200" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeDasharray="5 5" />
-            <path d="M 90 280 C 250 280, 380 220, 500 200" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5 5" />
-            <path d="M 230 352 C 330 352, 400 240, 500 200" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5 5" />
+            {/* Left Connectors */}
+            {leftIntegrations.map((tool, idx) => (
+              <path 
+                key={`line-left-${idx}`}
+                d={`M ${tool.svgX} ${tool.svgY} C ${(tool.svgX + 500) / 2} ${tool.svgY}, ${(tool.svgX + 500) / 2} 200, 500 200`} 
+                stroke="rgba(255,255,255,0.35)" 
+                strokeWidth="1.5" 
+                strokeDasharray="5 5" 
+              />
+            ))}
 
-            {/* Right Connectors from Central Hub */}
-            <path d="M 500 200 C 600 160, 670 48, 770 48" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5 5" />
-            <path d="M 500 200 C 620 180, 740 120, 900 120" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5 5" />
-            <path d="M 500 200 L 780 200" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeDasharray="5 5" />
-            <path d="M 500 200 C 620 220, 750 280, 910 280" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5 5" />
-            <path d="M 500 200 C 600 240, 670 352, 770 352" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5 5" />
+            {/* Right Connectors */}
+            {rightIntegrations.map((tool, idx) => (
+              <path 
+                key={`line-right-${idx}`}
+                d={`M 500 200 C ${(500 + tool.svgX) / 2} 200, ${(500 + tool.svgX) / 2} ${tool.svgY}, ${tool.svgX} ${tool.svgY}`} 
+                stroke="rgba(255,255,255,0.35)" 
+                strokeWidth="1.5" 
+                strokeDasharray="5 5" 
+              />
+            ))}
           </svg>
 
           {/* Central Cressco Core Hub */}
@@ -101,18 +146,23 @@ export default function WorkflowSection() {
           {leftIntegrations.map((tool, idx) => (
             <div
               key={`left-${idx}`}
-              className="absolute -translate-x-1/2 -translate-y-1/2 z-10 transition-transform duration-300 hover:scale-110 hover:z-30 cursor-pointer"
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-300 hover:scale-110 hover:z-30 cursor-pointer group"
               style={{ left: `${tool.xPercent}%`, top: `${tool.yPercent}%` }}
               title={`${tool.name} • ${tool.category}`}
             >
-              <div className="w-11 h-11 sm:w-13 sm:h-13 md:w-14 md:h-14 relative drop-shadow-[0_8px_18px_rgba(0,0,0,0.28)]">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-white/95 backdrop-blur-md p-2 sm:p-2.5 flex items-center justify-center shadow-[0_10px_25px_rgba(0,0,0,0.25)] border border-white/40 group-hover:border-white transition-all">
                 <Image
                   src={tool.icon}
                   alt={tool.name}
-                  width={56}
-                  height={56}
+                  width={48}
+                  height={48}
                   className="w-full h-full object-contain"
                 />
+              </div>
+              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-40">
+                <span className="text-[11px] font-medium bg-stone-900/90 text-white px-2 py-0.5 rounded shadow">
+                  {tool.name}
+                </span>
               </div>
             </div>
           ))}
@@ -121,18 +171,23 @@ export default function WorkflowSection() {
           {rightIntegrations.map((tool, idx) => (
             <div
               key={`right-${idx}`}
-              className="absolute -translate-x-1/2 -translate-y-1/2 z-10 transition-transform duration-300 hover:scale-110 hover:z-30 cursor-pointer"
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-300 hover:scale-110 hover:z-30 cursor-pointer group"
               style={{ left: `${tool.xPercent}%`, top: `${tool.yPercent}%` }}
               title={`${tool.name} • ${tool.category}`}
             >
-              <div className="w-11 h-11 sm:w-13 sm:h-13 md:w-14 md:h-14 relative drop-shadow-[0_8px_18px_rgba(0,0,0,0.28)]">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-white/95 backdrop-blur-md p-2 sm:p-2.5 flex items-center justify-center shadow-[0_10px_25px_rgba(0,0,0,0.25)] border border-white/40 group-hover:border-white transition-all">
                 <Image
                   src={tool.icon}
                   alt={tool.name}
-                  width={56}
-                  height={56}
+                  width={48}
+                  height={48}
                   className="w-full h-full object-contain"
                 />
+              </div>
+              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-40">
+                <span className="text-[11px] font-medium bg-stone-900/90 text-white px-2 py-0.5 rounded shadow">
+                  {tool.name}
+                </span>
               </div>
             </div>
           ))}

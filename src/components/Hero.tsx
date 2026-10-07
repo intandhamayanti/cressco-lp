@@ -71,8 +71,8 @@ export default function Hero() {
                 <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E] border border-black/10" />
                 <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F] border border-black/10" />
               </div>
-              <div className="flex items-center gap-1.5 px-3 py-0.5 bg-white rounded-md border border-black/[0.06] text-xs font-mono text-charcoal-100">
-                <span className="text-brand-500">https://</span>app-cressco.vercel.app/dashboard
+              <div className="flex items-center gap-1.5 px-3 py-0.5 bg-white rounded-md border border-black/[0.06] text-[11px] sm:text-xs font-mono text-charcoal-100 shadow-2xs">
+                <span className="text-brand-500 font-semibold">https://</span>app-cressco.id
               </div>
               <div className="text-[11px] text-charcoal-50 font-medium hidden sm:block">
                 Cressco OS v2.4

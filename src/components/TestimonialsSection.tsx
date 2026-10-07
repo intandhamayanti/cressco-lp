@@ -100,24 +100,24 @@ const column3Data: TestimonialItem[] = [
 function TestimonialCard({ item }: { item: TestimonialItem }) {
   if (item.isFeatured) {
     return (
-      <div className="group relative w-full bg-gradient-to-b from-[#E05334] via-[#CE482A] to-[#B33519] rounded-2xl sm:rounded-3xl p-6 sm:p-7 text-white shadow-xl shadow-brand-500/20 border border-white/20 flex flex-col justify-between mb-6 transition-all duration-300 hover:shadow-2xl hover:shadow-brand-500/30 select-none">
+      <div className="group relative w-full h-full min-h-[220px] sm:min-h-[240px] bg-gradient-to-b from-[#E05334] via-[#CE482A] to-[#B33519] rounded-2xl sm:rounded-3xl p-5 sm:p-7 text-white shadow-xl shadow-brand-500/20 border border-white/20 flex flex-col justify-between transition-all duration-300 select-none">
         
         {/* Rating Stars */}
-        <div className="flex items-center gap-1 mb-4">
+        <div className="flex items-center gap-1 mb-3 shrink-0">
           {[...Array(5)].map((_, i) => (
-            <Star key={i} size={15} className="fill-amber-300 text-amber-300" />
+            <Star key={i} size={14} className="fill-amber-300 text-amber-300" />
           ))}
         </div>
 
         {/* Testimonial Quote */}
-        <p className="text-[14px] sm:text-[14.5px] leading-relaxed text-white/95 font-normal mb-6">
+        <p className="text-xs sm:text-[13.5px] leading-relaxed text-white/95 font-normal line-clamp-3 sm:line-clamp-4 flex-1 mb-4">
           &ldquo;{item.quote}&rdquo;
         </p>
 
         {/* Footer: Avatar + Name + Role + Verified Tag */}
-        <div className="flex items-center justify-between pt-4 border-t border-white/15">
-          <div className="flex items-center gap-3 min-w-0 pr-2">
-            <div className="relative w-10 h-10 rounded-xl overflow-hidden shrink-0 border border-white/30 shadow-sm bg-white/15">
+        <div className="flex items-center justify-between pt-3.5 border-t border-white/15 shrink-0 mt-auto">
+          <div className="flex items-center gap-2.5 min-w-0 pr-2">
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden shrink-0 border border-white/30 shadow-sm bg-white/15">
               <Image
                 src={item.avatar}
                 alt={item.name}
@@ -128,12 +128,12 @@ function TestimonialCard({ item }: { item: TestimonialItem }) {
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-1.5">
-                <h4 className="text-[14px] font-bold text-white leading-snug truncate">
+                <h4 className="text-xs sm:text-[13.5px] font-bold text-white leading-snug truncate">
                   {item.name}
                 </h4>
-                <CheckCircle2 size={14} className="text-white shrink-0 fill-emerald-500 text-white" />
+                <CheckCircle2 size={13} className="text-white shrink-0 fill-emerald-500 text-white" />
               </div>
-              <p className="text-xs text-white/80 font-normal leading-tight truncate mt-0.5">
+              <p className="text-[11px] sm:text-xs text-white/80 font-normal leading-tight truncate mt-0.5">
                 {item.role} • {item.bimbel}
               </p>
             </div>
@@ -144,24 +144,24 @@ function TestimonialCard({ item }: { item: TestimonialItem }) {
   }
 
   return (
-    <div className="group relative w-full bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-black/[0.08] shadow-[0_4px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_-4px_rgba(0,0,0,0.08)] hover:border-black/[0.14] transition-all duration-300 flex flex-col justify-between mb-6 select-none">
+    <div className="group relative w-full h-full min-h-[220px] sm:min-h-[240px] bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-black/[0.08] shadow-[0_4px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_-4px_rgba(0,0,0,0.08)] hover:border-black/[0.14] transition-all duration-300 flex flex-col justify-between select-none">
       
       {/* Rating Stars */}
-      <div className="flex items-center gap-1 mb-4">
+      <div className="flex items-center gap-1 mb-3 shrink-0">
         {[...Array(5)].map((_, i) => (
-          <Star key={i} size={15} className="fill-amber-400 text-amber-400" />
+          <Star key={i} size={14} className="fill-amber-400 text-amber-400" />
         ))}
       </div>
 
       {/* Testimonial Quote */}
-      <p className="text-[13.5px] sm:text-[14px] leading-relaxed text-charcoal-200 font-normal mb-5">
+      <p className="text-xs sm:text-[13.5px] leading-relaxed text-charcoal-200 font-normal line-clamp-3 sm:line-clamp-4 flex-1 mb-4">
         &ldquo;{item.quote}&rdquo;
       </p>
 
       {/* Footer: Avatar + Name + Role + Verified Tag */}
-      <div className="flex items-center justify-between pt-4 border-t border-black/[0.04]">
-        <div className="flex items-center gap-3 min-w-0 pr-2">
-          <div className="relative w-10 h-10 rounded-xl overflow-hidden shrink-0 border border-black/[0.08] shadow-sm bg-zinc-100">
+      <div className="flex items-center justify-between pt-3.5 border-t border-black/[0.05] shrink-0 mt-auto">
+        <div className="flex items-center gap-2.5 min-w-0 pr-2">
+          <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden shrink-0 border border-black/[0.08] shadow-sm bg-zinc-100">
             <Image
               src={item.avatar}
               alt={item.name}
@@ -172,12 +172,12 @@ function TestimonialCard({ item }: { item: TestimonialItem }) {
           </div>
           <div className="min-w-0">
             <div className="flex items-center gap-1.5">
-              <h4 className="text-[14px] font-bold text-charcoal-900 leading-snug truncate">
+              <h4 className="text-xs sm:text-[13.5px] font-bold text-charcoal-900 leading-snug truncate">
                 {item.name}
               </h4>
-              <CheckCircle2 size={14} className="text-emerald-600 shrink-0 fill-emerald-100" />
+              <CheckCircle2 size={13} className="text-emerald-600 shrink-0 fill-emerald-100" />
             </div>
-            <p className="text-xs text-charcoal-50 font-normal leading-tight truncate mt-0.5">
+            <p className="text-[11px] sm:text-xs text-charcoal-50 font-normal leading-tight truncate mt-0.5">
               {item.role} • {item.bimbel}
             </p>
           </div>
@@ -217,36 +217,48 @@ export default function TestimonialsSection() {
             
             {/* Column 1: Bergerak ke BAWAH */}
             <div className="relative overflow-hidden">
-              <div className="animate-marquee-down flex flex-col">
+              <div className="animate-marquee-down flex flex-col gap-6">
                 {column1Data.map((item, idx) => (
-                  <TestimonialCard key={`c1-a-${idx}`} item={item} />
+                  <div key={`c1-a-${idx}`} className="w-full">
+                    <TestimonialCard item={item} />
+                  </div>
                 ))}
                 {column1Data.map((item, idx) => (
-                  <TestimonialCard key={`c1-b-${idx}`} item={item} />
+                  <div key={`c1-b-${idx}`} className="w-full">
+                    <TestimonialCard item={item} />
+                  </div>
                 ))}
               </div>
             </div>
 
             {/* Column 2: Bergerak ke ATAS */}
             <div className="relative overflow-hidden">
-              <div className="animate-marquee-up flex flex-col">
+              <div className="animate-marquee-up flex flex-col gap-6">
                 {column2Data.map((item, idx) => (
-                  <TestimonialCard key={`c2-a-${idx}`} item={item} />
+                  <div key={`c2-a-${idx}`} className="w-full">
+                    <TestimonialCard item={item} />
+                  </div>
                 ))}
                 {column2Data.map((item, idx) => (
-                  <TestimonialCard key={`c2-b-${idx}`} item={item} />
+                  <div key={`c2-b-${idx}`} className="w-full">
+                    <TestimonialCard item={item} />
+                  </div>
                 ))}
               </div>
             </div>
 
             {/* Column 3: Bergerak ke BAWAH */}
             <div className="relative overflow-hidden">
-              <div className="animate-marquee-down flex flex-col">
+              <div className="animate-marquee-down flex flex-col gap-6">
                 {column3Data.map((item, idx) => (
-                  <TestimonialCard key={`c3-a-${idx}`} item={item} />
+                  <div key={`c3-a-${idx}`} className="w-full">
+                    <TestimonialCard item={item} />
+                  </div>
                 ))}
                 {column3Data.map((item, idx) => (
-                  <TestimonialCard key={`c3-b-${idx}`} item={item} />
+                  <div key={`c3-b-${idx}`} className="w-full">
+                    <TestimonialCard item={item} />
+                  </div>
                 ))}
               </div>
             </div>
@@ -254,16 +266,16 @@ export default function TestimonialsSection() {
           </div>
         </div>
 
-        {/* MOBILE VIEW: Horizontal Smooth Scroll */}
-        <div className="md:hidden relative overflow-hidden -mx-4 px-4">
-          <div className="animate-marquee-left flex gap-4 w-max">
+        {/* MOBILE VIEW: Horizontal Smooth Scroll with perfectly uniform card sizes */}
+        <div className="md:hidden relative overflow-hidden -mx-4 px-4 py-2">
+          <div className="animate-marquee-left flex gap-4 w-max items-stretch">
             {[...column1Data, ...column2Data, ...column3Data].map((item, idx) => (
-              <div key={`mob-a-${idx}`} className="w-[300px] shrink-0">
+              <div key={`mob-a-${idx}`} className="w-[280px] xs:w-[300px] h-[220px] shrink-0 flex">
                 <TestimonialCard item={item} />
               </div>
             ))}
             {[...column1Data, ...column2Data, ...column3Data].map((item, idx) => (
-              <div key={`mob-b-${idx}`} className="w-[300px] shrink-0">
+              <div key={`mob-b-${idx}`} className="w-[280px] xs:w-[300px] h-[220px] shrink-0 flex">
                 <TestimonialCard item={item} />
               </div>
             ))}

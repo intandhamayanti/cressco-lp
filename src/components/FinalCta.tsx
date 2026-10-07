@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 const APP_LOGIN_URL = 'https://app-cressco.vercel.app/login';
 
@@ -38,10 +38,10 @@ export default function FinalCta() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
               <a
                 href={APP_LOGIN_URL}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold text-base shadow-soft hover:shadow-brand-glow transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold text-base shadow-soft hover:shadow-brand-glow transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
                 <span>Try for free</span>
-                <ArrowRight size={18} />
+                <ArrowUpRight size={18} strokeWidth={2.2} />
               </a>
               <a
                 href={APP_LOGIN_URL}

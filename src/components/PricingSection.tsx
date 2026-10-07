@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Check, ArrowRight, Zap, Sparkles } from 'lucide-react';
+import { Check, ArrowUpRight, Sparkles } from 'lucide-react';
 
 const APP_LOGIN_URL = 'https://app-cressco.vercel.app/login';
 
@@ -279,17 +279,17 @@ export default function PricingSection() {
                         {currentPricing.billedTotal}
                       </p>
 
-                      {/* CTA Button with Right Arrow and Cressco Brand Colors */}
+                      {/* CTA Button with Diagonal Up-Right Arrow (↗) and Cressco Brand Colors */}
                       <a
                         href={APP_LOGIN_URL}
-                        className={`group/btn w-full py-3.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center justify-center gap-2 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer ${
+                        className={`group/btn w-full py-3.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center justify-center gap-1.5 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer ${
                           plan.isHighlighted
                             ? 'bg-white text-brand-600 hover:bg-brand-50 hover:text-brand-700 shadow-md'
                             : 'bg-brand-500 hover:bg-brand-600 text-white shadow-soft hover:shadow-brand-glow'
                         }`}
                       >
                         <span>{plan.ctaLabel}</span>
-                        <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
+                        <ArrowUpRight size={17} strokeWidth={2.2} className="transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                       </a>
                     </div>
                   </div>

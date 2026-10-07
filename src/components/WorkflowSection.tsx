@@ -11,18 +11,13 @@ interface IntegrationTool {
   yPercent: number;
   svgX: number;
   svgY: number;
+  mobXPercent: number; // For mobile orbital layout
+  mobYPercent: number;
+  mobSvgX: number;
+  mobSvgY: number;
 }
 
 const leftIntegrations: IntegrationTool[] = [
-  { 
-    name: 'Google Meet', 
-    icon: '/images/integrations/google-meet.png', 
-    category: 'Kelas Online & Privat', 
-    xPercent: 20, 
-    yPercent: 14,
-    svgX: 200,
-    svgY: 56,
-  },
   { 
     name: 'WhatsApp', 
     icon: '/images/integrations/whatsapp.png', 
@@ -31,6 +26,10 @@ const leftIntegrations: IntegrationTool[] = [
     yPercent: 32,
     svgX: 80,
     svgY: 128,
+    mobXPercent: 14,
+    mobYPercent: 18,
+    mobSvgX: 50,
+    mobSvgY: 65,
   },
   { 
     name: 'Google Calendar', 
@@ -40,6 +39,23 @@ const leftIntegrations: IntegrationTool[] = [
     yPercent: 50,
     svgX: 220,
     svgY: 200,
+    mobXPercent: 8,
+    mobYPercent: 50,
+    mobSvgX: 28,
+    mobSvgY: 180,
+  },
+  { 
+    name: 'Google Meet', 
+    icon: '/images/integrations/google-meet.png', 
+    category: 'Kelas Online & Privat', 
+    xPercent: 20, 
+    yPercent: 14,
+    svgX: 200,
+    svgY: 56,
+    mobXPercent: 14,
+    mobYPercent: 82,
+    mobSvgX: 50,
+    mobSvgY: 295,
   },
   { 
     name: 'Mailchimp', 
@@ -49,6 +65,10 @@ const leftIntegrations: IntegrationTool[] = [
     yPercent: 68,
     svgX: 80,
     svgY: 272,
+    mobXPercent: 0,
+    mobYPercent: 0,
+    mobSvgX: 0,
+    mobSvgY: 0,
   },
   { 
     name: 'Microsoft Excel', 
@@ -58,28 +78,14 @@ const leftIntegrations: IntegrationTool[] = [
     yPercent: 86,
     svgX: 200,
     svgY: 344,
+    mobXPercent: 0,
+    mobYPercent: 0,
+    mobSvgX: 0,
+    mobSvgY: 0,
   },
 ];
 
 const rightIntegrations: IntegrationTool[] = [
-  { 
-    name: 'Telegram', 
-    icon: '/images/integrations/telegram.png', 
-    category: 'Grup Pengajar & Tugas', 
-    xPercent: 80, 
-    yPercent: 14,
-    svgX: 800,
-    svgY: 56,
-  },
-  { 
-    name: 'Google Ads', 
-    icon: '/images/integrations/google-ads.png', 
-    category: 'Tracking Akuisisi Siswa', 
-    xPercent: 92, 
-    yPercent: 32,
-    svgX: 920,
-    svgY: 128,
-  },
   { 
     name: 'Zoom', 
     icon: '/images/integrations/zoom.png', 
@@ -88,6 +94,23 @@ const rightIntegrations: IntegrationTool[] = [
     yPercent: 50,
     svgX: 780,
     svgY: 200,
+    mobXPercent: 86,
+    mobYPercent: 18,
+    mobSvgX: 310,
+    mobSvgY: 65,
+  },
+  { 
+    name: 'Telegram', 
+    icon: '/images/integrations/telegram.png', 
+    category: 'Grup Pengajar & Tugas', 
+    xPercent: 80, 
+    yPercent: 14,
+    svgX: 800,
+    svgY: 56,
+    mobXPercent: 92,
+    mobYPercent: 50,
+    mobSvgX: 332,
+    mobSvgY: 180,
   },
   { 
     name: 'Gmail', 
@@ -97,6 +120,23 @@ const rightIntegrations: IntegrationTool[] = [
     yPercent: 68,
     svgX: 920,
     svgY: 272,
+    mobXPercent: 86,
+    mobYPercent: 82,
+    mobSvgX: 310,
+    mobSvgY: 295,
+  },
+  { 
+    name: 'Google Ads', 
+    icon: '/images/integrations/google-ads.png', 
+    category: 'Tracking Akuisisi Siswa', 
+    xPercent: 92, 
+    yPercent: 32,
+    svgX: 920,
+    svgY: 128,
+    mobXPercent: 0,
+    mobYPercent: 0,
+    mobSvgX: 0,
+    mobSvgY: 0,
   },
   { 
     name: 'Notion', 
@@ -106,10 +146,21 @@ const rightIntegrations: IntegrationTool[] = [
     yPercent: 86,
     svgX: 800,
     svgY: 344,
+    mobXPercent: 0,
+    mobYPercent: 0,
+    mobSvgX: 0,
+    mobSvgY: 0,
   },
 ];
 
-const allTools = [...leftIntegrations, ...rightIntegrations];
+const mobileLeftTools = leftIntegrations.slice(0, 3);
+const mobileRightTools = rightIntegrations.slice(0, 3);
+const mobilePillTools = [
+  leftIntegrations[3], // Mailchimp
+  leftIntegrations[4], // Excel
+  rightIntegrations[3], // Google Ads
+  rightIntegrations[4], // Notion
+];
 
 export default function WorkflowSection() {
   return (
@@ -247,90 +298,108 @@ export default function WorkflowSection() {
         </div>
 
         {/* ========================================================================= */}
-        {/* MOBILE VIEW: Clean, Spacious & Beautiful Vertical Integration Flow        */}
+        {/* MOBILE VIEW: Exact Curved Orbital Connectors (Mirrors Desktop Layout)     */}
         {/* ========================================================================= */}
-        <div className="flex md:hidden flex-col items-center gap-4 max-w-md mx-auto">
+        <div className="block md:hidden">
           
-          {/* Top 5 Key Tools Grid */}
-          <div className="grid grid-cols-3 gap-2.5 w-full">
-            {leftIntegrations.slice(0, 3).map((tool, idx) => (
-              <div 
-                key={`mob-top-${idx}`}
-                className="bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-md border border-white/60 flex flex-col items-center text-center justify-center gap-1.5"
-              >
-                <div className="w-7 h-7 relative flex items-center justify-center">
-                  <Image
-                    src={tool.icon}
-                    alt={tool.name}
-                    width={28}
-                    height={28}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <span className="text-[11px] font-bold text-charcoal-900 truncate w-full">
-                  {tool.name}
+          <div className="relative max-w-[360px] mx-auto h-[360px] select-none">
+            
+            {/* Mobile Curved SVG Connectors: Curved lines branching from left/right into center (180, 180) */}
+            <svg 
+              className="absolute inset-0 w-full h-full pointer-events-none z-0" 
+              viewBox="0 0 360 360" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* Left 3 Curved Lines to Center (180, 180) */}
+              {mobileLeftTools.map((tool, idx) => (
+                <path 
+                  key={`mob-curve-left-${idx}`}
+                  d={`M ${tool.mobSvgX} ${tool.mobSvgY} C ${(tool.mobSvgX + 180) / 2} ${tool.mobSvgY}, ${(tool.mobSvgX + 180) / 2} 180, 180 180`} 
+                  stroke="rgba(255,255,255,0.4)" 
+                  strokeWidth="1.5" 
+                  strokeDasharray="4 4" 
+                />
+              ))}
+
+              {/* Right 3 Curved Lines to Center (180, 180) */}
+              {mobileRightTools.map((tool, idx) => (
+                <path 
+                  key={`mob-curve-right-${idx}`}
+                  d={`M ${tool.mobSvgX} ${tool.mobSvgY} C ${(tool.mobSvgX + 180) / 2} ${tool.mobSvgY}, ${(tool.mobSvgX + 180) / 2} 180, 180 180`} 
+                  stroke="rgba(255,255,255,0.4)" 
+                  strokeWidth="1.5" 
+                  strokeDasharray="4 4" 
+                />
+              ))}
+            </svg>
+
+            {/* Central Mobile Cressco Hub */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none">
+              <div className="w-20 h-20 rounded-full bg-white text-brand-600 flex flex-col items-center justify-center shadow-[0_14px_35px_rgba(0,0,0,0.35)] border-4 border-white/40 select-none">
+                <Image
+                  src="/images/cressco-logo.png"
+                  alt="Cressco Core"
+                  width={34}
+                  height={34}
+                  className="object-contain drop-shadow-sm"
+                />
+                <span className="text-[8px] font-black uppercase tracking-wider mt-0.5 text-brand-700">
+                  CRESSCO
                 </span>
               </div>
-            ))}
-          </div>
+            </div>
 
-          {/* Pulse Connector Line Down */}
-          <div className="flex flex-col items-center justify-center my-0.5">
-            <div className="w-0.5 h-6 bg-gradient-to-b from-white/20 via-white/80 to-white/20 border-l border-dashed border-white/60" />
-            <div className="w-2 h-2 rounded-full bg-white animate-pulse -my-1 shadow-sm" />
-            <div className="w-0.5 h-6 bg-gradient-to-b from-white/20 via-white/80 to-white/20 border-l border-dashed border-white/60" />
-          </div>
-
-          {/* Central Mobile Cressco Hub */}
-          <div className="w-20 h-20 rounded-full bg-white text-brand-600 flex flex-col items-center justify-center shadow-[0_14px_35px_rgba(0,0,0,0.35)] border-4 border-white/40 shrink-0">
-            <Image
-              src="/images/cressco-logo.png"
-              alt="Cressco Core"
-              width={36}
-              height={36}
-              className="object-contain drop-shadow-sm"
-            />
-            <span className="text-[9px] font-black uppercase tracking-wider mt-0.5 text-brand-700">
-              CRESSCO
-            </span>
-          </div>
-
-          {/* Pulse Connector Line Down */}
-          <div className="flex flex-col items-center justify-center my-0.5">
-            <div className="w-0.5 h-6 bg-gradient-to-b from-white/20 via-white/80 to-white/20 border-l border-dashed border-white/60" />
-            <div className="w-2 h-2 rounded-full bg-white animate-pulse -my-1 shadow-sm" />
-            <div className="w-0.5 h-6 bg-gradient-to-b from-white/20 via-white/80 to-white/20 border-l border-dashed border-white/60" />
-          </div>
-
-          {/* Bottom 5 Key Tools Grid */}
-          <div className="grid grid-cols-3 gap-2.5 w-full">
-            {rightIntegrations.slice(0, 3).map((tool, idx) => (
-              <div 
-                key={`mob-bottom-${idx}`}
-                className="bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-md border border-white/60 flex flex-col items-center text-center justify-center gap-1.5"
+            {/* Mobile Left Floating Tools (3 Tools on Left Arc) */}
+            {mobileLeftTools.map((tool, idx) => (
+              <div
+                key={`mob-tool-left-${idx}`}
+                className="absolute -translate-x-1/2 -translate-y-1/2 z-10 cursor-pointer active:scale-110 transition-transform"
+                style={{ left: `${tool.mobXPercent}%`, top: `${tool.mobYPercent}%` }}
               >
-                <div className="w-7 h-7 relative flex items-center justify-center">
-                  <Image
-                    src={tool.icon}
-                    alt={tool.name}
-                    width={28}
-                    height={28}
-                    className="w-full h-full object-contain"
-                  />
+                <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white shadow-[0_8px_20px_rgba(0,0,0,0.22)] border border-white/60 flex items-center justify-center p-2.5 shrink-0">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 relative flex items-center justify-center shrink-0">
+                    <Image
+                      src={tool.icon}
+                      alt={tool.name}
+                      width={28}
+                      height={28}
+                      className="w-full h-full object-contain max-h-full max-w-full"
+                    />
+                  </div>
                 </div>
-                <span className="text-[11px] font-bold text-charcoal-900 truncate w-full">
-                  {tool.name}
-                </span>
               </div>
             ))}
+
+            {/* Mobile Right Floating Tools (3 Tools on Right Arc) */}
+            {mobileRightTools.map((tool, idx) => (
+              <div
+                key={`mob-tool-right-${idx}`}
+                className="absolute -translate-x-1/2 -translate-y-1/2 z-10 cursor-pointer active:scale-110 transition-transform"
+                style={{ left: `${tool.mobXPercent}%`, top: `${tool.mobYPercent}%` }}
+              >
+                <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white shadow-[0_8px_20px_rgba(0,0,0,0.22)] border border-white/60 flex items-center justify-center p-2.5 shrink-0">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 relative flex items-center justify-center shrink-0">
+                    <Image
+                      src={tool.icon}
+                      alt={tool.name}
+                      width={28}
+                      height={28}
+                      className="w-full h-full object-contain max-h-full max-w-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+
           </div>
 
-          {/* Horizontal Pill Badges for All Other Supported Tools */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mt-2 pt-3 border-t border-white/15 w-full">
-            {[leftIntegrations[3], leftIntegrations[4], rightIntegrations[3], rightIntegrations[4]].map((tool, idx) => (
+          {/* Bottom Pill Badges for Remaining Integrations */}
+          <div className="flex flex-wrap items-center justify-center gap-2 mt-4 pt-3 border-t border-white/15 max-w-xs mx-auto">
+            {mobilePillTools.map((tool, idx) => (
               <div 
-                key={`mob-badge-${idx}`}
-                className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-md border border-white/25 px-2.5 py-1 rounded-full text-white text-[11px] font-medium"
+                key={`mob-pill-${idx}`}
+                className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-md border border-white/25 px-3 py-1 rounded-full text-white text-xs font-medium"
               >
                 <div className="w-3.5 h-3.5 relative flex items-center justify-center">
                   <Image src={tool.icon} alt={tool.name} width={14} height={14} className="object-contain" />

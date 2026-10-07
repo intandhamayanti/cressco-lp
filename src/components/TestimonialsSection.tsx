@@ -100,7 +100,7 @@ const column3Data: TestimonialItem[] = [
 function TestimonialCard({ item }: { item: TestimonialItem }) {
   if (item.isFeatured) {
     return (
-      <div className="group relative w-full h-full min-h-[220px] sm:min-h-[240px] bg-gradient-to-b from-[#E05334] via-[#CE482A] to-[#B33519] rounded-2xl sm:rounded-3xl p-5 sm:p-7 text-white shadow-xl shadow-brand-500/20 border border-white/20 flex flex-col justify-between transition-all duration-300 select-none">
+      <div className="group relative w-full h-full min-h-[260px] sm:min-h-[270px] bg-gradient-to-b from-[#E05334] via-[#CE482A] to-[#B33519] rounded-2xl sm:rounded-3xl p-5 sm:p-7 text-white shadow-xl shadow-brand-500/20 border border-white/20 flex flex-col justify-between transition-all duration-300 select-none">
         
         {/* Rating Stars */}
         <div className="flex items-center gap-1 mb-3 shrink-0">
@@ -109,8 +109,8 @@ function TestimonialCard({ item }: { item: TestimonialItem }) {
           ))}
         </div>
 
-        {/* Testimonial Quote */}
-        <p className="text-xs sm:text-[13.5px] leading-relaxed text-white/95 font-normal line-clamp-3 sm:line-clamp-4 flex-1 mb-4">
+        {/* Testimonial Quote - FULL TEXT, NO CUTOFF */}
+        <p className="text-xs sm:text-[13.5px] leading-relaxed text-white/95 font-normal flex-1 mb-4">
           &ldquo;{item.quote}&rdquo;
         </p>
 
@@ -144,7 +144,7 @@ function TestimonialCard({ item }: { item: TestimonialItem }) {
   }
 
   return (
-    <div className="group relative w-full h-full min-h-[220px] sm:min-h-[240px] bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-black/[0.08] shadow-[0_4px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_-4px_rgba(0,0,0,0.08)] hover:border-black/[0.14] transition-all duration-300 flex flex-col justify-between select-none">
+    <div className="group relative w-full h-full min-h-[260px] sm:min-h-[270px] bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-black/[0.08] shadow-[0_4px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_-4px_rgba(0,0,0,0.08)] hover:border-black/[0.14] transition-all duration-300 flex flex-col justify-between select-none">
       
       {/* Rating Stars */}
       <div className="flex items-center gap-1 mb-3 shrink-0">
@@ -153,8 +153,8 @@ function TestimonialCard({ item }: { item: TestimonialItem }) {
         ))}
       </div>
 
-      {/* Testimonial Quote */}
-      <p className="text-xs sm:text-[13.5px] leading-relaxed text-charcoal-200 font-normal line-clamp-3 sm:line-clamp-4 flex-1 mb-4">
+      {/* Testimonial Quote - FULL TEXT, NO CUTOFF */}
+      <p className="text-xs sm:text-[13.5px] leading-relaxed text-charcoal-200 font-normal flex-1 mb-4">
         &ldquo;{item.quote}&rdquo;
       </p>
 
@@ -189,7 +189,7 @@ function TestimonialCard({ item }: { item: TestimonialItem }) {
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimoni" className="py-20 sm:py-28 bg-[#FAFAF9] border-t border-black/[0.05] relative overflow-hidden">
+    <section id="testimoni" className="py-20 sm:py-28 bg-[#FAFAF9] border-t border-black/[0.05] relative overflow-hidden font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -206,7 +206,7 @@ export default function TestimonialsSection() {
         </div>
 
         {/* DESKTOP VIEW: 3-Column Vertical Infinite Marquee */}
-        <div className="hidden md:block relative h-[700px] overflow-hidden">
+        <div className="hidden md:block relative h-[720px] overflow-hidden">
           
           {/* Top & Bottom Gradient Fade Masks */}
           <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-[#FAFAF9] via-[#FAFAF9]/90 to-transparent z-20 pointer-events-none" />
@@ -266,16 +266,16 @@ export default function TestimonialsSection() {
           </div>
         </div>
 
-        {/* MOBILE VIEW: Horizontal Smooth Scroll with perfectly uniform card sizes */}
+        {/* MOBILE VIEW: Horizontal Smooth Scroll with full readable quotes and equal height */}
         <div className="md:hidden relative overflow-hidden -mx-4 px-4 py-2">
           <div className="animate-marquee-left flex gap-4 w-max items-stretch">
             {[...column1Data, ...column2Data, ...column3Data].map((item, idx) => (
-              <div key={`mob-a-${idx}`} className="w-[280px] xs:w-[300px] h-[220px] shrink-0 flex">
+              <div key={`mob-a-${idx}`} className="w-[300px] xs:w-[320px] min-h-[260px] shrink-0 flex">
                 <TestimonialCard item={item} />
               </div>
             ))}
             {[...column1Data, ...column2Data, ...column3Data].map((item, idx) => (
-              <div key={`mob-b-${idx}`} className="w-[280px] xs:w-[300px] h-[220px] shrink-0 flex">
+              <div key={`mob-b-${idx}`} className="w-[300px] xs:w-[320px] min-h-[260px] shrink-0 flex">
                 <TestimonialCard item={item} />
               </div>
             ))}

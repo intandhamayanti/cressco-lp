@@ -31,7 +31,7 @@ export default function Navbar() {
       <div
         className={`pointer-events-auto transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-between ${
           scrolled
-            ? 'mt-3 sm:mt-4 w-[92%] sm:w-full max-w-3xl lg:max-w-4xl py-2 px-5 sm:px-6 rounded-full glass-header shadow-[0_16px_40px_-8px_rgba(24,24,27,0.14)] border border-white/95'
+            ? 'mt-4 sm:mt-5 w-[92%] sm:w-full max-w-4xl lg:max-w-5xl py-3 sm:py-3.5 px-6 sm:px-8 rounded-full glass-header shadow-[0_16px_40px_-8px_rgba(24,24,27,0.14)] border border-white/95'
             : 'mt-0 w-full max-w-full py-5 sm:py-6 px-6 sm:px-12 lg:px-16 rounded-none bg-transparent border-b border-transparent shadow-none'
         }`}
       >

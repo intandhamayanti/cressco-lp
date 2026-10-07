@@ -21,19 +21,21 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out pointer-events-none">
-      <div className="w-full px-4 sm:px-6 lg:px-8 mx-auto flex justify-center">
+      <div className="w-full px-4 sm:px-6 lg:px-10 mx-auto flex justify-center">
         
-        {/* Floating Capsule Glassmorphism Navbar */}
+        {/* Full-width top header that morphs into a centered floating glassmorphism pill when scrolled */}
         <div
-          className={`pointer-events-auto transition-all duration-500 ease-out glass-header rounded-full flex items-center justify-between ${
+          className={`pointer-events-auto transition-all duration-500 ease-out flex items-center justify-between ${
             scrolled
-              ? 'mt-3 w-full max-w-4xl py-2 px-5 sm:px-6 shadow-[0_12px_40px_-6px_rgba(24,24,27,0.12)] border-white/95 scale-[0.98]'
-              : 'mt-4 sm:mt-5 w-full max-w-5xl py-2.5 sm:py-3 px-6 sm:px-8 shadow-[0_8px_32px_-4px_rgba(24,24,27,0.06)] border-white/85 scale-100'
+              ? 'mt-3 w-full max-w-4xl py-2.5 px-5 sm:px-6 rounded-full glass-header shadow-[0_12px_40px_-6px_rgba(24,24,27,0.12)] border-white/90 scale-[0.98]'
+              : 'mt-0 w-full max-w-[1380px] py-5 sm:py-6 px-2 sm:px-4 bg-transparent border-transparent shadow-none rounded-none scale-100'
           }`}
         >
           {/* Logo */}
           <a href="/" className="flex items-center gap-2.5 group shrink-0">
-            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm border border-black/[0.05] p-1 group-hover:scale-105 transition-transform">
+            <div className={`w-8 h-8 rounded-xl flex items-center justify-center transition-all ${
+              scrolled ? 'bg-white shadow-sm border border-black/[0.05] p-1' : 'bg-white/80 backdrop-blur-sm border border-black/[0.04] p-1 shadow-sm'
+            } group-hover:scale-105`}>
               <img
                 src="/images/cressco-logo.png"
                 alt="Cressco Logo"
@@ -80,7 +82,7 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action Buttons */}
-          <div className="hidden md:flex items-center gap-2.5">
+          <div className="hidden md:flex items-center gap-3">
             <a
               href={APP_LOGIN_URL}
               className="text-sm font-semibold text-charcoal-800 hover:text-brand-600 px-3 py-1.5 transition-colors cursor-pointer"
@@ -89,7 +91,9 @@ export default function Navbar() {
             </a>
             <a
               href={APP_LOGIN_URL}
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-white bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 active:from-brand-700 px-5 py-2 rounded-full shadow-sm hover:shadow-brand-glow hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer border border-brand-400/30"
+              className={`inline-flex items-center gap-1.5 text-sm font-semibold text-white bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 active:from-brand-700 px-5 py-2.5 shadow-sm hover:shadow-brand-glow hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer border border-brand-400/30 ${
+                scrolled ? 'rounded-full' : 'rounded-xl'
+              }`}
             >
               <span>Try for free</span>
               <ArrowUpRight size={14} className="text-white/80" />
@@ -100,7 +104,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center gap-2">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 text-charcoal-800 hover:text-charcoal-900 rounded-full hover:bg-black/5 transition-colors"
+              className="p-2 text-charcoal-800 hover:text-charcoal-900 rounded-xl hover:bg-black/5 transition-colors"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}

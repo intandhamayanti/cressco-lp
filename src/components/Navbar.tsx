@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const APP_LOGIN_URL = 'https://app-cressco.vercel.app/login';
 
@@ -12,25 +12,31 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const y = window.scrollY || document.documentElement.scrollTop || window.pageYOffset || 0;
+      setScrolled(y > 15);
     };
+
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none flex justify-center">
+    <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none flex justify-center w-full">
       {/* 
         Morphing Header Container:
-        - Before scroll: 100% full-width bar at top of screen (mt-0, w-full, rounded-none, border-b)
-        - When scrolled: Shrinks ("menciut") into a centered floating capsule (mt-3, max-w-4xl, rounded-full, glass-header)
+        - At Top (scrolled = false): 100% full-width bar (w-full max-w-full mt-0 rounded-none border-b bg-white/85)
+        - On Scroll (scrolled = true): Shrinks into a centered floating glassmorphism capsule (mt-3 max-w-4xl rounded-full glass-header)
       */}
       <div
         className={`pointer-events-auto transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-between ${
           scrolled
-            ? 'w-[92%] sm:w-full max-w-4xl mt-3 sm:mt-4 py-2.5 px-5 sm:px-6 rounded-full glass-header shadow-[0_16px_40px_-8px_rgba(24,24,27,0.14)] border border-white/90'
-            : 'w-full max-w-full mt-0 py-4 sm:py-5 px-6 sm:px-12 lg:px-16 rounded-none bg-white/80 backdrop-blur-md border-b border-stone-200/80 shadow-none'
+            ? 'mt-3 sm:mt-4 w-[92%] sm:w-full max-w-4xl py-2 px-5 sm:px-6 rounded-full glass-header shadow-[0_14px_40px_-6px_rgba(24,24,27,0.14)] border border-white/95'
+            : 'mt-0 w-full max-w-full py-4 sm:py-5 px-6 sm:px-12 lg:px-16 rounded-none bg-white/85 backdrop-blur-md border-b border-stone-200/80 shadow-none'
         }`}
       >
         {/* Logo */}
@@ -42,40 +48,42 @@ export default function Navbar() {
               className="w-full h-full object-contain"
             />
           </div>
-          <span className="text-xl font-bold tracking-tight text-charcoal-900">
+          <span className="text-lg sm:text-xl font-bold tracking-tight text-charcoal-900">
             Cressco
           </span>
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-7 lg:gap-8">
+        <nav className={`hidden md:flex items-center transition-all duration-300 ${
+          scrolled ? 'gap-6 lg:gap-7' : 'gap-7 lg:gap-8'
+        }`}>
           <Link
             href="#features"
-            className="text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+            className="text-xs sm:text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
           >
             Fitur
           </Link>
           <Link
             href="#roles"
-            className="text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+            className="text-xs sm:text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
           >
             Solusi
           </Link>
           <Link
             href="#workflow"
-            className="text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+            className="text-xs sm:text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
           >
             Integrasi
           </Link>
           <Link
             href="#pricing"
-            className="text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+            className="text-xs sm:text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
           >
             Harga
           </Link>
           <Link
             href="#faq"
-            className="text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+            className="text-xs sm:text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
           >
             FAQ
           </Link>
@@ -85,18 +93,15 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <a
             href={APP_LOGIN_URL}
-            className="text-sm font-semibold text-charcoal-800 hover:text-brand-600 px-3 py-1.5 transition-colors cursor-pointer"
+            className="text-xs sm:text-sm font-semibold text-charcoal-800 hover:text-brand-600 px-2 sm:px-2.5 py-1.5 transition-colors cursor-pointer"
           >
             Login
           </a>
           <a
             href={APP_LOGIN_URL}
-            className={`inline-flex items-center gap-1.5 text-sm font-semibold text-white bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 active:from-brand-700 px-5 py-2 shadow-sm hover:shadow-brand-glow hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer border border-brand-400/30 ${
-              scrolled ? 'rounded-full' : 'rounded-xl'
-            }`}
+            className="inline-flex items-center justify-center text-xs sm:text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 active:bg-brand-700 px-4 sm:px-5 py-2 rounded-full shadow-sm hover:shadow-brand-glow hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer"
           >
             <span>Try for free</span>
-            <ArrowUpRight size={14} className="text-white/80" />
           </a>
         </div>
 
@@ -104,7 +109,7 @@ export default function Navbar() {
         <div className="md:hidden flex items-center gap-2">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-charcoal-800 hover:text-charcoal-900 rounded-xl hover:bg-black/5 transition-colors"
+            className="p-1.5 text-charcoal-800 hover:text-charcoal-900 rounded-xl hover:bg-black/5 transition-colors"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -160,7 +165,7 @@ export default function Navbar() {
               </a>
               <a
                 href={APP_LOGIN_URL}
-                className="w-full text-center text-sm font-semibold text-white bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 py-2.5 rounded-full shadow-sm block"
+                className="w-full text-center text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 py-2.5 rounded-full shadow-sm block"
               >
                 Try for free
               </a>

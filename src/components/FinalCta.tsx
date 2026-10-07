@@ -1,72 +1,104 @@
 'use client';
 
 import React from 'react';
-import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
+import { Check, Zap } from 'lucide-react';
 
 const APP_LOGIN_URL = 'https://app-cressco.vercel.app/login';
 
 export default function FinalCta() {
   return (
-    <section className="py-20 sm:py-28 bg-[#FAFAF9] relative overflow-hidden font-sans">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-24 bg-[#FAFAF9] relative overflow-hidden font-sans border-t border-black/[0.04]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Premium Glowing Banner Card */}
-        <div className="relative rounded-3xl bg-gradient-to-br from-[#D94E2F] via-[#CE482A] to-[#9E2A12] text-white p-8 sm:p-12 md:p-14 text-center shadow-[0_24px_60px_-15px_rgba(206,72,42,0.38)] overflow-hidden border border-white/20">
+        {/* Main 2-Column Banner Container (Reference Style) */}
+        <div className="relative rounded-3xl bg-[#FDF7F4] border border-[#F4D9CF] shadow-[0_16px_45px_-12px_rgba(206,72,42,0.12)] overflow-hidden grid grid-cols-1 lg:grid-cols-12 items-center">
           
-          {/* Subtle Ambient Glows & Grid */}
-          <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[550px] h-[350px] bg-white/[0.14] rounded-full blur-[100px] pointer-events-none" />
-          <div className="absolute -bottom-24 -right-16 w-80 h-80 bg-black/20 rounded-full blur-[80px] pointer-events-none" />
-          <div className="absolute inset-0 bg-grid-pattern opacity-10 mix-blend-overlay pointer-events-none" />
-
-          <div className="relative z-10 max-w-2xl mx-auto">
+          {/* Left Column: Headline, Copy, Checklist & Action */}
+          <div className="lg:col-span-6 p-7 sm:p-10 lg:p-12 z-10">
             
-            {/* Minimalist Section Badge */}
-            <span className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider font-bold text-white/90 bg-white/15 backdrop-blur-md px-3.5 py-1 rounded-full border border-white/25 mb-4 shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse" />
+            {/* Section Badge */}
+            <span className="font-mono text-xs uppercase tracking-wider font-bold text-brand-600 mb-3.5 inline-block">
               /08 MULAI SEKARANG
             </span>
 
-            {/* Headline */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white mb-3 leading-tight">
-              Siap Otomatisasi Operasional Bimbel Anda?
+            {/* Main Headline */}
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-charcoal-900 leading-[1.2] mb-3.5">
+              Siap Tingkatkan Efisiensi Bimbel Anda?
             </h2>
 
-            {/* Concise Supporting Copy */}
-            <p className="text-sm sm:text-base text-white/90 font-normal leading-relaxed mb-8 max-w-lg mx-auto">
-              Tinggalkan cara manual. Kelola jadwal, presensi, hingga tagihan SPP dalam satu platform modern yang terhubung langsung.
+            {/* Concise Subtitle */}
+            <p className="text-xs sm:text-sm md:text-base text-charcoal-100 font-normal leading-relaxed mb-6 max-w-lg">
+              Sederhanakan seluruh alur operasional bimbel Anda dari manajemen siswa, jadwal, presensi, hingga rekonsiliasi SPP dalam satu platform modern.
             </p>
 
-            {/* CTA Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-3.5">
+            {/* 3 Value Checkpoints */}
+            <div className="space-y-3 mb-7">
+              <div className="flex items-center gap-3">
+                <div className="w-5 h-5 rounded-md bg-charcoal-900 text-white flex items-center justify-center shrink-0 shadow-sm">
+                  <Check size={12} strokeWidth={3} />
+                </div>
+                <span className="text-xs sm:text-[13px] font-semibold text-charcoal-900">
+                  Bebas rekap spreadsheet & presensi manual yang rawan hilang
+                </span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="w-5 h-5 rounded-md bg-charcoal-900 text-white flex items-center justify-center shrink-0 shadow-sm">
+                  <Check size={12} strokeWidth={3} />
+                </div>
+                <span className="text-xs sm:text-[13px] font-semibold text-charcoal-900">
+                  Hemat hingga 20+ jam kerja operasional admin per bulan
+                </span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="w-5 h-5 rounded-md bg-charcoal-900 text-white flex items-center justify-center shrink-0 shadow-sm">
+                  <Check size={12} strokeWidth={3} />
+                </div>
+                <span className="text-xs sm:text-[13px] font-semibold text-charcoal-900">
+                  Tagihan SPP & invoice digital terkirim otomatis via WhatsApp
+                </span>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap items-center gap-3">
               <a
                 href={APP_LOGIN_URL}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-white text-brand-700 hover:bg-stone-100 font-bold text-sm sm:text-base shadow-[0_8px_25px_rgba(0,0,0,0.2)] hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-xl bg-charcoal-900 hover:bg-black text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer"
               >
+                <Zap size={15} className="text-amber-400 fill-amber-400 shrink-0" />
                 <span>Try for free</span>
-                <ArrowUpRight size={16} strokeWidth={2.5} className="text-brand-600" />
               </a>
               <a
                 href={APP_LOGIN_URL}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm sm:text-base border border-white/25 backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+                className="inline-flex items-center gap-1.5 px-5 sm:px-6 py-3 rounded-xl bg-white hover:bg-stone-50 text-charcoal-900 font-semibold text-xs sm:text-sm border border-stone-200/90 shadow-sm hover:-translate-y-0.5 active:translate-y-0 transition-all"
               >
                 <span>Login</span>
               </a>
             </div>
 
-            {/* Micro Assurances Bar */}
-            <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-6 mt-8 pt-6 border-t border-white/15 text-[11px] sm:text-xs text-white/85 font-medium">
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 size={13} className="text-white/90 shrink-0" />
-                <span>Setup Cepat 5 Menit</span>
+          </div>
+
+          {/* Right Column: Layered Terracotta Backdrop with Real Cressco Dashboard */}
+          <div className="lg:col-span-6 relative h-full min-h-[280px] sm:min-h-[360px] lg:min-h-[460px] flex items-end justify-end pl-6 sm:pl-10 lg:pl-0 pt-6 lg:pt-8">
+            
+            {/* Terracotta Brand Frame Backdrop */}
+            <div className="w-full h-full bg-[#CE482A] bg-gradient-to-br from-[#D94E2F] via-[#CE482A] to-[#B33519] rounded-tl-3xl lg:rounded-tl-[36px] p-4 sm:p-6 lg:p-7 flex items-end justify-end shadow-[-12px_12px_36px_-10px_rgba(206,72,42,0.25)]">
+              
+              {/* Inner Dashboard Card Mockup with Smooth Elevation */}
+              <div className="w-full max-w-[500px] rounded-2xl bg-white shadow-2xl border border-white/90 overflow-hidden -mr-4 -mb-4 sm:-mr-6 sm:-mb-6 lg:-mr-10 lg:-mb-8 transition-transform duration-500 hover:scale-[1.01]">
+                <Image
+                  src="/images/cressco-dashboard-cta.png"
+                  alt="Cressco Executive Dashboard Preview"
+                  width={1080}
+                  height={580}
+                  className="w-full h-auto object-cover object-top"
+                  priority
+                />
               </div>
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 size={13} className="text-white/90 shrink-0" />
-                <span>Tanpa Biaya Tersembunyi</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 size={13} className="text-white/90 shrink-0" />
-                <span>WhatsApp Pendampingan</span>
-              </div>
+
             </div>
 
           </div>

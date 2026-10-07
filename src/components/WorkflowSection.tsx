@@ -13,99 +13,65 @@ interface IntegrationTool {
   svgY: number;
 }
 
+// 3 Spacious Tools on the Left (Arc distribution)
 const leftIntegrations: IntegrationTool[] = [
-  { 
-    name: 'Google Meet', 
-    icon: '/images/integrations/google-meet.png', 
-    category: 'Kelas Online & Privat', 
-    xPercent: 20, 
-    yPercent: 14,
-    svgX: 200,
-    svgY: 56
-  },
   { 
     name: 'WhatsApp', 
     icon: '/images/integrations/whatsapp.png', 
     category: 'Broadcast & Notifikasi', 
-    xPercent: 8, 
-    yPercent: 32,
-    svgX: 80,
-    svgY: 128
+    xPercent: 18, 
+    yPercent: 22,
+    svgX: 180,
+    svgY: 88
   },
   { 
     name: 'Google Calendar', 
     icon: '/images/integrations/google-calendar.png', 
     category: 'Jadwal Sesi & Ujian', 
-    xPercent: 22, 
+    xPercent: 10, 
     yPercent: 50,
-    svgX: 220,
+    svgX: 100,
     svgY: 200
-  },
-  { 
-    name: 'Mailchimp', 
-    icon: '/images/integrations/mailchimp.png', 
-    category: 'Email Broadcast Siswa', 
-    xPercent: 8, 
-    yPercent: 68,
-    svgX: 80,
-    svgY: 272
   },
   { 
     name: 'Microsoft Excel', 
     icon: '/images/integrations/excel.png', 
     category: 'Rekonsiliasi & Impor Data', 
-    xPercent: 20, 
-    yPercent: 86,
-    svgX: 200,
-    svgY: 344
+    xPercent: 18, 
+    yPercent: 78,
+    svgX: 180,
+    svgY: 312
   },
 ];
 
+// 3 Spacious Tools on the Right (Arc distribution)
 const rightIntegrations: IntegrationTool[] = [
-  { 
-    name: 'Telegram', 
-    icon: '/images/integrations/telegram.png', 
-    category: 'Grup Pengajar & Tugas', 
-    xPercent: 80, 
-    yPercent: 14,
-    svgX: 800,
-    svgY: 56
-  },
-  { 
-    name: 'Google Ads', 
-    icon: '/images/integrations/google-ads.png', 
-    category: 'Tracking Akuisisi Siswa', 
-    xPercent: 92, 
-    yPercent: 32,
-    svgX: 920,
-    svgY: 128
-  },
   { 
     name: 'Zoom', 
     icon: '/images/integrations/zoom.png', 
     category: 'Webinar & Kelas Interaktif', 
-    xPercent: 78, 
+    xPercent: 82, 
+    yPercent: 22,
+    svgX: 820,
+    svgY: 88
+  },
+  { 
+    name: 'Telegram', 
+    icon: '/images/integrations/telegram.png', 
+    category: 'Grup Pengajar & Notifikasi', 
+    xPercent: 90, 
     yPercent: 50,
-    svgX: 780,
+    svgX: 900,
     svgY: 200
   },
   { 
     name: 'Gmail', 
     icon: '/images/integrations/gmail.png', 
     category: 'Invoice & Surat Resmi', 
-    xPercent: 92, 
-    yPercent: 68,
-    svgX: 920,
-    svgY: 272
-  },
-  { 
-    name: 'Notion', 
-    icon: '/images/integrations/notion.png', 
-    category: 'Silabus & Bank Materi', 
-    xPercent: 80, 
-    yPercent: 86,
-    svgX: 800,
-    svgY: 344
+    xPercent: 82, 
+    yPercent: 78,
+    svgX: 820,
+    svgY: 312
   },
 ];
 
@@ -141,9 +107,9 @@ export default function WorkflowSection() {
         </div>
 
         {/* ========================================================================= */}
-        {/* DESKTOP & TABLET VIEW: Orbital Layout with curved connectors (md and up) */}
+        {/* DESKTOP & TABLET VIEW: Spacious 3+3 Orbital Layout with curved connectors */}
         {/* ========================================================================= */}
-        <div className="hidden md:flex relative max-w-4xl mx-auto h-[420px] select-none items-center justify-center">
+        <div className="hidden md:flex relative max-w-4xl mx-auto h-[400px] select-none items-center justify-center">
           
           {/* Curved SVG Connectors */}
           <svg 
@@ -192,16 +158,16 @@ export default function WorkflowSection() {
             </div>
           </div>
 
-          {/* Left Floating Tools */}
+          {/* Left Floating Tools (3 Icons with Generous Spacing) */}
           {leftIntegrations.map((tool, idx) => (
             <div
               key={`left-${idx}`}
-              className="absolute -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-300 hover:scale-110 hover:z-30 cursor-pointer group"
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-10 transition-transform duration-300 hover:scale-110 hover:z-30 cursor-pointer group"
               style={{ left: `${tool.xPercent}%`, top: `${tool.yPercent}%` }}
               title={`${tool.name} • ${tool.category}`}
             >
-              <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white shadow-[0_10px_25px_rgba(0,0,0,0.22)] border border-white/60 group-hover:border-white transition-all flex items-center justify-center p-3 shrink-0">
-                <div className="w-8 h-8 md:w-9 md:h-9 relative flex items-center justify-center shrink-0">
+              <div className="w-15 h-15 md:w-16 md:h-16 rounded-2xl bg-white shadow-[0_10px_25px_rgba(0,0,0,0.22)] border border-white/60 group-hover:border-white transition-all flex items-center justify-center p-3 shrink-0">
+                <div className="w-9 h-9 relative flex items-center justify-center shrink-0">
                   <Image
                     src={tool.icon}
                     alt={tool.name}
@@ -219,16 +185,16 @@ export default function WorkflowSection() {
             </div>
           ))}
 
-          {/* Right Floating Tools */}
+          {/* Right Floating Tools (3 Icons with Generous Spacing) */}
           {rightIntegrations.map((tool, idx) => (
             <div
               key={`right-${idx}`}
-              className="absolute -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-300 hover:scale-110 hover:z-30 cursor-pointer group"
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-10 transition-transform duration-300 hover:scale-110 hover:z-30 cursor-pointer group"
               style={{ left: `${tool.xPercent}%`, top: `${tool.yPercent}%` }}
               title={`${tool.name} • ${tool.category}`}
             >
-              <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white shadow-[0_10px_25px_rgba(0,0,0,0.22)] border border-white/60 group-hover:border-white transition-all flex items-center justify-center p-3 shrink-0">
-                <div className="w-8 h-8 md:w-9 md:h-9 relative flex items-center justify-center shrink-0">
+              <div className="w-15 h-15 md:w-16 md:h-16 rounded-2xl bg-white shadow-[0_10px_25px_rgba(0,0,0,0.22)] border border-white/60 group-hover:border-white transition-all flex items-center justify-center p-3 shrink-0">
+                <div className="w-9 h-9 relative flex items-center justify-center shrink-0">
                   <Image
                     src={tool.icon}
                     alt={tool.name}
@@ -253,7 +219,7 @@ export default function WorkflowSection() {
         {/* ========================================================================= */}
         <div className="flex md:hidden flex-col items-center gap-4 max-w-sm mx-auto">
           
-          {/* Top 5 Tools Grid */}
+          {/* Top Tools Grid */}
           <div className="flex flex-wrap items-center justify-center gap-2.5 w-full">
             {topMobileTools.map((tool, idx) => (
               <div 
@@ -306,7 +272,7 @@ export default function WorkflowSection() {
             <div className="w-0.5 h-6 bg-gradient-to-b from-white/20 via-white/80 to-white/20 border-l border-dashed border-white/60" />
           </div>
 
-          {/* Bottom 5 Tools Grid */}
+          {/* Bottom Tools Grid */}
           <div className="flex flex-wrap items-center justify-center gap-2.5 w-full">
             {bottomMobileTools.map((tool, idx) => (
               <div 

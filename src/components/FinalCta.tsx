@@ -76,19 +76,19 @@ export default function FinalCta() {
           </div>
 
           {/* Right Column: Framed Terracotta Canvas with Zoomed Top-Left Dashboard Mockup */}
-          <div className="lg:col-span-6 relative min-h-[340px] sm:min-h-[420px] lg:min-h-full flex items-stretch justify-end">
+          <div className="lg:col-span-6 relative min-h-[360px] sm:min-h-[440px] lg:min-h-[480px] lg:h-auto lg:self-stretch overflow-hidden">
             
-            {/* Terracotta Framed Canvas: Starts below the top edge, flushes completely to the bottom edge */}
-            <div className="w-full mt-5 sm:mt-7 lg:mt-9 bg-[#CE482A] bg-gradient-to-br from-[#D94E2F] via-[#CE482A] to-[#B33519] rounded-tl-[36px] sm:rounded-tl-[46px] rounded-tr-none rounded-b-none relative overflow-hidden shadow-[-10px_10px_35px_-8px_rgba(206,72,42,0.22)]">
+            {/* Terracotta Framed Canvas: Pinned flush to bottom:0 & right:0 */}
+            <div className="absolute top-5 sm:top-7 lg:top-8 bottom-0 left-0 right-0 bg-[#CE482A] bg-gradient-to-br from-[#D94E2F] via-[#CE482A] to-[#B33519] rounded-tl-[32px] sm:rounded-tl-[44px] rounded-tr-none rounded-b-none overflow-hidden shadow-[-10px_10px_35px_-8px_rgba(206,72,42,0.25)]">
               
-              {/* Zoomed Dashboard Mockup - Top Left Corner rounded, Bottom straight/flush */}
-              <div className="absolute top-6 left-6 sm:top-8 sm:left-8 lg:top-9 lg:left-9 w-[880px] sm:w-[980px] lg:w-[1060px] max-w-none rounded-tl-2xl rounded-tr-2xl rounded-b-none bg-white shadow-2xl border-t border-l border-white/80 overflow-hidden select-none pointer-events-none">
+              {/* Zoomed Dashboard Mockup - Top Left Corner rounded, bottom & right bleed completely through */}
+              <div className="absolute top-5 left-5 sm:top-7 sm:left-7 lg:top-8 lg:left-8 w-[920px] sm:w-[1080px] lg:w-[1220px] max-w-none rounded-tl-2xl rounded-tr-none rounded-b-none bg-[#F8FAFC] shadow-2xl border-t border-l border-white/80 select-none pointer-events-none">
                 <Image
                   src="/images/cressco-dashboard-cta.png"
                   alt="Cressco Executive Dashboard Preview"
                   width={1200}
                   height={650}
-                  className="w-full h-auto object-cover object-top"
+                  className="w-full h-auto min-h-[500px] sm:min-h-[580px] lg:min-h-[640px] object-cover object-left-top block"
                   priority
                 />
               </div>

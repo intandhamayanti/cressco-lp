@@ -185,10 +185,10 @@ export default function ModalDemo({ isOpen, onClose, initialMode = 'register', s
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-3 px-4 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm shadow-soft hover:shadow-brand-glow transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3 px-4 rounded-full bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm shadow-soft hover:shadow-brand-glow transition-all flex items-center justify-center gap-2"
                 >
                   <span>{mode === 'login' ? 'Masuk ke Dashboard' : 'Mulai Coba Gratis'}</span>
-                  <ArrowRight size={15} />
+                  {mode !== 'login' && <ArrowUpRight size={16} />}
                 </button>
               </div>
             </form>

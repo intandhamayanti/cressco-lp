@@ -282,7 +282,7 @@ export default function PricingSection() {
                       {/* CTA Button with Diagonal Up-Right Arrow (↗) */}
                       <a
                         href={APP_LOGIN_URL}
-                        className={`group/btn w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer ${
+                        className={`group/btn w-full py-3 px-4 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer ${
                           plan.isHighlighted
                             ? 'bg-white text-brand-600 hover:bg-white/95 shadow-sm'
                             : 'bg-brand-500 hover:bg-brand-600 text-white shadow-soft hover:shadow-brand-glow'

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 const APP_LOGIN_URL = 'https://app-cressco.vercel.app/login';
 
@@ -95,9 +95,10 @@ export default function Navbar() {
           </a>
           <a
             href={APP_LOGIN_URL}
-            className="inline-flex items-center justify-center text-xs sm:text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 active:bg-brand-700 px-4 sm:px-5 py-2 rounded-full shadow-sm hover:shadow-brand-glow hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer"
+            className="inline-flex items-center justify-center gap-1.5 text-xs sm:text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 active:bg-brand-700 px-4 sm:px-5 py-2 rounded-full shadow-sm hover:shadow-brand-glow hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer"
           >
             <span>Try for free</span>
+            <ArrowUpRight size={14} className="text-white/90" />
           </a>
         </div>
 
@@ -161,9 +162,10 @@ export default function Navbar() {
               </a>
               <a
                 href={APP_LOGIN_URL}
-                className="w-full text-center text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 py-2.5 rounded-full shadow-sm block"
+                className="w-full inline-flex items-center justify-center gap-1.5 text-sm font-semibold text-white bg-brand-500 hover:bg-brand-600 py-2.5 rounded-full shadow-sm"
               >
-                Try for free
+                <span>Try for free</span>
+                <ArrowUpRight size={14} className="text-white/90" />
               </a>
             </div>
           </div>

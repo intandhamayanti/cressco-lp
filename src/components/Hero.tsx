@@ -49,7 +49,7 @@ export default function Hero() {
           <div className="flex items-center justify-center mb-14 sm:mb-16">
             <a
               href={APP_LOGIN_URL}
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-4 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold text-base sm:text-lg shadow-soft hover:shadow-brand-glow transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-4 rounded-full bg-brand-500 hover:bg-brand-600 text-white font-semibold text-base sm:text-lg shadow-soft hover:shadow-brand-glow transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
             >
               <span>Mulai dengan Cressco</span>
               <ArrowUpRight size={20} strokeWidth={2.5} />

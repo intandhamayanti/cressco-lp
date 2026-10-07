@@ -137,7 +137,7 @@ export default function FaqSection() {
                   href="https://wa.me/6281234567890?text=Halo%20tim%20Cressco,%20saya%20ingin%20konsultasi%20mengenai%20platform%20manajemen%20bimbel."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 active:from-brand-700 text-white font-semibold text-sm transition-all duration-200 shadow-lg shadow-brand-500/25 group border border-brand-400/30"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 active:from-brand-700 text-white font-semibold text-sm transition-all duration-200 shadow-lg shadow-brand-500/25 group border border-brand-400/30"
                 >
                   <span>Konsultasi Sekarang</span>
                   <ArrowUpRight size={16} className="text-white/80 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

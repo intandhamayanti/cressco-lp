@@ -20,14 +20,14 @@ export default function CoreFeatures() {
     <section id="features" className="py-24 sm:py-32 bg-surface-50/60 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
           <span className="font-mono text-xs uppercase tracking-wider font-bold text-brand-600 mb-3 inline-block">
             /01 FITUR UTAMA
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal-900 mb-4">
             Semua Kebutuhan Operasional Bimbel Anda
           </h2>
-          <p className="text-base sm:text-lg text-charcoal-100 font-normal leading-relaxed">
+          <p className="text-base sm:text-lg text-charcoal-100 font-normal leading-relaxed max-w-2xl mx-auto">
             Satu sistem terpadu untuk membantu owner, admin, dan tentor bekerja lebih teratur setiap hari.
           </p>
         </div>

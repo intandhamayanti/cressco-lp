@@ -18,19 +18,19 @@ const leftIntegrations: IntegrationTool[] = [
     name: 'Google Meet', 
     icon: '/images/integrations/google-meet.png', 
     category: 'Kelas Online & Privat', 
-    xPercent: 23, 
-    yPercent: 12,
-    svgX: 230,
-    svgY: 48
+    xPercent: 20, 
+    yPercent: 14,
+    svgX: 200,
+    svgY: 56
   },
   { 
     name: 'WhatsApp', 
     icon: '/images/integrations/whatsapp.png', 
     category: 'Broadcast & Notifikasi', 
-    xPercent: 10, 
-    yPercent: 30,
-    svgX: 100,
-    svgY: 120
+    xPercent: 8, 
+    yPercent: 32,
+    svgX: 80,
+    svgY: 128
   },
   { 
     name: 'Google Calendar', 
@@ -45,19 +45,19 @@ const leftIntegrations: IntegrationTool[] = [
     name: 'Mailchimp', 
     icon: '/images/integrations/mailchimp.png', 
     category: 'Email Broadcast Siswa', 
-    xPercent: 9, 
-    yPercent: 70,
-    svgX: 90,
-    svgY: 280
+    xPercent: 8, 
+    yPercent: 68,
+    svgX: 80,
+    svgY: 272
   },
   { 
     name: 'Microsoft Excel', 
     icon: '/images/integrations/excel.png', 
     category: 'Rekonsiliasi & Impor Data', 
-    xPercent: 23, 
-    yPercent: 88,
-    svgX: 230,
-    svgY: 352
+    xPercent: 20, 
+    yPercent: 86,
+    svgX: 200,
+    svgY: 344
   },
 ];
 
@@ -66,19 +66,19 @@ const rightIntegrations: IntegrationTool[] = [
     name: 'Telegram', 
     icon: '/images/integrations/telegram.png', 
     category: 'Grup Pengajar & Tugas', 
-    xPercent: 77, 
-    yPercent: 12,
-    svgX: 770,
-    svgY: 48
+    xPercent: 80, 
+    yPercent: 14,
+    svgX: 800,
+    svgY: 56
   },
   { 
     name: 'Google Ads', 
     icon: '/images/integrations/google-ads.png', 
     category: 'Tracking Akuisisi Siswa', 
-    xPercent: 90, 
-    yPercent: 30,
-    svgX: 900,
-    svgY: 120
+    xPercent: 92, 
+    yPercent: 32,
+    svgX: 920,
+    svgY: 128
   },
   { 
     name: 'Zoom', 
@@ -93,19 +93,19 @@ const rightIntegrations: IntegrationTool[] = [
     name: 'Gmail', 
     icon: '/images/integrations/gmail.png', 
     category: 'Invoice & Surat Resmi', 
-    xPercent: 91, 
-    yPercent: 70,
-    svgX: 910,
-    svgY: 280
+    xPercent: 92, 
+    yPercent: 68,
+    svgX: 920,
+    svgY: 272
   },
   { 
     name: 'Notion', 
     icon: '/images/integrations/notion.png', 
     category: 'Silabus & Bank Materi', 
-    xPercent: 77, 
-    yPercent: 88,
-    svgX: 770,
-    svgY: 352
+    xPercent: 80, 
+    yPercent: 86,
+    svgX: 800,
+    svgY: 344
   },
 ];
 
@@ -143,7 +143,7 @@ export default function WorkflowSection() {
         {/* ========================================================================= */}
         {/* DESKTOP & TABLET VIEW: Orbital Layout with curved connectors (md and up) */}
         {/* ========================================================================= */}
-        <div className="hidden md:flex relative max-w-4xl mx-auto h-[400px] select-none items-center justify-center">
+        <div className="hidden md:flex relative max-w-4xl mx-auto h-[420px] select-none items-center justify-center">
           
           {/* Curved SVG Connectors */}
           <svg 
@@ -154,18 +154,26 @@ export default function WorkflowSection() {
           >
             {/* Center at x=500, y=200 */}
             {/* Left Connectors into Central Hub */}
-            <path d="M 230 48 C 330 48, 400 160, 500 200" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5 5" />
-            <path d="M 100 120 C 260 120, 380 180, 500 200" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5 5" />
-            <path d="M 220 200 L 500 200" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeDasharray="5 5" />
-            <path d="M 90 280 C 250 280, 380 220, 500 200" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5 5" />
-            <path d="M 230 352 C 330 352, 400 240, 500 200" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5 5" />
+            {leftIntegrations.map((tool, idx) => (
+              <path 
+                key={`line-left-${idx}`}
+                d={`M ${tool.svgX} ${tool.svgY} C ${(tool.svgX + 500) / 2} ${tool.svgY}, ${(tool.svgX + 500) / 2} 200, 500 200`} 
+                stroke="rgba(255,255,255,0.35)" 
+                strokeWidth="1.5" 
+                strokeDasharray="5 5" 
+              />
+            ))}
 
             {/* Right Connectors from Central Hub */}
-            <path d="M 500 200 C 600 160, 670 48, 770 48" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5 5" />
-            <path d="M 500 200 C 620 180, 740 120, 900 120" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5 5" />
-            <path d="M 500 200 L 780 200" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeDasharray="5 5" />
-            <path d="M 500 200 C 620 220, 750 280, 910 280" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5 5" />
-            <path d="M 500 200 C 600 240, 670 352, 770 352" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5 5" />
+            {rightIntegrations.map((tool, idx) => (
+              <path 
+                key={`line-right-${idx}`}
+                d={`M 500 200 C ${(500 + tool.svgX) / 2} 200, ${(500 + tool.svgX) / 2} ${tool.svgY}, ${tool.svgX} ${tool.svgY}`} 
+                stroke="rgba(255,255,255,0.35)" 
+                strokeWidth="1.5" 
+                strokeDasharray="5 5" 
+              />
+            ))}
           </svg>
 
           {/* Central Cressco Core Hub */}
@@ -192,17 +200,19 @@ export default function WorkflowSection() {
               style={{ left: `${tool.xPercent}%`, top: `${tool.yPercent}%` }}
               title={`${tool.name} • ${tool.category}`}
             >
-              <div className="w-13 h-13 md:w-15 md:h-15 rounded-2xl bg-white/95 backdrop-blur-md p-2.5 flex items-center justify-center shadow-[0_10px_25px_rgba(0,0,0,0.25)] border border-white/40 group-hover:border-white transition-all">
-                <Image
-                  src={tool.icon}
-                  alt={tool.name}
-                  width={44}
-                  height={44}
-                  className="w-full h-full object-contain"
-                />
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white shadow-[0_10px_25px_rgba(0,0,0,0.22)] border border-white/60 group-hover:border-white transition-all flex items-center justify-center p-3 shrink-0">
+                <div className="w-8 h-8 md:w-9 md:h-9 relative flex items-center justify-center shrink-0">
+                  <Image
+                    src={tool.icon}
+                    alt={tool.name}
+                    width={36}
+                    height={36}
+                    className="w-full h-full object-contain max-h-full max-w-full"
+                  />
+                </div>
               </div>
-              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-40">
-                <span className="text-[11px] font-medium bg-stone-900/90 text-white px-2 py-0.5 rounded shadow">
+              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-40">
+                <span className="text-[11px] font-semibold bg-stone-900/90 text-white px-2.5 py-1 rounded-lg shadow-md">
                   {tool.name}
                 </span>
               </div>
@@ -217,17 +227,19 @@ export default function WorkflowSection() {
               style={{ left: `${tool.xPercent}%`, top: `${tool.yPercent}%` }}
               title={`${tool.name} • ${tool.category}`}
             >
-              <div className="w-13 h-13 md:w-15 md:h-15 rounded-2xl bg-white/95 backdrop-blur-md p-2.5 flex items-center justify-center shadow-[0_10px_25px_rgba(0,0,0,0.25)] border border-white/40 group-hover:border-white transition-all">
-                <Image
-                  src={tool.icon}
-                  alt={tool.name}
-                  width={44}
-                  height={44}
-                  className="w-full h-full object-contain"
-                />
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white shadow-[0_10px_25px_rgba(0,0,0,0.22)] border border-white/60 group-hover:border-white transition-all flex items-center justify-center p-3 shrink-0">
+                <div className="w-8 h-8 md:w-9 md:h-9 relative flex items-center justify-center shrink-0">
+                  <Image
+                    src={tool.icon}
+                    alt={tool.name}
+                    width={36}
+                    height={36}
+                    className="w-full h-full object-contain max-h-full max-w-full"
+                  />
+                </div>
               </div>
-              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-40">
-                <span className="text-[11px] font-medium bg-stone-900/90 text-white px-2 py-0.5 rounded shadow">
+              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-40">
+                <span className="text-[11px] font-semibold bg-stone-900/90 text-white px-2.5 py-1 rounded-lg shadow-md">
                   {tool.name}
                 </span>
               </div>
@@ -242,18 +254,18 @@ export default function WorkflowSection() {
         <div className="flex md:hidden flex-col items-center gap-4 max-w-sm mx-auto">
           
           {/* Top 5 Tools Grid */}
-          <div className="flex flex-wrap items-center justify-center gap-3 w-full">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 w-full">
             {topMobileTools.map((tool, idx) => (
               <div 
                 key={`mob-top-${idx}`}
                 className="flex items-center gap-2 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl shadow-sm border border-white/40 text-stone-900"
               >
-                <div className="w-6 h-6 relative shrink-0">
+                <div className="w-5 h-5 relative shrink-0 flex items-center justify-center">
                   <Image
                     src={tool.icon}
                     alt={tool.name}
-                    width={24}
-                    height={24}
+                    width={20}
+                    height={20}
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -295,18 +307,18 @@ export default function WorkflowSection() {
           </div>
 
           {/* Bottom 5 Tools Grid */}
-          <div className="flex flex-wrap items-center justify-center gap-3 w-full">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 w-full">
             {bottomMobileTools.map((tool, idx) => (
               <div 
                 key={`mob-bottom-${idx}`}
                 className="flex items-center gap-2 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl shadow-sm border border-white/40 text-stone-900"
               >
-                <div className="w-6 h-6 relative shrink-0">
+                <div className="w-5 h-5 relative shrink-0 flex items-center justify-center">
                   <Image
                     src={tool.icon}
                     alt={tool.name}
-                    width={24}
-                    height={24}
+                    width={20}
+                    height={20}
                     className="w-full h-full object-contain"
                   />
                 </div>

@@ -155,12 +155,6 @@ const rightIntegrations: IntegrationTool[] = [
 
 const mobileLeftTools = leftIntegrations.slice(0, 3);
 const mobileRightTools = rightIntegrations.slice(0, 3);
-const mobilePillTools = [
-  leftIntegrations[3], // Mailchimp
-  leftIntegrations[4], // Excel
-  rightIntegrations[3], // Google Ads
-  rightIntegrations[4], // Notion
-];
 
 export default function WorkflowSection() {
   return (
@@ -392,21 +386,6 @@ export default function WorkflowSection() {
               </div>
             ))}
 
-          </div>
-
-          {/* Bottom Pill Badges for Remaining Integrations */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mt-4 pt-3 border-t border-white/15 max-w-xs mx-auto">
-            {mobilePillTools.map((tool, idx) => (
-              <div 
-                key={`mob-pill-${idx}`}
-                className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-md border border-white/25 px-3 py-1 rounded-full text-white text-xs font-medium"
-              >
-                <div className="w-3.5 h-3.5 relative flex items-center justify-center">
-                  <Image src={tool.icon} alt={tool.name} width={14} height={14} className="object-contain" />
-                </div>
-                <span>{tool.name}</span>
-              </div>
-            ))}
           </div>
 
         </div>

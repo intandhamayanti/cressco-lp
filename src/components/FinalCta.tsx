@@ -78,17 +78,17 @@ export default function FinalCta() {
           {/* Right Column: Framed Terracotta Canvas with Zoomed Top-Left Dashboard Mockup */}
           <div className="lg:col-span-6 relative min-h-[360px] sm:min-h-[440px] lg:min-h-[480px] lg:h-auto lg:self-stretch overflow-hidden">
             
-            {/* Terracotta Framed Canvas: Pinned flush to bottom:0 & right:0, rounded only at top */}
-            <div className="absolute top-5 sm:top-7 lg:top-8 bottom-0 left-0 right-0 bg-[#CE482A] bg-gradient-to-br from-[#D94E2F] via-[#CE482A] to-[#B33519] rounded-t-[32px] sm:rounded-t-[44px] rounded-b-none overflow-hidden shadow-[-10px_10px_35px_-8px_rgba(206,72,42,0.25)]">
+            {/* Terracotta Framed Canvas: Pinned flush to bottom:0 & right:0, top-right is FULL (not rounded), top-left is rounded */}
+            <div className="absolute top-5 sm:top-7 lg:top-8 bottom-0 left-0 right-0 bg-[#CE482A] bg-gradient-to-br from-[#D94E2F] via-[#CE482A] to-[#B33519] rounded-tl-[32px] sm:rounded-tl-[44px] rounded-tr-none rounded-b-none overflow-hidden shadow-[-10px_10px_35px_-8px_rgba(206,72,42,0.25)]">
               
-              {/* Zoomed Dashboard Mockup - Top corners rounded with overflow-hidden, bottom flat */}
-              <div className="absolute top-5 left-5 sm:top-7 sm:left-7 lg:top-8 lg:left-8 w-[920px] sm:w-[1080px] lg:w-[1220px] max-w-none rounded-t-2xl sm:rounded-t-3xl rounded-b-none overflow-hidden bg-[#F8FAFC] shadow-2xl border-t border-l border-white/80 select-none pointer-events-none">
+              {/* Zoomed Dashboard Mockup - Top-Left rounded with overflow-hidden, Top-Right & Bottom full/flat */}
+              <div className="absolute top-5 left-5 sm:top-7 sm:left-7 lg:top-8 lg:left-8 w-[920px] sm:w-[1080px] lg:w-[1220px] max-w-none rounded-tl-2xl sm:rounded-tl-3xl rounded-tr-none rounded-b-none overflow-hidden bg-[#F8FAFC] shadow-2xl border-t border-l border-white/80 select-none pointer-events-none">
                 <Image
                   src="/images/cressco-dashboard-cta.png"
                   alt="Cressco Executive Dashboard Preview"
                   width={1200}
                   height={650}
-                  className="w-full h-auto min-h-[500px] sm:min-h-[580px] lg:min-h-[640px] object-cover object-left-top block rounded-t-2xl sm:rounded-t-3xl rounded-b-none"
+                  className="w-full h-auto min-h-[500px] sm:min-h-[580px] lg:min-h-[640px] object-cover object-left-top block rounded-tl-2xl sm:rounded-tl-3xl rounded-tr-none rounded-b-none"
                   priority
                 />
               </div>

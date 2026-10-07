@@ -12,31 +12,27 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const y = window.scrollY || document.documentElement.scrollTop || window.pageYOffset || 0;
-      setScrolled(y > 15);
+      const scrollY = window.scrollY || document.documentElement.scrollTop || window.pageYOffset || 0;
+      setScrolled(scrollY > 20);
     };
 
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
-    document.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none flex justify-center w-full">
+    <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none flex justify-center w-full transition-all duration-500 ease-out">
       {/* 
-        Morphing Header Container:
-        - At Top (scrolled = false): 100% full-width bar (w-full max-w-full mt-0 rounded-none border-b bg-white/85)
-        - On Scroll (scrolled = true): Shrinks into a centered floating glassmorphism capsule (mt-3 max-w-4xl rounded-full glass-header)
+        Dynamic Morphing Navbar:
+        - At Top (scrolled = false): 100% full-width transparent header (mt-0 w-full max-w-full py-5 px-6 sm:px-12 lg:px-16 bg-transparent border-transparent)
+        - On Scroll (scrolled = true): Smoothly shrinks into a centered floating glassmorphism pill (mt-3 max-w-3xl lg:max-w-4xl py-2 px-6 rounded-full glass-header shadow-xl)
       */}
       <div
         className={`pointer-events-auto transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-between ${
           scrolled
-            ? 'mt-3 sm:mt-4 w-[92%] sm:w-full max-w-4xl py-2 px-5 sm:px-6 rounded-full glass-header shadow-[0_14px_40px_-6px_rgba(24,24,27,0.14)] border border-white/95'
-            : 'mt-0 w-full max-w-full py-4 sm:py-5 px-6 sm:px-12 lg:px-16 rounded-none bg-white/85 backdrop-blur-md border-b border-stone-200/80 shadow-none'
+            ? 'mt-3 sm:mt-4 w-[92%] sm:w-full max-w-3xl lg:max-w-4xl py-2 px-5 sm:px-6 rounded-full glass-header shadow-[0_16px_40px_-8px_rgba(24,24,27,0.14)] border border-white/95'
+            : 'mt-0 w-full max-w-full py-5 sm:py-6 px-6 sm:px-12 lg:px-16 rounded-none bg-transparent border-b border-transparent shadow-none'
         }`}
       >
         {/* Logo */}
@@ -55,35 +51,35 @@ export default function Navbar() {
 
         {/* Desktop Navigation Links */}
         <nav className={`hidden md:flex items-center transition-all duration-300 ${
-          scrolled ? 'gap-6 lg:gap-7' : 'gap-7 lg:gap-8'
+          scrolled ? 'gap-6 lg:gap-7' : 'gap-8 lg:gap-9'
         }`}>
           <Link
             href="#features"
-            className="text-xs sm:text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+            className="text-xs sm:text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
           >
             Fitur
           </Link>
           <Link
             href="#roles"
-            className="text-xs sm:text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+            className="text-xs sm:text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
           >
             Solusi
           </Link>
           <Link
             href="#workflow"
-            className="text-xs sm:text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+            className="text-xs sm:text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
           >
             Integrasi
           </Link>
           <Link
             href="#pricing"
-            className="text-xs sm:text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+            className="text-xs sm:text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
           >
             Harga
           </Link>
           <Link
             href="#faq"
-            className="text-xs sm:text-sm font-medium text-charcoal-100 hover:text-charcoal-900 transition-colors"
+            className="text-xs sm:text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
           >
             FAQ
           </Link>
@@ -93,7 +89,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <a
             href={APP_LOGIN_URL}
-            className="text-xs sm:text-sm font-semibold text-charcoal-800 hover:text-brand-600 px-2 sm:px-2.5 py-1.5 transition-colors cursor-pointer"
+            className="text-xs sm:text-sm font-semibold text-charcoal-800 hover:text-brand-600 px-2.5 py-1.5 transition-colors cursor-pointer"
           >
             Login
           </a>

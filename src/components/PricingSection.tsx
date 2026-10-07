@@ -229,8 +229,8 @@ export default function PricingSection() {
                     }`}
                   >
                     <div>
-                      {/* Plan Header & Tagline */}
-                      <div className="flex items-center justify-between gap-2 mb-2">
+                      {/* Plan Header */}
+                      <div className="mb-2">
                         <h3
                           className={`font-bold text-2xl sm:text-3xl tracking-tight ${
                             plan.isHighlighted ? 'text-white' : 'text-charcoal-900'
@@ -238,11 +238,6 @@ export default function PricingSection() {
                         >
                           {plan.name}
                         </h3>
-                        {plan.isHighlighted && (
-                          <span className="px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-sm text-white text-[11px] font-bold tracking-wide border border-white/30 flex items-center gap-1">
-                            <Sparkles size={11} /> Populer
-                          </span>
-                        )}
                       </div>
 
                       {/* Plan Description */}
@@ -284,17 +279,17 @@ export default function PricingSection() {
                         {currentPricing.billedTotal}
                       </p>
 
-                      {/* CTA Button */}
+                      {/* CTA Button with Right Arrow and Cressco Brand Colors */}
                       <a
                         href={APP_LOGIN_URL}
-                        className={`w-full py-3.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center justify-center gap-2 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 cursor-pointer ${
+                        className={`group/btn w-full py-3.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center justify-center gap-2 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer ${
                           plan.isHighlighted
-                            ? 'bg-white text-brand-700 hover:bg-surface-50 shadow-md'
-                            : 'bg-charcoal-900 hover:bg-black text-white'
+                            ? 'bg-white text-brand-600 hover:bg-brand-50 hover:text-brand-700 shadow-md'
+                            : 'bg-brand-500 hover:bg-brand-600 text-white shadow-soft hover:shadow-brand-glow'
                         }`}
                       >
-                        <Zap size={14} className={plan.isHighlighted ? 'fill-brand-600 text-brand-600' : 'fill-white text-white'} />
                         <span>{plan.ctaLabel}</span>
+                        <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
                       </a>
                     </div>
                   </div>

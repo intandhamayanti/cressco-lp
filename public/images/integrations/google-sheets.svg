@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <filter id="gsShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="#ffffff" filter="url(#gsShadow)"/>
+  <g transform="translate(11, 8)">
+    <path d="M16.5 0H2.5C1.12 0 0 1.12 0 2.5V27.5C0 28.88 1.12 30 2.5 30H23.5C24.88 30 26 28.88 26 27.5V9.5L16.5 0Z" fill="#0F9D58"/>
+    <path d="M16 0V10H26L16 0Z" fill="#87CEAC"/>
+    <!-- Spreadsheet Grid -->
+    <rect x="5" y="13" width="16" height="12" rx="1" fill="#ffffff"/>
+    <path d="M5 17H21M5 21H21M10 13V25M16 13V25" stroke="#0F9D58" stroke-width="1.2"/>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <filter id="gcShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="#ffffff" filter="url(#gcShadow)"/>
+  <g transform="translate(10, 10)">
+    <rect x="0" y="0" width="28" height="28" rx="6" fill="#1A73E8"/>
+    <path d="M0 6C0 2.68 2.68 0 6 0H22C25.32 0 28 2.68 28 6V9H0V6Z" fill="#EA4335"/>
+    <rect x="6" y="2" width="3" height="4" rx="1.5" fill="#ffffff"/>
+    <rect x="19" y="2" width="3" height="4" rx="1.5" fill="#ffffff"/>
+    <!-- Calendar Date '31' -->
+    <text x="14" y="22" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-weight="bold" font-size="11" text-anchor="middle">31</text>
+  </g>
+</svg>

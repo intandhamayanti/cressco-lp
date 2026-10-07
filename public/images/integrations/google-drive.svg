@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <filter id="gdShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="#ffffff" filter="url(#gdShadow)"/>
+  <g transform="translate(9, 9)">
+    <path d="M19.1 27.5L28.6 11H9.5L0 27.5H19.1Z" fill="#34A853" opacity="0"/>
+    <path d="M10.7 3.5L3.6 15.8L7.3 22.2L14.4 9.9L10.7 3.5Z" fill="#0066DA"/>
+    <path d="M21.5 3.5H7.2L10.9 9.9H25.2L21.5 3.5Z" fill="#00AC47"/>
+    <path d="M18.1 22.2L25.2 9.9L21.5 3.5L14.4 15.8L18.1 22.2Z" fill="#EA4335" opacity="0"/>
+    <path d="M14.4 22.2H28.7L25 15.8H10.7L14.4 22.2Z" fill="#FFBA00"/>
+    <path d="M25 15.8L17.8 3.5L21.5 3.5L28.7 15.8H25Z" fill="#2684FC"/>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <linearGradient id="tgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2aabee"/>
+      <stop offset="100%" stop-color="#229ed9"/>
+    </linearGradient>
+    <filter id="tgShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#229ed9" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="url(#tgGrad)" filter="url(#tgShadow)"/>
+  <path fill="#ffffff" d="M11.5 23.5L34.5 14C35.5 13.6 36.5 14.2 36.1 15.2L32.2 33.5C31.8 34.5 30.8 34.7 30 34.1L24.2 29.8L21.5 32.3C21.1 32.7 20.7 32.9 20.3 32.9L20.7 26.8L32 16.5C32.4 16.1 32 15.7 31.4 16.1L17.5 25L11.7 23.2C10.5 22.8 10.5 21.8 11.5 23.5Z"/>
+</svg>

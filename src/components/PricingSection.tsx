@@ -224,7 +224,7 @@ export default function PricingSection() {
                   <div
                     className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-[310px] sm:min-h-[330px] transition-all duration-300 ${
                       plan.isHighlighted
-                        ? 'bg-gradient-to-b from-[#E05334] via-[#CE482A] to-[#B33519] text-white shadow-lg shadow-brand-500/25 border border-white/20'
+                        ? 'bg-gradient-to-br from-[#EA6C4E] via-[#DE5A3B] to-[#CE482A] text-white shadow-lg shadow-brand-500/15 border border-white/25'
                         : 'bg-[#FDF6F4] border border-[#F5DBD4] text-charcoal-900'
                     }`}
                   >
@@ -232,7 +232,7 @@ export default function PricingSection() {
                       {/* Plan Header */}
                       <div className="mb-2">
                         <h3
-                          className={`font-bold text-2xl sm:text-3xl tracking-tight ${
+                          className={`font-semibold text-2xl sm:text-3xl tracking-tight ${
                             plan.isHighlighted ? 'text-white' : 'text-charcoal-900'
                           }`}
                         >
@@ -279,17 +279,17 @@ export default function PricingSection() {
                         {currentPricing.billedTotal}
                       </p>
 
-                      {/* CTA Button with Diagonal Up-Right Arrow (↗) and Cressco Brand Colors */}
+                      {/* CTA Button with Diagonal Up-Right Arrow (↗) */}
                       <a
                         href={APP_LOGIN_URL}
-                        className={`group/btn w-full py-3.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center justify-center gap-1.5 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer ${
+                        className={`group/btn w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer ${
                           plan.isHighlighted
-                            ? 'bg-white text-brand-600 hover:bg-brand-50 hover:text-brand-700 shadow-md'
+                            ? 'bg-white text-brand-600 hover:bg-white/95 shadow-sm'
                             : 'bg-brand-500 hover:bg-brand-600 text-white shadow-soft hover:shadow-brand-glow'
                         }`}
                       >
                         <span>{plan.ctaLabel}</span>
-                        <ArrowUpRight size={17} strokeWidth={2.2} className="transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                        <ArrowUpRight size={16} strokeWidth={2.2} className="transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                       </a>
                     </div>
                   </div>

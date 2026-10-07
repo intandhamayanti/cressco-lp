@@ -22,9 +22,9 @@ export default function FinalCta() {
               /08 MULAI SEKARANG
             </span>
 
-            {/* Main Headline */}
-            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold tracking-tight text-charcoal-900 leading-[1.18] mb-4 sm:mb-5">
-              Siap Tingkatkan Efisiensi Bimbel Anda?
+            {/* Main Headline (2 Clean Lines) */}
+            <h2 className="text-2xl sm:text-3xl lg:text-[38px] xl:text-[40px] font-bold tracking-tight text-charcoal-900 leading-[1.2] mb-4 sm:mb-5 max-w-lg">
+              Siap Tingkatkan Efisiensi<br className="hidden sm:inline" /> Bimbel Anda?
             </h2>
 
             {/* Breathable Subtitle */}
@@ -76,13 +76,13 @@ export default function FinalCta() {
           </div>
 
           {/* Right Column: Framed Terracotta Canvas with Zoomed Top-Left Dashboard Mockup */}
-          <div className="lg:col-span-6 relative min-h-[320px] sm:min-h-[400px] lg:min-h-full flex items-end justify-end">
+          <div className="lg:col-span-6 relative min-h-[340px] sm:min-h-[420px] lg:min-h-full flex items-stretch justify-end">
             
-            {/* Terracotta Framed Canvas */}
-            <div className="w-full h-[90%] sm:h-[92%] bg-[#CE482A] bg-gradient-to-br from-[#D94E2F] via-[#CE482A] to-[#B33519] rounded-tl-[36px] sm:rounded-tl-[48px] relative overflow-hidden shadow-[-10px_10px_35px_-8px_rgba(206,72,42,0.22)]">
+            {/* Terracotta Framed Canvas: Starts below the top edge, flushes completely to the bottom edge */}
+            <div className="w-full mt-5 sm:mt-7 lg:mt-9 bg-[#CE482A] bg-gradient-to-br from-[#D94E2F] via-[#CE482A] to-[#B33519] rounded-tl-[36px] sm:rounded-tl-[46px] rounded-tr-none rounded-b-none relative overflow-hidden shadow-[-10px_10px_35px_-8px_rgba(206,72,42,0.22)]">
               
-              {/* Zoomed Dashboard Mockup - Anchored Top-Left */}
-              <div className="absolute top-6 left-6 sm:top-9 sm:left-9 lg:top-11 lg:left-11 w-[880px] sm:w-[980px] lg:w-[1060px] max-w-none rounded-2xl bg-white shadow-2xl border border-white/80 overflow-hidden select-none pointer-events-none">
+              {/* Zoomed Dashboard Mockup - Top Left Corner rounded, Bottom straight/flush */}
+              <div className="absolute top-6 left-6 sm:top-8 sm:left-8 lg:top-9 lg:left-9 w-[880px] sm:w-[980px] lg:w-[1060px] max-w-none rounded-tl-2xl rounded-tr-2xl rounded-b-none bg-white shadow-2xl border-t border-l border-white/80 overflow-hidden select-none pointer-events-none">
                 <Image
                   src="/images/cressco-dashboard-cta.png"
                   alt="Cressco Executive Dashboard Preview"

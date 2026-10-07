@@ -48,14 +48,14 @@ export default function FaqSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="mb-10 sm:mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
           <span className="font-mono text-xs uppercase tracking-wider font-bold text-brand-600 mb-3 inline-block">
             /07 TANYA JAWAB (FAQ)
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-charcoal-900 mb-4">
             Pertanyaan Seputar Cressco
           </h2>
-          <p className="text-sm sm:text-base text-charcoal-100 max-w-2xl font-normal leading-relaxed">
+          <p className="text-sm sm:text-base text-charcoal-100 font-normal leading-relaxed">
             Segala hal yang perlu Anda ketahui tentang implementasi, keamanan data, dan kemudahan operasional bimbel Anda bersama Cressco.
           </p>
         </div>

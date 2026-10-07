@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const APP_LOGIN_URL = 'https://app-cressco.vercel.app/login';
 
@@ -41,7 +41,7 @@ export default function Navbar() {
               </span>
             </a>
 
-            {/* Desktop Navigation Links */}
+            {/* Desktop Navigation Links (4 Essential Menus) */}
             <nav className="hidden md:flex items-center gap-8">
               <Link
                 href="#features"
@@ -53,13 +53,7 @@ export default function Navbar() {
                 href="#roles"
                 className="text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
               >
-                Solusi Peran
-              </Link>
-              <Link
-                href="#pricing"
-                className="text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
-              >
-                Harga
+                Solusi
               </Link>
               <Link
                 href="#workflow"
@@ -68,16 +62,10 @@ export default function Navbar() {
                 Integrasi
               </Link>
               <Link
-                href="#testimoni"
+                href="#pricing"
                 className="text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
               >
-                Testimoni
-              </Link>
-              <Link
-                href="#faq"
-                className="text-sm font-medium text-charcoal-200 hover:text-charcoal-900 transition-colors"
-              >
-                FAQ
+                Harga
               </Link>
             </nav>
 
@@ -120,28 +108,28 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="text-sm font-medium text-charcoal-200 hover:text-brand-500 py-1"
             >
-              Product
+              Fitur
             </Link>
             <Link
               href="#roles"
               onClick={() => setMobileMenuOpen(false)}
               className="text-sm font-medium text-charcoal-200 hover:text-brand-500 py-1"
             >
-              Solutions
-            </Link>
-            <Link
-              href="#pricing"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-sm font-medium text-charcoal-200 hover:text-brand-500 py-1"
-            >
-              Pricing
+              Solusi
             </Link>
             <Link
               href="#workflow"
               onClick={() => setMobileMenuOpen(false)}
               className="text-sm font-medium text-charcoal-200 hover:text-brand-500 py-1"
             >
-              Resources
+              Integrasi
+            </Link>
+            <Link
+              href="#pricing"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-sm font-medium text-charcoal-200 hover:text-brand-500 py-1"
+            >
+              Harga
             </Link>
             <div className="pt-2 border-t border-black/[0.06] flex flex-col gap-2">
               <a

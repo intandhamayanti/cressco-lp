@@ -22,9 +22,9 @@ export default function FinalCta() {
               /08 MULAI SEKARANG
             </span>
 
-            {/* Main Headline (2 Clean Lines) */}
-            <h2 className="text-2xl sm:text-3xl lg:text-[38px] xl:text-[40px] font-bold tracking-tight text-charcoal-900 leading-[1.2] mb-4 sm:mb-5 max-w-lg">
-              Siap Tingkatkan Efisiensi<br className="hidden sm:inline" /> Bimbel Anda?
+            {/* Main Headline (2 Clean, Balanced Lines) */}
+            <h2 className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[38px] font-bold tracking-tight text-charcoal-900 leading-[1.25] mb-4 sm:mb-5 max-w-lg">
+              Siap Tingkatkan<br /> Efisiensi Bimbel Anda?
             </h2>
 
             {/* Breathable Subtitle */}
